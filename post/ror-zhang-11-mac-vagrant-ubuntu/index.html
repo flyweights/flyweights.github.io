@@ -1,9 +1,11 @@
+
+<!DOCTYPE html>
 <html>
   <head>
     
 <meta charset="utf-8" >
 
-<title>白罴</title>
+<title>RoR章1.1 Mac-Vagrant-Ubuntu | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -75,17 +77,56 @@
 </transition>
 
 
-        <div class="content-container">
+      <div class="content-container">
+        <div class="post-detail">
           
-          <div class="tags-container">
-            
-              <a class="tag" href="https://flyweights.github.io/tag/jJilF7m7o7">other</a>
+            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/ror-zhang-11-mac-vagrant-ubuntu.jpg')">
+            </div>
+          
+          <h2 class="post-title">RoR章1.1 Mac-Vagrant-Ubuntu</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-08-20</span>
             
           </div>
+          <div class="post-content">
+            <p>Development Environments Made Easy</p>
+<!-- more -->
+<h2 id="1-install">1. Install</h2>
+<pre><code class="language-bash">$ brew cask install virtualbox
+$ brew cask install vagrant
+$ brew cask install vagrant-manager
+</code></pre>
+<h2 id="2-init">2. Init</h2>
+<pre><code class="language-bash">$ mkdir rails-va
+$ cd rails-va
+$ vagrant init ubuntu/trusty64
+</code></pre>
+<h2 id="3-usage">3. Usage</h2>
+<pre><code class="language-bash">$ cd rails-va
+$ vagrant status
+$ vagrant up
+$ vagrant ssh
+$ vagrant reload
+$ vagrant halt
+</code></pre>
 
+          </div>
         </div>
 
-        <div class="site-footer">
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://flyweights.github.io/post/song-bie">
+              <h3 class="post-title">
+                下一篇：送别
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
   <div class="slogan">闲坐竹林里，淡泊寻常心。</div>
   <div class="social-container">
     
@@ -104,8 +145,8 @@
 </div>
 
 
-      </div>
-      <script type="application/javascript">
+    </div>
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
 
@@ -121,6 +162,5 @@ var app = new Vue({
 
 
 
-    </div>
   </body>
 </html>
