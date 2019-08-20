@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-08-20T03:29:20.774Z</updated>
+    <updated>2019-08-20T03:42:52.619Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -11,9 +11,9 @@
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
     <entry>
-        <title type="html"><![CDATA[RoR章1.1 Mac-Vagrant-Ubuntu]]></title>
-        <id>https://flyweights.github.io/post/ror-zhang-11-mac-vagrant-ubuntu</id>
-        <link href="https://flyweights.github.io/post/ror-zhang-11-mac-vagrant-ubuntu">
+        <title type="html"><![CDATA[RoR章1之1 Mac-Vagrant-Ubuntu]]></title>
+        <id>https://flyweights.github.io/post/ror-zhang-1-zhi-1-mac-vagrant-ubuntu</id>
+        <link href="https://flyweights.github.io/post/ror-zhang-1-zhi-1-mac-vagrant-ubuntu">
         </link>
         <updated>2019-08-20T02:27:39.000Z</updated>
         <summary type="html"><![CDATA[<p>Development Environments Made Easy</p>
