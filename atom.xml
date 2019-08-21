@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-08-21T07:02:20.101Z</updated>
+    <updated>2019-08-21T10:03:48.524Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
     <entry>
-        <title type="html"><![CDATA[Rvm]]></title>
+        <title type="html"><![CDATA[RVM]]></title>
         <id>https://flyweights.github.io/post/rvm</id>
         <link href="https://flyweights.github.io/post/rvm">
         </link>
