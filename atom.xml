@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-08-21T06:48:44.055Z</updated>
+    <updated>2019-08-21T07:02:20.101Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -16,7 +16,11 @@
         <link href="https://flyweights.github.io/post/rvm">
         </link>
         <updated>2019-08-21T06:39:48.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="1-install">1.  Install</h2>
+        <summary type="html"><![CDATA[<p>RVM is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>RVM is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems.</p>
+<!-- more -->
+<h2 id="1-install">1.  Install</h2>
 <pre><code class="language-bash">$ \curl -L https://get.rvm.io | bash -s stable
 $ rvm | head -n 1
 $ rvm use ruby --install --default
