@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>送别 | 白罴</title>
+<title>Rvm | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,41 +80,46 @@
       <div class="content-container">
         <div class="post-detail">
           
-            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/song-bie.jpg')">
-            </div>
-          
-          <h2 class="post-title">送别</h2>
+          <h2 class="post-title">Rvm</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-08-15</span>
-            
-              <span>
-                <i class="icon-pricetags-outline"></i>
-                
-                  <a href="https://flyweights.github.io/tag/jJilF7m7o7">
-                    other
-                    
-                  </a>
-                
-              </span>
+            <span><i class="icon-calendar-outline"></i> 2019-08-21</span>
             
           </div>
           <div class="post-content">
-            <p>词：李叔同</p>
-<p>长亭外古道边，<br>
-芳草碧连天。<br>
-晚风拂柳笛声残,<br>
-夕阳山外山。</p>
-<!-- more -->
-<p>天之涯，<br>
-地之角，<br>
-知交半零落。<br>
-一瓢浊酒尽余欢，<br>
-今宵别梦寒。</p>
+            <h2 id="1-install">1.  Install</h2>
+<pre><code class="language-bash">$ \curl -L https://get.rvm.io | bash -s stable
+$ rvm | head -n 1
+$ rvm use ruby --install --default
+$ ruby -v
+</code></pre>
+<h2 id="2-list">2. List</h2>
+<pre><code class="language-bash">$ rvm list known
+</code></pre>
+<h2 id="3-use">3. Use</h2>
+<pre><code class="language-bash">$ rvm use 2.6.0 
+</code></pre>
+<h2 id="4-default">4. Default</h2>
+<pre><code class="language-bash">$ rvm use 2.6.0 --default 
+</code></pre>
+<h2 id="5-remove">5. Remove</h2>
+<pre><code class="language-bash">$ rvm remove 2.6.0
+</code></pre>
+<h2 id="6-implode">6. Implode</h2>
+<pre><code class="language-bash">$ rvm implode
+</code></pre>
 
           </div>
         </div>
 
         
+          <div class="next-post">
+            <a class="purple-link" href="https://flyweights.github.io/post/mac-vagrant-ubuntu">
+              <h3 class="post-title">
+                下一篇：Mac-Vagrant-Ubuntu
+              </h3>
+            </a>
+          </div>
+          
       </div>
 
       

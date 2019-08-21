@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-08-21T06:27:10.444Z</updated>
+    <updated>2019-08-21T06:48:44.055Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,35 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[Rvm]]></title>
+        <id>https://flyweights.github.io/post/rvm</id>
+        <link href="https://flyweights.github.io/post/rvm">
+        </link>
+        <updated>2019-08-21T06:39:48.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="1-install">1.  Install</h2>
+<pre><code class="language-bash">$ \curl -L https://get.rvm.io | bash -s stable
+$ rvm | head -n 1
+$ rvm use ruby --install --default
+$ ruby -v
+</code></pre>
+<h2 id="2-list">2. List</h2>
+<pre><code class="language-bash">$ rvm list known
+</code></pre>
+<h2 id="3-use">3. Use</h2>
+<pre><code class="language-bash">$ rvm use 2.6.0 
+</code></pre>
+<h2 id="4-default">4. Default</h2>
+<pre><code class="language-bash">$ rvm use 2.6.0 --default 
+</code></pre>
+<h2 id="5-remove">5. Remove</h2>
+<pre><code class="language-bash">$ rvm remove 2.6.0
+</code></pre>
+<h2 id="6-implode">6. Implode</h2>
+<pre><code class="language-bash">$ rvm implode
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Mac-Vagrant-Ubuntu]]></title>
         <id>https://flyweights.github.io/post/mac-vagrant-ubuntu</id>
