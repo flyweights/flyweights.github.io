@@ -1,9 +1,11 @@
+
+<!DOCTYPE html>
 <html>
   <head>
     
 <meta charset="utf-8" >
 
-<title>白罴</title>
+<title>RoR章1之2 Hello-World | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -75,19 +77,63 @@
 </transition>
 
 
-        <div class="content-container">
+      <div class="content-container">
+        <div class="post-detail">
           
-          <div class="tags-container">
-            
-              <a class="tag" href="https://flyweights.github.io/tag/eHVnXhms2">RoR</a>
-            
-              <a class="tag" href="https://flyweights.github.io/tag/jJilF7m7o7">other</a>
+            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/ror-zhang-1-zhi-2-hello-world.jpeg')">
+            </div>
+          
+          <h2 class="post-title">RoR章1之2 Hello-World</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-08-20</span>
             
           </div>
+          <div class="post-content">
+            <p>return &quot;Hello , World&quot;</p>
+<!-- more -->
+<blockquote>
+<p>备注：<code>-&gt;</code>默认为 <code>vagrant@vagrant-ubuntu-trusty-64:~$</code></p>
+</blockquote>
+<h2 id="1-update-install">1. Update &amp; Install</h2>
+<pre><code class="language-bash">-&gt; sudo apt-get update
+-&gt; sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common
 
+# 需添加数据库密码
+-&gt; sudo apt-get install mysql-server mysql-client libmysqlclient-dev
+</code></pre>
+<h2 id="2-rvm">2. Rvm</h2>
+<pre><code class="language-bash">-&gt;  \curl -L https://get.rvm.io | bash -s stable
+-&gt; exit
+$ vagrant ssh
+-&gt; rvm | head -n 1
+-&gt; rvm use ruby --install --default
+-&gt; ruby -v
+</code></pre>
+<h2 id="3rails">3.Rails</h2>
+<pre><code class="language-bash">$ gem install rails
+</code></pre>
+<h2 id="4-new">4. New</h2>
+<pre><code class="language-bash">-&gt; rails new data_system -d mysql
+-&gt; cd data_system/
+-&gt; rails s
+</code></pre>
+<h2 id="5-hello-world">5. Hello world</h2>
+<pre><code class="language-bash"> -&gt; rails g controller home index
+</code></pre>
+<p>目录：<code>app/views/home/index.html.erb</code></p>
+<pre><code class="language-html">&lt;h1&gt;Hello, World!&lt;/h1&gt;
+</code></pre>
+<p>http://192.168.xx.oo:3000/home/index</p>
+
+          </div>
         </div>
 
-        <div class="site-footer">
+        
+      </div>
+
+      
+
+      <div class="site-footer">
   <div class="slogan">闲坐竹林里，淡泊寻常心。</div>
   <div class="social-container">
     
@@ -106,8 +152,8 @@
 </div>
 
 
-      </div>
-      <script type="application/javascript">
+    </div>
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
 
@@ -123,6 +169,5 @@ var app = new Vue({
 
 
 
-    </div>
   </body>
 </html>
