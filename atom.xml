@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-08-23T02:18:03.610Z</updated>
+    <updated>2019-08-26T01:11:19.523Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,45 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[Git]]></title>
+        <id>https://flyweights.github.io/post/git</id>
+        <link href="https://flyweights.github.io/post/git">
+        </link>
+        <updated>2019-08-24T01:27:06.000Z</updated>
+        <summary type="html"><![CDATA[<p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
+<!-- more -->
+<h2 id="1-install">1. Install</h2>
+<pre><code>$ brew install git
+$ git --version
+</code></pre>
+<h2 id="2-configure">2. Configure</h2>
+<pre><code>$ git config --global user.name &quot;Your Actual Name&quot;
+$ git config --global user.email &quot;Your Actual Email&quot;
+$ git config -l
+</code></pre>
+<h2 id="3-add-commit">3. Add &amp; Commit</h2>
+<pre><code>$ git add .
+$ git commit -m &quot;Commit message&quot;
+</code></pre>
+<h2 id="4-push">4. Push</h2>
+<pre><code>$ git remote add origin &lt;server&gt;
+$ git push origin master
+</code></pre>
+<h2 id="5-branch">5. Branch</h2>
+<pre><code>$ git checkout -b feature_x
+$ git checkout master
+$ git branch -d feature_x
+$ git push origin &lt;branch&gt;
+</code></pre>
+<h2 id="6-update-merge">6. Update &amp; Merge</h2>
+<pre><code>$ git pull
+$ git merge &lt;branch&gt;
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Mac-Homebrew]]></title>
         <id>https://flyweights.github.io/post/mac-homebrew</id>
