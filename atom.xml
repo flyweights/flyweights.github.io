@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-08-28T09:06:11.117Z</updated>
+    <updated>2019-08-28T09:42:27.822Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -151,7 +151,128 @@
 </tr>
 </tbody>
 </table>
-<h2 id="4">4. ...</h2>
+<h2 id="4-optimize">4. Optimize</h2>
+<table>
+<thead>
+<tr>
+<th>emoji</th>
+<th>alias</th>
+<th>messages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>⚡️</td>
+<td>:zap:</td>
+<td>Improving performance.</td>
+</tr>
+<tr>
+<td>♿️</td>
+<td>:wheelchair:</td>
+<td>Improving accessibility.</td>
+</tr>
+<tr>
+<td>🏗</td>
+<td>:building_construction:</td>
+<td>Making architectural changes.</td>
+</tr>
+<tr>
+<td>📱</td>
+<td>:iphone:</td>
+<td>Working on responsive design.</td>
+</tr>
+<tr>
+<td>🔍</td>
+<td>:mag:</td>
+<td>Improving SEO</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-file">5. File</h2>
+<table>
+<thead>
+<tr>
+<th>emoji</th>
+<th>alias</th>
+<th>messages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔥</td>
+<td>:fire:</td>
+<td>Removing code or files.</td>
+</tr>
+<tr>
+<td>💄</td>
+<td>:lipstick:</td>
+<td>Updating the UI and style files.</td>
+</tr>
+<tr>
+<td>🔧</td>
+<td>:wrench:</td>
+<td>Changing configuration files.</td>
+</tr>
+<tr>
+<td>📦</td>
+<td>:package:</td>
+<td>Updating compiled files or packages.</td>
+</tr>
+<tr>
+<td>🚚</td>
+<td>:truck:</td>
+<td>Moving or renaming files.</td>
+</tr>
+<tr>
+<td>🗃</td>
+<td>:card_file_box:</td>
+<td>Performing database related changes.</td>
+</tr>
+<tr>
+<td>🙈</td>
+<td>:see_no_evil:</td>
+<td>Adding or updating a .gitignore file</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-deploy">6. Deploy</h2>
+<table>
+<thead>
+<tr>
+<th>emoji</th>
+<th>alias</th>
+<th>messages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🚀</td>
+<td>:rocket:</td>
+<td>Deploying stuff.</td>
+</tr>
+<tr>
+<td>💚</td>
+<td>:green_heart:</td>
+<td>Fixing CI Build.</td>
+</tr>
+<tr>
+<td>👷</td>
+<td>:construction_worker:</td>
+<td>Adding CI build system.</td>
+</tr>
+<tr>
+<td>🐳</td>
+<td>:whale:</td>
+<td>Work about Docker.</td>
+</tr>
+<tr>
+<td>☸️</td>
+<td>:wheel_of_dharma:</td>
+<td>Work about Kubernetes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-other">7. Other</h2>
 <p>to be continued</p>
 ]]></content>
     </entry>
