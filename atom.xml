@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-08-27T02:58:05.903Z</updated>
+    <updated>2019-08-28T01:39:54.081Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,151 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[gitmoji]]></title>
+        <id>https://flyweights.github.io/post/gitmoji</id>
+        <link href="https://flyweights.github.io/post/gitmoji">
+        </link>
+        <updated>2019-08-28T07:53:43.000Z</updated>
+        <summary type="html"><![CDATA[<p>An emoji guide for your commit messages</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>An emoji guide for your commit messages</p>
+<!-- more -->
+<h2 id="1-system">1. System</h2>
+<table>
+<thead>
+<tr>
+<th>emoji</th>
+<th>alias</th>
+<th>messages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🍎</td>
+<td>:apple:</td>
+<td>Fixing something on macOS.</td>
+</tr>
+<tr>
+<td>🐧</td>
+<td>:penguin:</td>
+<td>Fixing something on Linux.</td>
+</tr>
+<tr>
+<td>🏁</td>
+<td>:checkered_flag:</td>
+<td>Fixing something on Windows.</td>
+</tr>
+<tr>
+<td>🤖</td>
+<td>:robot:</td>
+<td>Fixing something on Android.</td>
+</tr>
+<tr>
+<td>🍏</td>
+<td>:green_apple:</td>
+<td>Fixing something on iOS.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-code">2. Code</h2>
+<table>
+<thead>
+<tr>
+<th>emoji</th>
+<th>alias</th>
+<th>messages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🎨</td>
+<td>:art:</td>
+<td>Improving structure / format of the code.</td>
+</tr>
+<tr>
+<td>🔥</td>
+<td>:fire:</td>
+<td>Removing code or files.</td>
+</tr>
+<tr>
+<td>📈</td>
+<td>:chart_with_upwards_trend:</td>
+<td>Adding analytics or tracking code.</td>
+</tr>
+<tr>
+<td>♻️</td>
+<td>:recycle:</td>
+<td>Refactoring code.</td>
+</tr>
+<tr>
+<td>💩</td>
+<td>:poop:</td>
+<td>Writing bad code that needs to be improved.</td>
+</tr>
+<tr>
+<td>👽</td>
+<td>:alien:</td>
+<td>Updating code due to external API changes.</td>
+</tr>
+<tr>
+<td>👌</td>
+<td>:ok_hand:</td>
+<td>Updating code due to code review changes..</td>
+</tr>
+<tr>
+<td>💡</td>
+<td>:bulb:</td>
+<td>Documenting source code.</td>
+</tr>
+<tr>
+<td>🍻</td>
+<td>:beers:</td>
+<td>Writing code drunkenly.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-dependency">3. Dependency</h2>
+<table>
+<thead>
+<tr>
+<th>emoji</th>
+<th>alias</th>
+<th>messages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>⬇️</td>
+<td>:arrow_down:</td>
+<td>Downgrading dependencies.</td>
+</tr>
+<tr>
+<td>⬆️</td>
+<td>:arrow_up:</td>
+<td>Upgrading dependencies.</td>
+</tr>
+<tr>
+<td>📌</td>
+<td>:pushpin:</td>
+<td>Pinning dependencies to specific versions.</td>
+</tr>
+<tr>
+<td>➕</td>
+<td>:heavy_plus_sign:</td>
+<td>Adding a dependency.</td>
+</tr>
+<tr>
+<td>➖</td>
+<td>:heavy_minus_sign:</td>
+<td>Removing a dependency.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4">4. ...</h2>
+<p>to be continued</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Xcode]]></title>
         <id>https://flyweights.github.io/post/xcode</id>

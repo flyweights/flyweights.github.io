@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>RoR章1之2 Hello-World | 白罴</title>
+<title>gitmoji | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,55 +80,163 @@
       <div class="content-container">
         <div class="post-detail">
           
-            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/ror-zhang-1-zhi-2-hello-world.jpeg')">
+            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/gitmoji.png')">
             </div>
           
-          <h2 class="post-title">RoR章1之2 Hello-World</h2>
+          <h2 class="post-title">gitmoji</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-08-20</span>
+            <span><i class="icon-calendar-outline"></i> 2019-08-28</span>
             
           </div>
           <div class="post-content">
-            <p>return &quot;Hello , World&quot;</p>
+            <p>An emoji guide for your commit messages</p>
 <!-- more -->
-<blockquote>
-<p>备注：<code>-&gt;</code>默认为 <code>vagrant@vagrant-ubuntu-trusty-64:~$</code></p>
-</blockquote>
-<h2 id="1-update-install">1. Update &amp; Install</h2>
-<pre><code class="language-bash">-&gt; sudo apt-get update
--&gt; sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common
-
-# 需添加数据库密码
--&gt; sudo apt-get install mysql-server mysql-client libmysqlclient-dev
-</code></pre>
-<h2 id="2-rvm">2. Rvm</h2>
-<pre><code class="language-bash">-&gt;  \curl -L https://get.rvm.io | bash -s stable
--&gt; exit
-$ vagrant ssh
--&gt; rvm | head -n 1
--&gt; rvm use ruby --install --default
--&gt; ruby -v
-</code></pre>
-<h2 id="3rails">3.Rails</h2>
-<pre><code class="language-bash">$ gem install rails
-</code></pre>
-<h2 id="4-new">4. New</h2>
-<pre><code class="language-bash">-&gt; rails new data_system -d mysql
--&gt; cd data_system/
--&gt; rails s
-</code></pre>
-<h2 id="5-hello-world">5. Hello world</h2>
-<pre><code class="language-bash"> -&gt; rails g controller home index
-</code></pre>
-<p>目录：<code>app/views/home/index.html.erb</code></p>
-<pre><code class="language-html">&lt;h1&gt;Hello, World!&lt;/h1&gt;
-</code></pre>
-<p>http://192.168.xx.oo:3000/home/index</p>
+<h2 id="1-system">1. System</h2>
+<table>
+<thead>
+<tr>
+<th>emoji</th>
+<th>alias</th>
+<th>messages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🍎</td>
+<td>:apple:</td>
+<td>Fixing something on macOS.</td>
+</tr>
+<tr>
+<td>🐧</td>
+<td>:penguin:</td>
+<td>Fixing something on Linux.</td>
+</tr>
+<tr>
+<td>🏁</td>
+<td>:checkered_flag:</td>
+<td>Fixing something on Windows.</td>
+</tr>
+<tr>
+<td>🤖</td>
+<td>:robot:</td>
+<td>Fixing something on Android.</td>
+</tr>
+<tr>
+<td>🍏</td>
+<td>:green_apple:</td>
+<td>Fixing something on iOS.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-code">2. Code</h2>
+<table>
+<thead>
+<tr>
+<th>emoji</th>
+<th>alias</th>
+<th>messages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🎨</td>
+<td>:art:</td>
+<td>Improving structure / format of the code.</td>
+</tr>
+<tr>
+<td>🔥</td>
+<td>:fire:</td>
+<td>Removing code or files.</td>
+</tr>
+<tr>
+<td>📈</td>
+<td>:chart_with_upwards_trend:</td>
+<td>Adding analytics or tracking code.</td>
+</tr>
+<tr>
+<td>♻️</td>
+<td>:recycle:</td>
+<td>Refactoring code.</td>
+</tr>
+<tr>
+<td>💩</td>
+<td>:poop:</td>
+<td>Writing bad code that needs to be improved.</td>
+</tr>
+<tr>
+<td>👽</td>
+<td>:alien:</td>
+<td>Updating code due to external API changes.</td>
+</tr>
+<tr>
+<td>👌</td>
+<td>:ok_hand:</td>
+<td>Updating code due to code review changes..</td>
+</tr>
+<tr>
+<td>💡</td>
+<td>:bulb:</td>
+<td>Documenting source code.</td>
+</tr>
+<tr>
+<td>🍻</td>
+<td>:beers:</td>
+<td>Writing code drunkenly.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-dependency">3. Dependency</h2>
+<table>
+<thead>
+<tr>
+<th>emoji</th>
+<th>alias</th>
+<th>messages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>⬇️</td>
+<td>:arrow_down:</td>
+<td>Downgrading dependencies.</td>
+</tr>
+<tr>
+<td>⬆️</td>
+<td>:arrow_up:</td>
+<td>Upgrading dependencies.</td>
+</tr>
+<tr>
+<td>📌</td>
+<td>:pushpin:</td>
+<td>Pinning dependencies to specific versions.</td>
+</tr>
+<tr>
+<td>➕</td>
+<td>:heavy_plus_sign:</td>
+<td>Adding a dependency.</td>
+</tr>
+<tr>
+<td>➖</td>
+<td>:heavy_minus_sign:</td>
+<td>Removing a dependency.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4">4. ...</h2>
+<p>to be continued</p>
 
           </div>
         </div>
 
         
+          <div class="next-post">
+            <a class="purple-link" href="https://flyweights.github.io/post/xcode">
+              <h3 class="post-title">
+                下一篇：Xcode
+              </h3>
+            </a>
+          </div>
+          
       </div>
 
       
