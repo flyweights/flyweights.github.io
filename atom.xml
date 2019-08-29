@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-08-28T09:42:27.822Z</updated>
+    <updated>2019-08-29T01:37:23.110Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,38 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[Mac-MySQL]]></title>
+        <id>https://flyweights.github.io/post/mac-mysql</id>
+        <link href="https://flyweights.github.io/post/mac-mysql">
+        </link>
+        <updated>2019-08-29T02:00:54.000Z</updated>
+        <summary type="html"><![CDATA[<p>Relational database.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Relational database.</p>
+<!-- more -->
+<h2 id="1-mysql">1. MySQL</h2>
+<pre><code class="language-bash">$ brew install mysql
+</code></pre>
+<p>or</p>
+<pre><code class="language-bash">$ brew install mysql@5.6
+</code></pre>
+<h2 id="2-info">2. Info</h2>
+<pre><code>We've installed your MySQL database without a root password. To secure it run:
+    mysql_secure_installation
+
+MySQL is configured to only allow connections from localhost by default
+
+To connect run:
+    mysql -uroot
+
+To have launchd start mysql now and restart at login:
+  brew services start mysql
+Or, if you don't want/need a background service you can just run:
+  mysql.server start
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[gitmoji]]></title>
         <id>https://flyweights.github.io/post/gitmoji</id>

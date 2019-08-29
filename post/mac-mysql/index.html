@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1566985295624">
+<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1567041864315">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://flyweights.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://flyweights.github.io">
-        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1566985295624" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1567041864315" alt="" width="32px" height="32px">
       </a>
       <a href="https://flyweights.github.io">
         <h1 class="site-title">白罴</h1>
@@ -91,12 +91,39 @@
           <div class="post-content">
             <p>Relational database.</p>
 <!-- more -->
-<h2 id="1-install">1. Install</h2>
+<h2 id="1-mysql">1. MySQL</h2>
+<pre><code class="language-bash">$ brew install mysql
+</code></pre>
+<p>or</p>
+<pre><code class="language-bash">$ brew install mysql@5.6
+</code></pre>
+<h2 id="2-info">2. Info</h2>
+<pre><code>We've installed your MySQL database without a root password. To secure it run:
+    mysql_secure_installation
+
+MySQL is configured to only allow connections from localhost by default
+
+To connect run:
+    mysql -uroot
+
+To have launchd start mysql now and restart at login:
+  brew services start mysql
+Or, if you don't want/need a background service you can just run:
+  mysql.server start
+</code></pre>
 
           </div>
         </div>
 
         
+          <div class="next-post">
+            <a class="purple-link" href="https://flyweights.github.io/post/gitmoji">
+              <h3 class="post-title">
+                下一篇：gitmoji
+              </h3>
+            </a>
+          </div>
+          
       </div>
 
       
