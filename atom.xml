@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-08-29T07:55:03.096Z</updated>
+    <updated>2019-08-30T01:21:04.534Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,27 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[DBngin-TablePlus]]></title>
+        <id>https://flyweights.github.io/post/dbngin-tableplus</id>
+        <link href="https://flyweights.github.io/post/dbngin-tableplus">
+        </link>
+        <updated>2019-08-30T01:39:59.000Z</updated>
+        <summary type="html"><![CDATA[<p>Database management made easy</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Database management made easy</p>
+<!-- more -->
+<h2 id="1-install">1. Install</h2>
+<pre><code class="language-bash">$ brew cask install dbngin
+$ brew cask install  tableplus
+</code></pre>
+<h2 id="2-dbngin">2. DBngin</h2>
+<p><img src="https://flyweights.github.io/post-images/1567127797151.png" alt=""><br>
+<img src="https://flyweights.github.io/post-images/1567127942707.png" alt=""></p>
+<h2 id="3-tableplus">3. TablePlus</h2>
+<p><img src="https://flyweights.github.io/post-images/1567127969486.png" alt=""></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Mac-MySQL]]></title>
         <id>https://flyweights.github.io/post/mac-mysql</id>
