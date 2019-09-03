@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-09-03T01:50:07.105Z</updated>
+    <updated>2019-09-03T02:11:17.357Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,138 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[Easy-Ruby]]></title>
+        <id>https://flyweights.github.io/post/easy-ruby</id>
+        <link href="https://flyweights.github.io/post/easy-ruby">
+        </link>
+        <updated>2019-09-03T01:51:51.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="1-constant-variable">1. Constant &amp; Variable</h2>
+<pre><code class="language-ruby">my_name = &quot;小明&quot; // Variable
+MyName = &quot;小明&quot; // Constant
+</code></pre>
+<h2 id="2-control-flow">2. Control Flow</h2>
+<pre><code class="language-ruby">day = 5
+
+if day==0
+	puts &quot;星期日&quot;
+elsif day==6
+	puts &quot;星期六&quot;
+else
+	puts &quot;工作日&quot;
+end
+</code></pre>
+<h2 id="3-data-type">3. Data Type</h2>
+<ul>
+<li>Number</li>
+<li>String</li>
+<li>Range</li>
+<li>Array</li>
+<li>Hash</li>
+<li>Symbol</li>
+</ul>
+<h3 id="类型">类型</h3>
+<pre><code class="language-ruby">puts 5.class  # =&gt; Integer
+</code></pre>
+<h3 id="数字">数字</h3>
+<pre><code class="language-ruby">puts 10 + 3    # =&gt; 13
+puts 10 - 3    # =&gt; 7
+puts 10 * 3    # =&gt; 30
+puts 10 / 3    # =&gt; 3
+puts 10.0 / 3  # =&gt; 3.3333333333333335
+puts 10 / 3.0  # =&gt; 3.3333333333333335
+puts 10 % 3    # =&gt; 1
+</code></pre>
+<h3 id="字符串">字符串</h3>
+<pre><code class="language-ruby">name = &quot;小明&quot;
+age = 18
+
+puts &quot;你好，我是&quot; + name + &quot;，我今年&quot; + age.to_s + &quot;岁&quot; # =&gt; 你好，我是小明，我今年18岁
+
+puts &quot;你好，我是#{name}，我今年#{age}岁&quot; # =&gt; 你好，我是小明，我今年18岁
+</code></pre>
+<h3 id="范围">范围</h3>
+<pre><code class="language-ruby">(1..5).to_a   # 1 到 5
+(1...5).to_a  # 1 到 4
+</code></pre>
+<h3 id="数组">数组</h3>
+<pre><code class="language-ruby">thoughts = [&quot;儒家&quot;, &quot;道家&quot;, &quot;墨家&quot;, &quot;法家&quot;]
+p thoughts[1] # =&gt; 道家
+p thoughts[-1] # =&gt; 法家
+p thoughts.first # =&gt; 儒家
+p thoughts.last # =&gt; 法家
+</code></pre>
+<h3 id="字典">字典</h3>
+<pre><code class="language-ruby">thought_hash = {
+	儒家: &quot;孔子&quot;,
+	道家: &quot;老子&quot;,
+	墨家: &quot;墨子&quot;
+}
+
+puts thought_hash.keys  # =&gt; []
+puts thought_hash.values # =&gt; []
+
+profile.each do |key, value|
+  puts key
+  puts value
+end
+</code></pre>
+<h3 id="符号">符号</h3>
+<pre><code class="language-ruby">=begin
+  Symbol 是不可变的对象
+	Symbol 是带变量名的对象
+=end
+
+:hello
+</code></pre>
+<h2 id="3-methods">3. Methods</h2>
+<pre><code class="language-ruby">def say_hello_to(name=&quot;美女&quot;)
+	return &quot;hello, #{name}&quot;
+end
+
+p say_hello_to
+</code></pre>
+<h2 id="4-block">4. Block</h2>
+<pre><code class="language-ruby">def say_hello
+	puts &quot;开始&quot;
+	yield 123        # 把控制权暂时让给 Block
+	puts &quot;结束&quot;
+end
+
+say_hello { |x|
+	puts &quot;这里是 Block，我收到了#{x}&quot;
+}
+</code></pre>
+<h2 id="5-class">5. Class</h2>
+<pre><code class="language-ruby">class Cat
+  attr_accessor :name #属性 
+
+  def initialize(name, gender)
+    @name = name # 实例变量
+    @gender = gender
+  end
+    
+  def say_hello
+    puts &quot;hello, my name is #{@name}&quot; # =&gt; hello, my name is kitty
+  end
+end
+</code></pre>
+<h2 id="6-module">6. Module</h2>
+<pre><code class="language-ruby">module Flyable
+  def fly
+    puts &quot;I can fly!&quot;
+  end
+end
+
+class Cat
+  include Flyable
+end
+
+kitty = Cat.new
+kitty.fly        # =&gt; I can fly!
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Rails-Hello]]></title>
         <id>https://flyweights.github.io/post/rails-hello</id>
@@ -35,7 +167,7 @@ $ rails s
  $ mkdir app/views/home
  $ touch app/views/home/index.html.erb
 </code></pre>
-<pre><code class="language-html">&lt;!-- app/views/home/index.html.erb   --&gt;
+<pre><code class="language-html">&lt;!-- app/views/home/index.html.erb  --&gt;
 
 &lt;h1&gt;Hello, World!&lt;/h1&gt;
 </code></pre>
@@ -621,36 +753,6 @@ $ ruby -v
 </code></pre>
 <h2 id="6-implode">6. Implode</h2>
 <pre><code class="language-bash">$ rvm implode
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Mac-Vagrant-Ubuntu]]></title>
-        <id>https://flyweights.github.io/post/mac-vagrant-ubuntu</id>
-        <link href="https://flyweights.github.io/post/mac-vagrant-ubuntu">
-        </link>
-        <updated>2019-08-20T02:27:39.000Z</updated>
-        <summary type="html"><![CDATA[<p>Development Environments Made Easy</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Development Environments Made Easy</p>
-<!-- more -->
-<h2 id="1-install">1. Install</h2>
-<pre><code class="language-bash">$ brew cask install virtualbox
-$ brew cask install vagrant
-$ brew cask install vagrant-manager
-</code></pre>
-<h2 id="2-init">2. Init</h2>
-<pre><code class="language-bash">$ mkdir rails-va
-$ cd rails-va
-$ vagrant init ubuntu/bionic64
-</code></pre>
-<h2 id="3-usage">3. Usage</h2>
-<pre><code class="language-bash">$ cd rails-va
-$ vagrant status
-$ vagrant up
-$ vagrant ssh
-$ vagrant reload
-$ vagrant halt
 </code></pre>
 ]]></content>
     </entry>
