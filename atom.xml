@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-08-30T07:42:33.455Z</updated>
+    <updated>2019-09-03T01:50:07.105Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,38 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[Rails-Hello]]></title>
+        <id>https://flyweights.github.io/post/rails-hello</id>
+        <link href="https://flyweights.github.io/post/rails-hello">
+        </link>
+        <updated>2019-09-02T08:12:14.000Z</updated>
+        <summary type="html"><![CDATA[<p>return &quot;Hello , World&quot;</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>return &quot;Hello , World&quot;</p>
+<!-- more -->
+<h2 id="1-rails">1 .Rails</h2>
+<pre><code class="language-bash">$ gem install rails
+</code></pre>
+<h2 id="2-new">2. New</h2>
+<pre><code class="language-bash">$ rails new data_system -d mysql
+$ cd data_system/
+$ rails s
+</code></pre>
+<h2 id="3-database">3. Database</h2>
+<p>mysql</p>
+<h2 id="4-hello-world">4. Hello world</h2>
+<pre><code class="language-bash"> $ rails g controller home index
+ $ mkdir app/views/home
+ $ touch app/views/home/index.html.erb
+</code></pre>
+<pre><code class="language-html">&lt;!-- app/views/home/index.html.erb   --&gt;
+
+&lt;h1&gt;Hello, World!&lt;/h1&gt;
+</code></pre>
+<p><a href="http://localhost:3000">http://localhost:3000</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[DBngin-TablePlus]]></title>
         <id>https://flyweights.github.io/post/dbngin-tableplus</id>
@@ -620,31 +652,6 @@ $ vagrant ssh
 $ vagrant reload
 $ vagrant halt
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[送别]]></title>
-        <id>https://flyweights.github.io/post/song-bie</id>
-        <link href="https://flyweights.github.io/post/song-bie">
-        </link>
-        <updated>2019-08-15T00:48:55.000Z</updated>
-        <summary type="html"><![CDATA[<p>词：李叔同</p>
-<p>长亭外古道边，<br>
-芳草碧连天。<br>
-晚风拂柳笛声残,<br>
-夕阳山外山。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>词：李叔同</p>
-<p>长亭外古道边，<br>
-芳草碧连天。<br>
-晚风拂柳笛声残,<br>
-夕阳山外山。</p>
-<!-- more -->
-<p>天之涯，<br>
-地之角，<br>
-知交半零落。<br>
-一瓢浊酒尽余欢，<br>
-今宵别梦寒。</p>
 ]]></content>
     </entry>
 </feed>

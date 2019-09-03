@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1567150933703">
+<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1567475390035">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://flyweights.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://flyweights.github.io">
-        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1567150933703" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1567475390035" alt="" width="32px" height="32px">
       </a>
       <a href="https://flyweights.github.io">
         <h1 class="site-title">白罴</h1>
@@ -85,50 +85,45 @@
           
           <h2 class="post-title">Rails-Hello</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-08-31</span>
+            <span><i class="icon-calendar-outline"></i> 2019-09-02</span>
             
           </div>
           <div class="post-content">
             <p>return &quot;Hello , World&quot;</p>
 <!-- more -->
-<blockquote>
-<p>备注：<code>-&gt;</code>默认为 <code>vagrant@vagrant-ubuntu-trusty-64:~$</code></p>
-</blockquote>
-<h2 id="1-update-install">1. Update &amp; Install</h2>
-<pre><code class="language-bash">-&gt; sudo apt-get update
--&gt; sudo apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common
-
-# 需添加数据库密码
--&gt; sudo apt-get install mysql-server mysql-client libmysqlclient-dev
-</code></pre>
-<h2 id="2-rvm">2. Rvm</h2>
-<pre><code class="language-bash">-&gt;  \curl -L https://get.rvm.io | bash -s stable
--&gt; exit
-$ vagrant ssh
--&gt; rvm | head -n 1
--&gt; rvm use ruby --install --default
--&gt; ruby -v
-</code></pre>
-<h2 id="3rails">3.Rails</h2>
+<h2 id="1-rails">1 .Rails</h2>
 <pre><code class="language-bash">$ gem install rails
 </code></pre>
-<h2 id="4-new">4. New</h2>
-<pre><code class="language-bash">-&gt; rails new data_system -d mysql
--&gt; cd data_system/
--&gt; rails s
+<h2 id="2-new">2. New</h2>
+<pre><code class="language-bash">$ rails new data_system -d mysql
+$ cd data_system/
+$ rails s
 </code></pre>
-<h2 id="5-hello-world">5. Hello world</h2>
-<pre><code class="language-bash"> -&gt; rails g controller home index
+<h2 id="3-database">3. Database</h2>
+<p>mysql</p>
+<h2 id="4-hello-world">4. Hello world</h2>
+<pre><code class="language-bash"> $ rails g controller home index
+ $ mkdir app/views/home
+ $ touch app/views/home/index.html.erb
 </code></pre>
-<p>目录：<code>app/views/home/index.html.erb</code></p>
-<pre><code class="language-html">&lt;h1&gt;Hello, World!&lt;/h1&gt;
+<pre><code class="language-html">&lt;!-- app/views/home/index.html.erb   --&gt;
+
+&lt;h1&gt;Hello, World!&lt;/h1&gt;
 </code></pre>
-<p>http://192.168.xx.oo:3000/home/index</p>
+<p><a href="http://localhost:3000">http://localhost:3000</a></p>
 
           </div>
         </div>
 
         
+          <div class="next-post">
+            <a class="purple-link" href="https://flyweights.github.io/post/dbngin-tableplus">
+              <h3 class="post-title">
+                下一篇：DBngin-TablePlus
+              </h3>
+            </a>
+          </div>
+          
       </div>
 
       
