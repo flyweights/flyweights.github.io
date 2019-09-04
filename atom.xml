@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-09-04T02:32:27.090Z</updated>
+    <updated>2019-09-04T02:34:33.135Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -16,7 +16,11 @@
         <link href="https://flyweights.github.io/post/xcode-xcformat">
         </link>
         <updated>2019-09-04T02:16:31.000Z</updated>
-        <content type="html"><![CDATA[<p><img src="https://flyweights.github.io/post-images/1567563958104.png" alt=""><br>
+        <summary type="html"><![CDATA[<p>XCFormat includes an Xcode Source Editor Extension, allows you to format your code directly in Xcode.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>XCFormat includes an Xcode Source Editor Extension, allows you to format your code directly in Xcode.</p>
+<!-- more -->
+<p><img src="https://flyweights.github.io/post-images/1567563958104.png" alt=""><br>
 <img src="https://flyweights.github.io/post-images/1567563971012.png" alt=""><br>
 <img src="https://flyweights.github.io/post-images/1567563975698.png" alt=""><br>
 <img src="https://flyweights.github.io/post-images/1567563981266.png" alt=""><br>
