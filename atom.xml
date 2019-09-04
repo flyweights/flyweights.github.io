@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-09-03T02:24:30.926Z</updated>
+    <updated>2019-09-04T02:32:27.090Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[Xcode-XCFormat]]></title>
+        <id>https://flyweights.github.io/post/xcode-xcformat</id>
+        <link href="https://flyweights.github.io/post/xcode-xcformat">
+        </link>
+        <updated>2019-09-04T02:16:31.000Z</updated>
+        <content type="html"><![CDATA[<p><img src="https://flyweights.github.io/post-images/1567563958104.png" alt=""><br>
+<img src="https://flyweights.github.io/post-images/1567563971012.png" alt=""><br>
+<img src="https://flyweights.github.io/post-images/1567563975698.png" alt=""><br>
+<img src="https://flyweights.github.io/post-images/1567563981266.png" alt=""><br>
+<img src="https://flyweights.github.io/post-images/1567563986224.png" alt=""></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Easy-Ruby]]></title>
         <id>https://flyweights.github.io/post/easy-ruby</id>
@@ -723,40 +736,6 @@ $ nvm list available
 </code></pre>
 <h2 id="5-removal">5. Removal</h2>
 <pre><code class="language-bash">$ rm -rf &quot;$NVM_DIR&quot;
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[RVM]]></title>
-        <id>https://flyweights.github.io/post/rvm</id>
-        <link href="https://flyweights.github.io/post/rvm">
-        </link>
-        <updated>2019-08-21T06:39:48.000Z</updated>
-        <summary type="html"><![CDATA[<p>RVM is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>RVM is a command-line tool which allows you to easily install, manage, and work with multiple ruby environments from interpreters to sets of gems.</p>
-<!-- more -->
-<h2 id="1-install">1.  Install</h2>
-<pre><code class="language-bash">$ \curl -L https://get.rvm.io | bash -s stable
-$ rvm | head -n 1
-
-$ rvm use ruby --install --default
-$ ruby -v
-</code></pre>
-<h2 id="2-list">2. List</h2>
-<pre><code class="language-bash">$ rvm list known
-</code></pre>
-<h2 id="3-use">3. Use</h2>
-<pre><code class="language-bash">$ rvm use 2.6.0 
-</code></pre>
-<h2 id="4-default">4. Default</h2>
-<pre><code class="language-bash">$ rvm use 2.6.0 --default 
-</code></pre>
-<h2 id="5-remove">5. Remove</h2>
-<pre><code class="language-bash">$ rvm remove 2.6.0
-</code></pre>
-<h2 id="6-implode">6. Implode</h2>
-<pre><code class="language-bash">$ rvm implode
 </code></pre>
 ]]></content>
     </entry>
