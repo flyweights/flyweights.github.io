@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-09-04T02:40:01.118Z</updated>
+    <updated>2019-09-17T01:43:51.554Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,41 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[gitmoji-cli]]></title>
+        <id>https://flyweights.github.io/post/gitmoji-cli</id>
+        <link href="https://flyweights.github.io/post/gitmoji-cli">
+        </link>
+        <updated>2019-09-05T01:14:25.000Z</updated>
+        <summary type="html"><![CDATA[<p>A <a href="https://gitmoji.carloscuesta.me/">gitmoji</a> interactive client for using gitmojis on commit messages.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>A <a href="https://gitmoji.carloscuesta.me/">gitmoji</a> interactive client for using gitmojis on commit messages.</p>
+<!-- more -->
+<h2 id="1-install">1. Install</h2>
+<pre><code class="language-bash">$ npm i -g gitmoji-cli
+</code></pre>
+<h2 id="2-usage">2. Usage</h2>
+<pre><code>$ gitmoji --help
+</code></pre>
+<pre><code>  A gitmoji client for using emojis on commit messages.
+
+  Usage
+    $ gitmoji
+  Options
+    --commit, -c    Interactively commit using the prompts
+    --config, -g    Setup gitmoji-cli preferences.
+    --init, -i      Initialize gitmoji as a commit hook
+    --list, -l      List all the available gitmojis
+    --remove, -r    Remove a previously initialized commit hook
+    --search, -s    Search gitmojis
+    --update, -u    Sync emoji list with the repo
+    --version, -v   Print gitmoji-cli installed version
+  Examples
+    $ gitmoji -l
+    $ gitmoji bug linter -s
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Xcode-XCFormat]]></title>
         <id>https://flyweights.github.io/post/xcode-xcformat</id>
@@ -709,37 +744,6 @@ $ brew cask uninstall firefox
 </code></pre>
 <h2 id="5-list">5. List</h2>
 <pre><code class="language-bash">$ brew list
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[NVM]]></title>
-        <id>https://flyweights.github.io/post/nvm</id>
-        <link href="https://flyweights.github.io/post/nvm">
-        </link>
-        <updated>2019-08-22T00:35:09.000Z</updated>
-        <summary type="html"><![CDATA[<p>Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions</p>
-<!-- more -->
-<h2 id="1-install">1. Install</h2>
-<pre><code class="language-bash">$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-
-$ nvm install node
-$ node -v
-</code></pre>
-<h2 id="2-list">2. List</h2>
-<pre><code class="language-bash">$ nvm list
-$ nvm list available
-</code></pre>
-<h2 id="3-use">3. Use</h2>
-<pre><code class="language-bash">$ nvm use 12.9.0
-</code></pre>
-<h2 id="4-uninstall">4. Uninstall</h2>
-<pre><code class="language-bash">$ nvm uninstall
-</code></pre>
-<h2 id="5-removal">5. Removal</h2>
-<pre><code class="language-bash">$ rm -rf &quot;$NVM_DIR&quot;
 </code></pre>
 ]]></content>
     </entry>
