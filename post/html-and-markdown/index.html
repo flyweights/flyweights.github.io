@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>html-and-markdown | 白罴</title>
+<meta name="description" content="闲坐竹林里，淡泊寻常心。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1568685450669">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://flyweights.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://flyweights.github.io">
+        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1568685450669" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://flyweights.github.io">
+        <h1 class="site-title">白罴</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/html-and-markdown.png')">
+            </div>
+          
+          <h2 class="post-title">html-and-markdown</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-09-06</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://flyweights.github.io/tag/fGlSkvcDF">
+                    html
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://flyweights.github.io/tag/d9SZd8DVkr">
+                    markdown
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>学习<code>HTML</code>，对比学习<code>Markdown</code>。<br>
+对比两种标记语言的异同，输出同一种效果。</p>
+<!-- more -->
+<h3 id="常用标签">常用标签</h3>
+<ol>
+<li>标题</li>
+<li>分割线</li>
+<li>换行</li>
+<li>段落</li>
+<li>超链接</li>
+<li>图片</li>
+<li>表格</li>
+<li>无序列表</li>
+<li>有序列表</li>
+<li>其它</li>
+</ol>
+<h3 id="1标题">1.标题</h3>
+<p><code>Markdown</code>的标题写法</p>
+<pre><code># 1号标题
+## 2号标题
+### 3号标题
+#### 4号标题
+##### 5号标题
+###### 6号标题
+</code></pre>
+<p><code>HTML</code>的标题写法</p>
+<pre><code class="language-html">&lt;h1&gt;1号标题&lt;/h1&gt;
+&lt;h2&gt;2号标题&lt;/h2&gt;
+&lt;h3&gt;3号标题&lt;/h3&gt;
+&lt;h4&gt;4号标题&lt;/h4&gt;
+&lt;h5&gt;5号标题&lt;/h5&gt;
+&lt;h6&gt;6号标题&lt;/h6&gt;
+</code></pre>
+<h3 id="2-分割线">2. 分割线</h3>
+<p><code>Markdown</code>的分割线写法</p>
+<pre><code>---
+</code></pre>
+<p><code>HTML</code>的分割线写法</p>
+<pre><code class="language-html">&lt;hr&gt;
+</code></pre>
+<h3 id="3-换行">3. 换行</h3>
+<p><code>Markdown</code>的换行写法（直接按一下回车就行了）</p>
+<pre><code>
+</code></pre>
+<p><code>HTML</code>的换行写法</p>
+<pre><code>&lt;br&gt;
+</code></pre>
+<h3 id="4-段落">4. 段落</h3>
+<p><code>Markdown</code>的段落写法（按照平时那样书写就行了）</p>
+<pre><code>这是一个段落哦
+这是另一个段落
+</code></pre>
+<p><code>HTML</code>的段落写法</p>
+<pre><code class="language-html">&lt;p&gt;这是一个段落哦&lt;/p&gt;
+&lt;p&gt;这是另一个段落&lt;/p&gt;
+</code></pre>
+<h3 id="5-超链接">5. 超链接</h3>
+<p><code>Markdown</code>的超链接写法</p>
+<pre><code>[点我在新窗口中打开-github](https://github.com/)
+</code></pre>
+<p><code>HTML</code>的超链接写法</p>
+<pre><code class="language-html">&lt;a href=&quot;https://github.com/&quot; target=&quot;_blank&quot;&gt;点我在新窗口中打开-github&lt;/a&gt;
+</code></pre>
+<h3 id="6-图片">6. 图片</h3>
+<p><code>Markdown</code>的图片写法</p>
+<pre><code>![image](https://help.github.com/assets/images/site/invertocat.png)
+</code></pre>
+<p><code>HTML</code>的图片写法</p>
+<pre><code class="language-html">&lt;img src=&quot;https://help.github.com/assets/images/site/invertocat.png&quot;&gt;
+</code></pre>
+<h3 id="7-表格">7. 表格</h3>
+<p><code>Markdown</code>的表格写法，<code>Markdown</code>不支持合并单元格</p>
+<pre><code>header 1 | header 2
+---|---
+row 1 col 1 | row 1 col 2
+row 2 col 1 | row 2 col 2
+</code></pre>
+<p><code>HTML</code>的表格写法</p>
+<pre><code class="language-html">&lt;table border=&quot;1&quot;&gt;
+    &lt;tr&gt;
+        &lt;td&gt;第一行第一列&lt;/td&gt;
+        &lt;td&gt;第一行第二列&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td colspan=&quot;2&quot;&gt;合并单元格&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<h3 id="8无序列表">8.无序列表</h3>
+<p><code>Markdown</code>的无序列表写法</p>
+<pre><code>- Perl
+- PHP
+- Python
+- Ruby
+</code></pre>
+<p><code>HTML</code>的无序列表写法</p>
+<pre><code class="language-html">&lt;ul&gt;
+    &lt;li&gt;Perl/&lt;/li&gt;
+    &lt;li&gt;PHP&lt;/li&gt;
+    &lt;li&gt;Python&lt;/li&gt;
+    &lt;li&gt;Ruby&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h3 id="9有序列表">9.有序列表</h3>
+<p><code>Markdown</code>的有序列表写法</p>
+<pre><code>- Linux
+- Apache
+- Mysql
+- PHP
+</code></pre>
+<p><code>HTML</code>的有序列表写法</p>
+<pre><code class="language-html">&lt;ol&gt;
+    &lt;li&gt;Linux&lt;/li&gt;
+    &lt;li&gt;Apache&lt;/li&gt;
+    &lt;li&gt;Mysql&lt;/li&gt;
+    &lt;li&gt;PHP&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<h3 id="10其它">10.其它</h3>
+<p>两个无意义的标签</p>
+<pre><code class="language-html">&lt;div&gt;你好&lt;/div&gt;
+&lt;span&gt;Hello&lt;/span&gt;
+</code></pre>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://flyweights.github.io/post/gitmoji-cli">
+              <h3 class="post-title">
+                下一篇：gitmoji-cli
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">闲坐竹林里，淡泊寻常心。</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://flyweights.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
