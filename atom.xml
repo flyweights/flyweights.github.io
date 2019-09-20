@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-09-19T01:15:28.603Z</updated>
+    <updated>2019-09-20T04:04:15.640Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,31 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[Easy-Swift-1]]></title>
+        <id>https://flyweights.github.io/post/easy-swift-1</id>
+        <link href="https://flyweights.github.io/post/easy-swift-1">
+        </link>
+        <updated>2019-09-20T03:49:12.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="variable-constant">Variable &amp; Constant</h2>
+<pre><code class="language-swift">var v = 10
+let l = 100
+</code></pre>
+<h2 id="string">String</h2>
+<pre><code class="language-swift">var v = &quot;Less is more&quot;
+let l = &quot;Less is more&quot;
+</code></pre>
+<h2 id="array">Array</h2>
+<pre><code class="language-swift">var letters : String[] = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;]
+</code></pre>
+<h2 id="dictionary">Dictionary</h2>
+<pre><code class="language-swift">var letters : [String : String] = [&quot;A&quot; : &quot;apple&quot;, &quot;B&quot; : &quot;ball&quot;, &quot;C&quot; : &quot;cat&quot;, &quot;D&quot; : &quot;dog&quot;]
+</code></pre>
+<h2 id="set">Set</h2>
+<pre><code class="language-swift">var letter : Set = [&quot;apple&quot;, &quot;ball&quot;, &quot;cat&quot;, &quot;dog&quot;]
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Typora]]></title>
         <id>https://flyweights.github.io/post/typora</id>
@@ -820,33 +845,6 @@ Or, if you don't want/need a background service you can just run:
 </tr>
 </tbody>
 </table>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Xcode]]></title>
-        <id>https://flyweights.github.io/post/xcode</id>
-        <link href="https://flyweights.github.io/post/xcode">
-        </link>
-        <updated>2019-08-27T02:52:11.000Z</updated>
-        <summary type="html"><![CDATA[<p>Xcode is an integrated development environment for macOS containing a suite of software development tools developed by Apple for developing software for macOS, iOS, iPadOS, watchOS, and tvOS.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Xcode is an integrated development environment for macOS containing a suite of software development tools developed by Apple for developing software for macOS, iOS, iPadOS, watchOS, and tvOS.</p>
-<!-- more -->
-<h2 id="1-install">1. Install</h2>
-<p><img src="https://flyweights.github.io/post-images/1566874456713.png" alt=""></p>
-<h2 id="2-keyboardshortcuts">2. KeyboardShortcuts</h2>
-<p><img src="https://flyweights.github.io/post-images/1566874488484.png" alt=""></p>
-<h2 id="3-skill">3. Skill</h2>
-<ul>
-<li>
-<p>单行注释<br>
-快捷键：<code>cmd + /</code></p>
-</li>
-<li>
-<p>文档注释<br>
-快捷键：<code>cmd + opt + /</code></p>
-</li>
-</ul>
 ]]></content>
     </entry>
 </feed>
