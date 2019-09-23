@@ -1,105 +1,99 @@
-
-<!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>gitmoji | 白罴</title>
-<meta name="description" content="闲坐竹林里，淡泊寻常心。">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
+<meta name="description" content="闲坐竹林里，淡泊寻常心。" />
+<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1569221984054">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1569205130100">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://flyweights.github.io/styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://flyweights.github.io">
-        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1569205130100" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://flyweights.github.io">
-        <h1 class="site-title">白罴</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://flyweights.github.io">
+  <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1569221984054" alt="">
+  </a>
+  <h1 class="site-title">
+    白罴
+  </h1>
+  <p class="site-description">
+    闲坐竹林里，淡泊寻常心。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
 </div>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
         <div class="post-detail">
-          
-            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/gitmoji.png')">
-            </div>
-          
-          <h2 class="post-title">gitmoji</h2>
-          <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-08-28</span>
-            
+          <article class="post">
+            <h2 class="post-title">
+              gitmoji
+            </h2>
+            <div class="post-info">
               <span>
-                <i class="icon-pricetags-outline"></i>
-                
-                  <a href="https://flyweights.github.io/tag/WGoeu1iK-">
-                    Git
-                    
-                  </a>
-                
+                2019-08-28
               </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="https://flyweights.github.io/tag/WGoeu1iK-" class="post-tag">
+                  # Git
+                </a>
+              
+            </div>
             
-          </div>
-          <div class="post-content">
-            <p><a href="http://gitmoji.carloscuesta.me/">An emoji guide for your commit messages</a></p>
+              <img class="post-feature-image" src="https://flyweights.github.io/post-images/gitmoji.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p><a href="http://gitmoji.carloscuesta.me/">An emoji guide for your commit messages</a></p>
 <!-- more -->
 <h2 id="1-system">1. System</h2>
 <table>
@@ -113,27 +107,27 @@
 <tbody>
 <tr>
 <td>🍎</td>
-<td>:apple:</td>
+<td>🍎</td>
 <td>Fixing something on macOS.</td>
 </tr>
 <tr>
 <td>🐧</td>
-<td>:penguin:</td>
+<td>🐧</td>
 <td>Fixing something on Linux.</td>
 </tr>
 <tr>
 <td>🏁</td>
-<td>:checkered_flag:</td>
+<td>🏁</td>
 <td>Fixing something on Windows.</td>
 </tr>
 <tr>
 <td>🤖</td>
-<td>:robot:</td>
+<td>🤖</td>
 <td>Fixing something on Android.</td>
 </tr>
 <tr>
 <td>🍏</td>
-<td>:green_apple:</td>
+<td>🍏</td>
 <td>Fixing something on iOS.</td>
 </tr>
 </tbody>
@@ -150,52 +144,52 @@
 <tbody>
 <tr>
 <td>🎉</td>
-<td>:tada:</td>
+<td>🎉</td>
 <td>Initial commit.</td>
 </tr>
 <tr>
 <td>✨</td>
-<td>:sparkles:</td>
+<td>✨</td>
 <td>Introducing new features.</td>
 </tr>
 <tr>
 <td>📝</td>
-<td>:pencil:</td>
+<td>📝</td>
 <td>Writing docs.</td>
 </tr>
 <tr>
 <td>🐛</td>
-<td>:bug:</td>
+<td>🐛</td>
 <td>Fixing a bug.</td>
 </tr>
 <tr>
 <td>🚑</td>
-<td>:ambulance:</td>
+<td>🚑</td>
 <td>Critical hotfix.</td>
 </tr>
 <tr>
 <td>🔖</td>
-<td>:bookmark:</td>
+<td>🔖</td>
 <td>Releasing / Version tags.</td>
 </tr>
 <tr>
 <td>🔊</td>
-<td>:loud_sound:</td>
+<td>🔊</td>
 <td>Adding logs.</td>
 </tr>
 <tr>
 <td>🔇</td>
-<td>:mute:</td>
+<td>🔇</td>
 <td>Removing logs.</td>
 </tr>
 <tr>
 <td>👥</td>
-<td>:busts_in_silhouette:</td>
+<td>👥</td>
 <td>Adding contributor(s).</td>
 </tr>
 <tr>
 <td>📸</td>
-<td>:camera_flash:</td>
+<td>📸</td>
 <td>Adding or updating snapshots</td>
 </tr>
 </tbody>
@@ -212,42 +206,42 @@
 <tbody>
 <tr>
 <td>🔥</td>
-<td>:fire:</td>
+<td>🔥</td>
 <td>Removing code or files.</td>
 </tr>
 <tr>
 <td>💄</td>
-<td>:lipstick:</td>
+<td>💄</td>
 <td>Updating the UI and style files.</td>
 </tr>
 <tr>
 <td>🔧</td>
-<td>:wrench:</td>
+<td>🔧</td>
 <td>Changing configuration files.</td>
 </tr>
 <tr>
 <td>📦</td>
-<td>:package:</td>
+<td>📦</td>
 <td>Updating compiled files or packages.</td>
 </tr>
 <tr>
 <td>🚚</td>
-<td>:truck:</td>
+<td>🚚</td>
 <td>Moving or renaming files.</td>
 </tr>
 <tr>
 <td>🗃</td>
-<td>:card_file_box:</td>
+<td>🗃</td>
 <td>Performing database related changes.</td>
 </tr>
 <tr>
 <td>🙈</td>
-<td>:see_no_evil:</td>
+<td>🙈</td>
 <td>Adding or updating a .gitignore file</td>
 </tr>
 <tr>
 <td>💬</td>
-<td>:speech_balloon:</td>
+<td>💬</td>
 <td>Updating text and literals.</td>
 </tr>
 </tbody>
@@ -264,47 +258,47 @@
 <tbody>
 <tr>
 <td>🎨</td>
-<td>:art:</td>
+<td>🎨</td>
 <td>Improving structure / format of the code.</td>
 </tr>
 <tr>
 <td>🔥</td>
-<td>:fire:</td>
+<td>🔥</td>
 <td>Removing code or files.</td>
 </tr>
 <tr>
 <td>📈</td>
-<td>:chart_with_upwards_trend:</td>
+<td>📈</td>
 <td>Adding analytics or tracking code.</td>
 </tr>
 <tr>
 <td>♻️</td>
-<td>:recycle:</td>
+<td>♻️</td>
 <td>Refactoring code.</td>
 </tr>
 <tr>
 <td>💩</td>
-<td>:poop:</td>
+<td>💩</td>
 <td>Writing bad code that needs to be improved.</td>
 </tr>
 <tr>
 <td>👽</td>
-<td>:alien:</td>
+<td>👽</td>
 <td>Updating code due to external API changes.</td>
 </tr>
 <tr>
 <td>👌</td>
-<td>:ok_hand:</td>
+<td>👌</td>
 <td>Updating code due to code review changes..</td>
 </tr>
 <tr>
 <td>💡</td>
-<td>:bulb:</td>
+<td>💡</td>
 <td>Documenting source code.</td>
 </tr>
 <tr>
 <td>🍻</td>
-<td>:beers:</td>
+<td>🍻</td>
 <td>Writing code drunkenly.</td>
 </tr>
 </tbody>
@@ -321,27 +315,27 @@
 <tbody>
 <tr>
 <td>⬇️</td>
-<td>:arrow_down:</td>
+<td>⬇️</td>
 <td>Downgrading dependencies.</td>
 </tr>
 <tr>
 <td>⬆️</td>
-<td>:arrow_up:</td>
+<td>⬆️</td>
 <td>Upgrading dependencies.</td>
 </tr>
 <tr>
 <td>📌</td>
-<td>:pushpin:</td>
+<td>📌</td>
 <td>Pinning dependencies to specific versions.</td>
 </tr>
 <tr>
 <td>➕</td>
-<td>:heavy_plus_sign:</td>
+<td>➕</td>
 <td>Adding a dependency.</td>
 </tr>
 <tr>
 <td>➖</td>
-<td>:heavy_minus_sign:</td>
+<td>➖</td>
 <td>Removing a dependency.</td>
 </tr>
 </tbody>
@@ -358,32 +352,32 @@
 <tbody>
 <tr>
 <td>⚡️</td>
-<td>:zap:</td>
+<td>⚡️</td>
 <td>Improving performance.</td>
 </tr>
 <tr>
 <td>♿️</td>
-<td>:wheelchair:</td>
+<td>♿️</td>
 <td>Improving accessibility.</td>
 </tr>
 <tr>
 <td>🏗</td>
-<td>:building_construction:</td>
+<td>🏗</td>
 <td>Making architectural changes.</td>
 </tr>
 <tr>
 <td>📱</td>
-<td>:iphone:</td>
+<td>📱</td>
 <td>Working on responsive design.</td>
 </tr>
 <tr>
 <td>🔍</td>
-<td>:mag:</td>
+<td>🔍</td>
 <td>Improving SEO</td>
 </tr>
 <tr>
 <td>🚸</td>
-<td>:children_crossing:</td>
+<td>🚸</td>
 <td>Improving user experience / usability.</td>
 </tr>
 </tbody>
@@ -400,27 +394,27 @@
 <tbody>
 <tr>
 <td>🚀</td>
-<td>:rocket:</td>
+<td>🚀</td>
 <td>Deploying stuff.</td>
 </tr>
 <tr>
 <td>💚</td>
-<td>:green_heart:</td>
+<td>💚</td>
 <td>Fixing CI Build.</td>
 </tr>
 <tr>
 <td>👷</td>
-<td>:construction_worker:</td>
+<td>👷</td>
 <td>Adding CI build system.</td>
 </tr>
 <tr>
 <td>🐳</td>
-<td>:whale:</td>
+<td>🐳</td>
 <td>Work about Docker.</td>
 </tr>
 <tr>
 <td>☸️</td>
-<td>:wheel_of_dharma:</td>
+<td>☸️</td>
 <td>Work about Kubernetes</td>
 </tr>
 </tbody>
@@ -437,88 +431,120 @@
 <tbody>
 <tr>
 <td>✅</td>
-<td>:white_check_mark:</td>
+<td>✅</td>
 <td>Updating tests.</td>
 </tr>
 <tr>
 <td>🔒</td>
-<td>:lock:</td>
+<td>🔒</td>
 <td>Fixing security issues.</td>
 </tr>
 <tr>
 <td>🗃</td>
-<td>:card_file_box:</td>
+<td>🗃</td>
 <td>Performing database related changes.</td>
 </tr>
 <tr>
 <td>🤡</td>
-<td>:clown_face:</td>
+<td>🤡</td>
 <td>Mocking things.</td>
 </tr>
 <tr>
 <td>🥚</td>
-<td>:egg:</td>
+<td>🥚</td>
 <td>Adding an easter egg.</td>
 </tr>
 <tr>
 <td>⚗</td>
-<td>:alembic:</td>
+<td>⚗️</td>
 <td>Experimenting new things</td>
 </tr>
 </tbody>
 </table>
 
-          </div>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#1-system">1. System</a></li>
+<li><a href="#2-project">2. Project</a></li>
+<li><a href="#3-file">3. File</a></li>
+<li><a href="#4-code">4. Code</a></li>
+<li><a href="#5-dependency">5. Dependency</a></li>
+<li><a href="#6-optimize">6. Optimize</a></li>
+<li><a href="#7-deploy">7. Deploy</a></li>
+<li><a href="#8-other">8. Other</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://flyweights.github.io/post/xcode">
+            <div class="next">下一篇</div>
+            <a href="https://flyweights.github.io/post/xcode">
               <h3 class="post-title">
-                下一篇：Xcode
+                Xcode
               </h3>
             </a>
           </div>
-          
-      </div>
+        
 
-      
+        
 
-      <div class="site-footer">
-  <div class="slogan">闲坐竹林里，淡泊寻常心。</div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://flyweights.github.io/atom.xml" target="_blank">RSS</a>
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://flyweights.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
+<script>
+  hljs.initHighlightingOnLoad()
 
-    </div>
-    <script type="application/javascript">
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-hljs.initHighlightingOnLoad()
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
 
 </script>
 
-
-
-
+      </div>
+    </div>
   </body>
 </html>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-09-23T02:18:55.797Z</updated>
+    <updated>2019-09-23T07:01:01.419Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,40 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[Easy-Swift-2]]></title>
+        <id>https://flyweights.github.io/post/easy-swift-2</id>
+        <link href="https://flyweights.github.io/post/easy-swift-2">
+        </link>
+        <updated>2019-09-11T02:51:05.000Z</updated>
+        <summary type="html"><![CDATA[<p>The powerful programming language that is also easy to learn.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>The powerful programming language that is also easy to learn.</p>
+<!-- more -->
+<h2 id="class">Class</h2>
+<pre><code class="language-swift">class Cat {
+	var name: String?
+	var age: Int?
+}
+
+var kitty = Cat()
+kitty.name = &quot;Hello Kitty&quot;
+kitty.age = 45
+</code></pre>
+<h2 id="method">Method</h2>
+<pre><code>class Cat {
+
+	func sayHello(name:String) -&gt; Bool {
+		print(&quot;Hello, my name is \(name)&quot;)		
+		return true
+	}
+}
+
+var kitty = Cat()
+kitty.sayHello(name: &quot;Kitty&quot;)
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Easy-Swift-1]]></title>
         <id>https://flyweights.github.io/post/easy-swift-1</id>
@@ -438,7 +472,7 @@ $ brew cask install  tableplus
 <p><img src="https://flyweights.github.io/post-images/1567127797151.png" alt=""><br>
 <img src="https://flyweights.github.io/post-images/1567127942707.png" alt=""></p>
 <h2 id="3-tableplus">3. TablePlus</h2>
-<p><img src="https://flyweights.github.io/post-images/1567127969486.png" alt=""></p>
+<figure data-type="image" tabindex="1"><img src="https://flyweights.github.io/post-images/1567127969486.png" alt=""></figure>
 ]]></content>
     </entry>
     <entry>
@@ -471,384 +505,6 @@ To have launchd start mysql now and restart at login:
 Or, if you don't want/need a background service you can just run:
   mysql.server start
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[gitmoji]]></title>
-        <id>https://flyweights.github.io/post/gitmoji</id>
-        <link href="https://flyweights.github.io/post/gitmoji">
-        </link>
-        <updated>2019-08-28T07:53:43.000Z</updated>
-        <summary type="html"><![CDATA[<p><a href="http://gitmoji.carloscuesta.me/">An emoji guide for your commit messages</a></p>
-]]></summary>
-        <content type="html"><![CDATA[<p><a href="http://gitmoji.carloscuesta.me/">An emoji guide for your commit messages</a></p>
-<!-- more -->
-<h2 id="1-system">1. System</h2>
-<table>
-<thead>
-<tr>
-<th>emoji</th>
-<th>alias</th>
-<th>messages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🍎</td>
-<td>:apple:</td>
-<td>Fixing something on macOS.</td>
-</tr>
-<tr>
-<td>🐧</td>
-<td>:penguin:</td>
-<td>Fixing something on Linux.</td>
-</tr>
-<tr>
-<td>🏁</td>
-<td>:checkered_flag:</td>
-<td>Fixing something on Windows.</td>
-</tr>
-<tr>
-<td>🤖</td>
-<td>:robot:</td>
-<td>Fixing something on Android.</td>
-</tr>
-<tr>
-<td>🍏</td>
-<td>:green_apple:</td>
-<td>Fixing something on iOS.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="2-project">2. Project</h2>
-<table>
-<thead>
-<tr>
-<th>emoji</th>
-<th>alias</th>
-<th>messages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🎉</td>
-<td>:tada:</td>
-<td>Initial commit.</td>
-</tr>
-<tr>
-<td>✨</td>
-<td>:sparkles:</td>
-<td>Introducing new features.</td>
-</tr>
-<tr>
-<td>📝</td>
-<td>:pencil:</td>
-<td>Writing docs.</td>
-</tr>
-<tr>
-<td>🐛</td>
-<td>:bug:</td>
-<td>Fixing a bug.</td>
-</tr>
-<tr>
-<td>🚑</td>
-<td>:ambulance:</td>
-<td>Critical hotfix.</td>
-</tr>
-<tr>
-<td>🔖</td>
-<td>:bookmark:</td>
-<td>Releasing / Version tags.</td>
-</tr>
-<tr>
-<td>🔊</td>
-<td>:loud_sound:</td>
-<td>Adding logs.</td>
-</tr>
-<tr>
-<td>🔇</td>
-<td>:mute:</td>
-<td>Removing logs.</td>
-</tr>
-<tr>
-<td>👥</td>
-<td>:busts_in_silhouette:</td>
-<td>Adding contributor(s).</td>
-</tr>
-<tr>
-<td>📸</td>
-<td>:camera_flash:</td>
-<td>Adding or updating snapshots</td>
-</tr>
-</tbody>
-</table>
-<h2 id="3-file">3. File</h2>
-<table>
-<thead>
-<tr>
-<th>emoji</th>
-<th>alias</th>
-<th>messages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🔥</td>
-<td>:fire:</td>
-<td>Removing code or files.</td>
-</tr>
-<tr>
-<td>💄</td>
-<td>:lipstick:</td>
-<td>Updating the UI and style files.</td>
-</tr>
-<tr>
-<td>🔧</td>
-<td>:wrench:</td>
-<td>Changing configuration files.</td>
-</tr>
-<tr>
-<td>📦</td>
-<td>:package:</td>
-<td>Updating compiled files or packages.</td>
-</tr>
-<tr>
-<td>🚚</td>
-<td>:truck:</td>
-<td>Moving or renaming files.</td>
-</tr>
-<tr>
-<td>🗃</td>
-<td>:card_file_box:</td>
-<td>Performing database related changes.</td>
-</tr>
-<tr>
-<td>🙈</td>
-<td>:see_no_evil:</td>
-<td>Adding or updating a .gitignore file</td>
-</tr>
-<tr>
-<td>💬</td>
-<td>:speech_balloon:</td>
-<td>Updating text and literals.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="4-code">4. Code</h2>
-<table>
-<thead>
-<tr>
-<th>emoji</th>
-<th>alias</th>
-<th>messages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🎨</td>
-<td>:art:</td>
-<td>Improving structure / format of the code.</td>
-</tr>
-<tr>
-<td>🔥</td>
-<td>:fire:</td>
-<td>Removing code or files.</td>
-</tr>
-<tr>
-<td>📈</td>
-<td>:chart_with_upwards_trend:</td>
-<td>Adding analytics or tracking code.</td>
-</tr>
-<tr>
-<td>♻️</td>
-<td>:recycle:</td>
-<td>Refactoring code.</td>
-</tr>
-<tr>
-<td>💩</td>
-<td>:poop:</td>
-<td>Writing bad code that needs to be improved.</td>
-</tr>
-<tr>
-<td>👽</td>
-<td>:alien:</td>
-<td>Updating code due to external API changes.</td>
-</tr>
-<tr>
-<td>👌</td>
-<td>:ok_hand:</td>
-<td>Updating code due to code review changes..</td>
-</tr>
-<tr>
-<td>💡</td>
-<td>:bulb:</td>
-<td>Documenting source code.</td>
-</tr>
-<tr>
-<td>🍻</td>
-<td>:beers:</td>
-<td>Writing code drunkenly.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="5-dependency">5. Dependency</h2>
-<table>
-<thead>
-<tr>
-<th>emoji</th>
-<th>alias</th>
-<th>messages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>⬇️</td>
-<td>:arrow_down:</td>
-<td>Downgrading dependencies.</td>
-</tr>
-<tr>
-<td>⬆️</td>
-<td>:arrow_up:</td>
-<td>Upgrading dependencies.</td>
-</tr>
-<tr>
-<td>📌</td>
-<td>:pushpin:</td>
-<td>Pinning dependencies to specific versions.</td>
-</tr>
-<tr>
-<td>➕</td>
-<td>:heavy_plus_sign:</td>
-<td>Adding a dependency.</td>
-</tr>
-<tr>
-<td>➖</td>
-<td>:heavy_minus_sign:</td>
-<td>Removing a dependency.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="6-optimize">6. Optimize</h2>
-<table>
-<thead>
-<tr>
-<th>emoji</th>
-<th>alias</th>
-<th>messages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>⚡️</td>
-<td>:zap:</td>
-<td>Improving performance.</td>
-</tr>
-<tr>
-<td>♿️</td>
-<td>:wheelchair:</td>
-<td>Improving accessibility.</td>
-</tr>
-<tr>
-<td>🏗</td>
-<td>:building_construction:</td>
-<td>Making architectural changes.</td>
-</tr>
-<tr>
-<td>📱</td>
-<td>:iphone:</td>
-<td>Working on responsive design.</td>
-</tr>
-<tr>
-<td>🔍</td>
-<td>:mag:</td>
-<td>Improving SEO</td>
-</tr>
-<tr>
-<td>🚸</td>
-<td>:children_crossing:</td>
-<td>Improving user experience / usability.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="7-deploy">7. Deploy</h2>
-<table>
-<thead>
-<tr>
-<th>emoji</th>
-<th>alias</th>
-<th>messages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🚀</td>
-<td>:rocket:</td>
-<td>Deploying stuff.</td>
-</tr>
-<tr>
-<td>💚</td>
-<td>:green_heart:</td>
-<td>Fixing CI Build.</td>
-</tr>
-<tr>
-<td>👷</td>
-<td>:construction_worker:</td>
-<td>Adding CI build system.</td>
-</tr>
-<tr>
-<td>🐳</td>
-<td>:whale:</td>
-<td>Work about Docker.</td>
-</tr>
-<tr>
-<td>☸️</td>
-<td>:wheel_of_dharma:</td>
-<td>Work about Kubernetes</td>
-</tr>
-</tbody>
-</table>
-<h2 id="8-other">8. Other</h2>
-<table>
-<thead>
-<tr>
-<th>emoji</th>
-<th>alias</th>
-<th>messages</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>✅</td>
-<td>:white_check_mark:</td>
-<td>Updating tests.</td>
-</tr>
-<tr>
-<td>🔒</td>
-<td>:lock:</td>
-<td>Fixing security issues.</td>
-</tr>
-<tr>
-<td>🗃</td>
-<td>:card_file_box:</td>
-<td>Performing database related changes.</td>
-</tr>
-<tr>
-<td>🤡</td>
-<td>:clown_face:</td>
-<td>Mocking things.</td>
-</tr>
-<tr>
-<td>🥚</td>
-<td>:egg:</td>
-<td>Adding an easter egg.</td>
-</tr>
-<tr>
-<td>⚗</td>
-<td>:alembic:</td>
-<td>Experimenting new things</td>
-</tr>
-</tbody>
-</table>
 ]]></content>
     </entry>
 </feed>

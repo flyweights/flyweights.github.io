@@ -1,405 +1,60 @@
-
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>白罴</title>
-<meta name="description" content="闲坐竹林里，淡泊寻常心。">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
+<meta name="description" content="闲坐竹林里，淡泊寻常心。" />
+<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1569221984054">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1569205130100">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://flyweights.github.io/styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://flyweights.github.io">
-        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1569205130100" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://flyweights.github.io">
-        <h1 class="site-title">白罴</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://flyweights.github.io">
+  <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1569221984054" alt="">
+  </a>
+  <h1 class="site-title">
+    白罴
+  </h1>
+  <p class="site-description">
+    闲坐竹林里，淡泊寻常心。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
   </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
-        
-        
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyweights.github.io/post/easy-swift-1">
-        <h2 class="post-title">Easy-Swift-1</h2>
-      </a>
-      <div class="post-abstract">
-        <p>The powerful programming language that is also easy to learn.</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-09-10</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://flyweights.github.io/tag/i48QmFE_d">
-                swift
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyweights.github.io/post/easy-swift-1">
-        <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/easy-swift-1.jpeg')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyweights.github.io/post/typora">
-        <h2 class="post-title">Typora</h2>
-      </a>
-      <div class="post-abstract">
-        <p>/* NEW WAY TO READ &amp; WRITE MARKDOWN.| */</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-09-09</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://flyweights.github.io/tag/d9SZd8DVkr">
-                markdown
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyweights.github.io/post/typora">
-        <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/typora.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyweights.github.io/post/html-and-markdown">
-        <h2 class="post-title">html-and-markdown</h2>
-      </a>
-      <div class="post-abstract">
-        <p>学习<code>HTML</code>，对比学习<code>Markdown</code>。<br>
-对比两种标记语言的异同，输出同一种效果。</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-09-06</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://flyweights.github.io/tag/fGlSkvcDF">
-                html
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://flyweights.github.io/tag/d9SZd8DVkr">
-                markdown
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyweights.github.io/post/html-and-markdown">
-        <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/html-and-markdown.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyweights.github.io/post/gitmoji-cli">
-        <h2 class="post-title">gitmoji-cli</h2>
-      </a>
-      <div class="post-abstract">
-        <p>A <a href="https://gitmoji.carloscuesta.me/">gitmoji</a> interactive client for using gitmojis on commit messages.</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-09-05</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://flyweights.github.io/tag/WGoeu1iK-">
-                Git
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyweights.github.io/post/gitmoji-cli">
-        <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/gitmoji-cli.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyweights.github.io/post/xcode-xcformat">
-        <h2 class="post-title">Xcode-XCFormat</h2>
-      </a>
-      <div class="post-abstract">
-        <p>XCFormat includes an Xcode Source Editor Extension, allows you to format your code directly in Xcode.</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-09-04</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://flyweights.github.io/tag/MU_thBpha">
-                Xcode
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyweights.github.io/post/xcode-xcformat">
-        <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/xcode-xcformat.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyweights.github.io/post/easy-ruby">
-        <h2 class="post-title">Easy-Ruby</h2>
-      </a>
-      <div class="post-abstract">
-        <p>A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-09-03</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://flyweights.github.io/tag/tUS-dEnxm">
-                Ruby
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyweights.github.io/post/easy-ruby">
-        <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/easy-ruby.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyweights.github.io/post/rails-hello">
-        <h2 class="post-title">Rails-Hello</h2>
-      </a>
-      <div class="post-abstract">
-        <p>return &quot;Hello , World&quot;</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-09-02</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://flyweights.github.io/tag/tUS-dEnxm">
-                Ruby
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyweights.github.io/post/rails-hello">
-        <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/rails-hello.jpg')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyweights.github.io/post/dbngin-tableplus">
-        <h2 class="post-title">DBngin-TablePlus</h2>
-      </a>
-      <div class="post-abstract">
-        <p>Database management made easy</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-08-30</span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyweights.github.io/post/dbngin-tableplus">
-        <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/dbngin-tableplus.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyweights.github.io/post/mac-mysql">
-        <h2 class="post-title">Mac-MySQL</h2>
-      </a>
-      <div class="post-abstract">
-        <p>Relational database.</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-08-29</span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyweights.github.io/post/mac-mysql">
-        <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/mac-mysql.jpg')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyweights.github.io/post/gitmoji">
-        <h2 class="post-title">gitmoji</h2>
-      </a>
-      <div class="post-abstract">
-        <p><a href="http://gitmoji.carloscuesta.me/">An emoji guide for your commit messages</a></p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-08-28</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://flyweights.github.io/tag/WGoeu1iK-">
-                Git
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyweights.github.io/post/gitmoji">
-        <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/gitmoji.png')">
-        </div>
-      </a>
-    
-  </section>
-
-
-<div class="pagination-container">
-  
-  
-    <a href="https://flyweights.github.io/page/2/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
-  
-</div>
-
-
-      </div>
-
-      <div class="site-footer">
-  <div class="slogan">闲坐竹林里，淡泊寻常心。</div>
   <div class="social-container">
     
       
@@ -413,26 +68,333 @@
       
     
   </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://flyweights.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
+    
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://flyweights.github.io/post/easy-swift-2">
+        <h2 class="post-title">Easy-Swift-2</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-09-11
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+      </div>
+      
+        <a href="https://flyweights.github.io/post/easy-swift-2" class="post-feature-image" style="background-image: url('https://flyweights.github.io/post-images/easy-swift-2.jpeg')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>The powerful programming language that is also easy to learn.</p>
 
-    </div>
-    <script type="application/javascript">
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://flyweights.github.io/post/easy-swift-1">
+        <h2 class="post-title">Easy-Swift-1</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-09-10
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://flyweights.github.io/tag/i48QmFE_d" class="post-tag">
+            # swift
+          </a>
+        
+      </div>
+      
+        <a href="https://flyweights.github.io/post/easy-swift-1" class="post-feature-image" style="background-image: url('https://flyweights.github.io/post-images/easy-swift-1.jpeg')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>The powerful programming language that is also easy to learn.</p>
 
-hljs.initHighlightingOnLoad()
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://flyweights.github.io/post/typora">
+        <h2 class="post-title">Typora</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-09-09
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://flyweights.github.io/tag/d9SZd8DVkr" class="post-tag">
+            # markdown
+          </a>
+        
+      </div>
+      
+        <a href="https://flyweights.github.io/post/typora" class="post-feature-image" style="background-image: url('https://flyweights.github.io/post-images/typora.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>/* NEW WAY TO READ &amp; WRITE MARKDOWN.| */</p>
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://flyweights.github.io/post/html-and-markdown">
+        <h2 class="post-title">html-and-markdown</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-09-06
+        </span>
+        <span>
+          3 min read
+        </span>
+        
+          <a href="https://flyweights.github.io/tag/fGlSkvcDF" class="post-tag">
+            # html
+          </a>
+        
+          <a href="https://flyweights.github.io/tag/d9SZd8DVkr" class="post-tag">
+            # markdown
+          </a>
+        
+      </div>
+      
+        <a href="https://flyweights.github.io/post/html-and-markdown" class="post-feature-image" style="background-image: url('https://flyweights.github.io/post-images/html-and-markdown.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>学习<code>HTML</code>，对比学习<code>Markdown</code>。<br>
+对比两种标记语言的异同，输出同一种效果。</p>
+
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://flyweights.github.io/post/gitmoji-cli">
+        <h2 class="post-title">gitmoji-cli</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-09-05
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://flyweights.github.io/tag/WGoeu1iK-" class="post-tag">
+            # Git
+          </a>
+        
+      </div>
+      
+        <a href="https://flyweights.github.io/post/gitmoji-cli" class="post-feature-image" style="background-image: url('https://flyweights.github.io/post-images/gitmoji-cli.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>A <a href="https://gitmoji.carloscuesta.me/">gitmoji</a> interactive client for using gitmojis on commit messages.</p>
+
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://flyweights.github.io/post/xcode-xcformat">
+        <h2 class="post-title">Xcode-XCFormat</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-09-04
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://flyweights.github.io/tag/MU_thBpha" class="post-tag">
+            # Xcode
+          </a>
+        
+      </div>
+      
+        <a href="https://flyweights.github.io/post/xcode-xcformat" class="post-feature-image" style="background-image: url('https://flyweights.github.io/post-images/xcode-xcformat.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>XCFormat includes an Xcode Source Editor Extension, allows you to format your code directly in Xcode.</p>
+
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://flyweights.github.io/post/easy-ruby">
+        <h2 class="post-title">Easy-Ruby</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-09-03
+        </span>
+        <span>
+          3 min read
+        </span>
+        
+          <a href="https://flyweights.github.io/tag/tUS-dEnxm" class="post-tag">
+            # Ruby
+          </a>
+        
+      </div>
+      
+        <a href="https://flyweights.github.io/post/easy-ruby" class="post-feature-image" style="background-image: url('https://flyweights.github.io/post-images/easy-ruby.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.</p>
+
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://flyweights.github.io/post/rails-hello">
+        <h2 class="post-title">Rails-Hello</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-09-02
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://flyweights.github.io/tag/tUS-dEnxm" class="post-tag">
+            # Ruby
+          </a>
+        
+      </div>
+      
+        <a href="https://flyweights.github.io/post/rails-hello" class="post-feature-image" style="background-image: url('https://flyweights.github.io/post-images/rails-hello.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>return &quot;Hello , World&quot;</p>
+
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://flyweights.github.io/post/dbngin-tableplus">
+        <h2 class="post-title">DBngin-TablePlus</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-08-30
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+      </div>
+      
+        <a href="https://flyweights.github.io/post/dbngin-tableplus" class="post-feature-image" style="background-image: url('https://flyweights.github.io/post-images/dbngin-tableplus.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>Database management made easy</p>
+
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://flyweights.github.io/post/mac-mysql">
+        <h2 class="post-title">Mac-MySQL</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-08-29
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+      </div>
+      
+        <a href="https://flyweights.github.io/post/mac-mysql" class="post-feature-image" style="background-image: url('https://flyweights.github.io/post-images/mac-mysql.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>Relational database.</p>
+
+      </di>
+    </article>
+  
+</div>
+
+    
+        <div class="pagination-container">
+  
+  
+    <a href="https://flyweights.github.io/page/2/" class="prev-page">下一页</a>
+  
+</div>
+
+    
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://flyweights.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
 
 </script>
 
-
-
-
+      </div>
+    </div>
   </body>
 </html>

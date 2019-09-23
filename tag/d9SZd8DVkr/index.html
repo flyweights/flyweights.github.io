@@ -1,174 +1,60 @@
-
-<!DOCTYPE html>
 <html>
   <head>
-    
-<meta charset="utf-8" >
-
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>markdown | 白罴</title>
-<meta name="description" content="闲坐竹林里，淡泊寻常心。">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
+<meta name="description" content="闲坐竹林里，淡泊寻常心。" />
+<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1569221984054">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1569205130100">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://flyweights.github.io/styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://flyweights.github.io">
-        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1569205130100" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://flyweights.github.io">
-        <h1 class="site-title">白罴</h1>
-      </a>
-    </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
-    </div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://flyweights.github.io">
+  <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1569221984054" alt="">
+  </a>
+  <h1 class="site-title">
+    白罴
+  </h1>
+  <p class="site-description">
+    闲坐竹林里，淡泊寻常心。
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
   </div>
-</div>
-
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
-        
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-      <div class="content-container">
-
-        <div class="current-tag-container">
-          <h2 class="title">
-            <i class="icon icon-pricetags-outline"></i> markdown
-          </h2> 
-        </div>
-
-        
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyweights.github.io/post/typora">
-        <h2 class="post-title">Typora</h2>
-      </a>
-      <div class="post-abstract">
-        <p>/* NEW WAY TO READ &amp; WRITE MARKDOWN.| */</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-09-09</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://flyweights.github.io/tag/d9SZd8DVkr">
-                markdown
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyweights.github.io/post/typora">
-        <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/typora.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyweights.github.io/post/html-and-markdown">
-        <h2 class="post-title">html-and-markdown</h2>
-      </a>
-      <div class="post-abstract">
-        <p>学习<code>HTML</code>，对比学习<code>Markdown</code>。<br>
-对比两种标记语言的异同，输出同一种效果。</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-09-06</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://flyweights.github.io/tag/fGlSkvcDF">
-                html
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://flyweights.github.io/tag/d9SZd8DVkr">
-                markdown
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyweights.github.io/post/html-and-markdown">
-        <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/html-and-markdown.png')">
-        </div>
-      </a>
-    
-  </section>
-
-
-<div class="pagination-container">
-  
-  
-</div>
-
-
-      </div>
-
-      <div class="site-footer">
-  <div class="slogan">闲坐竹林里，淡泊寻常心。</div>
   <div class="social-container">
     
       
@@ -182,26 +68,129 @@
       
     
   </div>
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://flyweights.github.io/atom.xml" target="_blank">RSS</a>
 </div>
 
+        <div class="current-tag-container">
+            <h2 class="title">
+                标签：# markdown
+            </h2> 
+        </div>
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://flyweights.github.io/post/typora">
+        <h2 class="post-title">Typora</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-09-09
+        </span>
+        <span>
+          1 min read
+        </span>
+        
+          <a href="https://flyweights.github.io/tag/d9SZd8DVkr" class="post-tag">
+            # markdown
+          </a>
+        
+      </div>
+      
+        <a href="https://flyweights.github.io/post/typora" class="post-feature-image" style="background-image: url('https://flyweights.github.io/post-images/typora.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>/* NEW WAY TO READ &amp; WRITE MARKDOWN.| */</p>
 
-    </div>
-    <script type="application/javascript">
+      </di>
+    </article>
+  
+    <article class="post">
+      <a href="https://flyweights.github.io/post/html-and-markdown">
+        <h2 class="post-title">html-and-markdown</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-09-06
+        </span>
+        <span>
+          3 min read
+        </span>
+        
+          <a href="https://flyweights.github.io/tag/fGlSkvcDF" class="post-tag">
+            # html
+          </a>
+        
+          <a href="https://flyweights.github.io/tag/d9SZd8DVkr" class="post-tag">
+            # markdown
+          </a>
+        
+      </div>
+      
+        <a href="https://flyweights.github.io/post/html-and-markdown" class="post-feature-image" style="background-image: url('https://flyweights.github.io/post-images/html-and-markdown.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>学习<code>HTML</code>，对比学习<code>Markdown</code>。<br>
+对比两种标记语言的异同，输出同一种效果。</p>
 
-hljs.initHighlightingOnLoad()
+      </di>
+    </article>
+  
+</div>
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+        <div class="pagination-container">
+  
+  
+</div>
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://flyweights.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
 
 </script>
 
-
-
-
+      </div>
+    </div>
   </body>
 </html>
