@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-09-23T07:10:34.978Z</updated>
+    <updated>2019-09-24T01:21:09.430Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -16,9 +16,9 @@
         <link href="https://flyweights.github.io/post/easy-swift-2">
         </link>
         <updated>2019-09-11T02:51:05.000Z</updated>
-        <summary type="html"><![CDATA[<p>The powerful programming language that is also easy to learn.</p>
+        <summary type="html"><![CDATA[<p>类是模具，对象是铸件。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>The powerful programming language that is also easy to learn.</p>
+        <content type="html"><![CDATA[<p>类是模具，对象是铸件。</p>
 <!-- more -->
 <h2 id="class">Class</h2>
 <pre><code class="language-swift">class Cat {
@@ -31,9 +31,9 @@ kitty.name = &quot;Hello Kitty&quot;
 kitty.age = 45
 </code></pre>
 <h2 id="method">Method</h2>
-<pre><code>class Cat {
+<pre><code class="language-swift">class Cat {
 
-	func sayHello(name:String) -&gt; Bool {
+    func sayHello(name:String) -&gt; Bool {
 		print(&quot;Hello, my name is \(name)&quot;)		
 		return true
 	}
