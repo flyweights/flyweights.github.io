@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1569400192929">
+<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1569401926690">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://flyweights.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://flyweights.github.io">
-        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1569400192929" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1569401926690" alt="" width="32px" height="32px">
       </a>
       <a href="https://flyweights.github.io">
         <h1 class="site-title">白罴</h1>
@@ -112,9 +112,44 @@ Or, if you don't want/need a background service you can just run:
   mysql.server start
 </code></pre>
 <h2 id="3-或者手动安装">3. 或者手动安装</h2>
-<p><a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a><br>
-安装成功如下：<br>
+<p><a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p>
+<p>安装成功如下：<br>
 <img src="https://flyweights.github.io/post-images/1569400183146.png" alt=""></p>
+<p>a. 进入数据库：</p>
+<pre><code class="language-bash">$ /usr/local/mysql/bin/mysql -uroot -p
+</code></pre>
+<pre><code class="language-bash">Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.17 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql&gt; 
+</code></pre>
+<p>b. 创建新的数据库：</p>
+<pre><code class="language-bash">mysql&gt; create database data_system;
+Query OK, 1 row affected (0.01 sec)
+</code></pre>
+<p>c. 查看现有的数据库</p>
+<pre><code class="language-bash">mysql&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| data_system        |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+</code></pre>
 
           </div>
         </div>
