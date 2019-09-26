@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1569401926690">
+<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1569462270928">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://flyweights.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://flyweights.github.io">
-        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1569401926690" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1569462270928" alt="" width="32px" height="32px">
       </a>
       <a href="https://flyweights.github.io">
         <h1 class="site-title">白罴</h1>
@@ -110,7 +110,19 @@ $ cd data_system/
 $ rails s
 </code></pre>
 <h2 id="3-database">3. Database</h2>
-<p>mysql</p>
+<p>config/database.yml</p>
+<pre><code class="language-yml">default: &amp;default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: &lt;%= ENV.fetch(&quot;RAILS_MAX_THREADS&quot;) { 5 } %&gt;
+  username: 数据库用户名称
+  password: 数据库用户密码
+  host: localhost
+
+development:
+  &lt;&lt;: *default
+  database: 数据库名
+</code></pre>
 <h2 id="4-hello-world">4. Hello world</h2>
 <pre><code class="language-bash"> $ rails g controller home index
  $ mkdir app/views/home
