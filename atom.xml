@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-09-26T01:44:34.421Z</updated>
+    <updated>2019-09-26T02:07:33.797Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,79 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[Rails-Account]]></title>
+        <id>https://flyweights.github.io/post/rails-account</id>
+        <link href="https://flyweights.github.io/post/rails-account">
+        </link>
+        <updated>2019-09-25T01:46:53.000Z</updated>
+        <summary type="html"><![CDATA[<p>Data Migration is the process of migrating data from one data environment to another.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Data Migration is the process of migrating data from one data environment to another.</p>
+<!-- more -->
+<h2 id="1-表结构">1. 表结构</h2>
+<p>表名称：accounts</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段名字</th>
+<th>字段说明</th>
+<th>字段类型</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">name</td>
+<td>用户名称</td>
+<td>string</td>
+<td>必填</td>
+</tr>
+<tr>
+<td style="text-align:left">email</td>
+<td>注册邮箱</td>
+<td>string</td>
+<td>必填</td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td>密码</td>
+<td>string</td>
+<td>必填</td>
+</tr>
+<tr>
+<td style="text-align:left">role</td>
+<td>用户角色（控制权限）</td>
+<td>integer</td>
+<td>0普通用户 1管理员 2超级管理员</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td>用户状态（是否激活）</td>
+<td>integer</td>
+<td>0已激活 1未激活</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-迁移文件">2. 迁移文件</h2>
+<pre><code class="language-bash">$ rails g model Account name:string email:string password:string role:integer status:integer 
+Running via Spring preloader in process 39715
+      invoke  active_record
+      create    db/migrate/20190926015939_create_accounts.rb
+      create    app/models/account.rb
+      invoke    test_unit
+      create      test/models/account_test.rb
+      create      test/fixtures/accounts.yml
+</code></pre>
+<h2 id="3-迁移操作">3. 迁移操作</h2>
+<pre><code class="language-bash">$ rails db:migrate
+== 20190926015939 CreateAccounts: migrating ===================================
+-- create_table(:accounts)
+   -&gt; 0.0103s
+== 20190926015939 CreateAccounts: migrated (0.0104s) ==========================
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Easy-Swift-2]]></title>
         <id>https://flyweights.github.io/post/easy-swift-2</id>
@@ -485,77 +558,6 @@ $ brew cask install  tableplus
 <img src="https://flyweights.github.io/post-images/1567127942707.png" alt=""></p>
 <h2 id="3-tableplus">3. TablePlus</h2>
 <figure data-type="image" tabindex="1"><img src="https://flyweights.github.io/post-images/1567127969486.png" alt=""></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Mac-MySQL]]></title>
-        <id>https://flyweights.github.io/post/mac-mysql</id>
-        <link href="https://flyweights.github.io/post/mac-mysql">
-        </link>
-        <updated>2019-08-29T02:00:54.000Z</updated>
-        <summary type="html"><![CDATA[<p>Relational database.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Relational database.</p>
-<!-- more -->
-<h2 id="1-mysql">1. MySQL</h2>
-<pre><code class="language-bash">$ brew install mysql
-</code></pre>
-<p>or</p>
-<pre><code class="language-bash">$ brew install mysql@5.6
-</code></pre>
-<h2 id="2-info">2. Info</h2>
-<pre><code>We've installed your MySQL database without a root password. To secure it run:
-    mysql_secure_installation
-
-MySQL is configured to only allow connections from localhost by default
-
-To connect run:
-    mysql -uroot
-
-To have launchd start mysql now and restart at login:
-  brew services start mysql
-Or, if you don't want/need a background service you can just run:
-  mysql.server start
-</code></pre>
-<h2 id="3-或者手动安装">3. 或者手动安装</h2>
-<p><a href="https://dev.mysql.com/downloads/mysql/">https://dev.mysql.com/downloads/mysql/</a></p>
-<p>安装成功如下：<br>
-<img src="https://flyweights.github.io/post-images/1569400183146.png" alt=""></p>
-<p>a. 进入数据库：</p>
-<pre><code class="language-bash">$ /usr/local/mysql/bin/mysql -uroot -p
-</code></pre>
-<pre><code class="language-bash">Enter password: 
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 10
-Server version: 8.0.17 MySQL Community Server - GPL
-
-Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-mysql&gt; 
-</code></pre>
-<p>b. 创建新的数据库：</p>
-<pre><code class="language-bash">mysql&gt; create database data_system;
-Query OK, 1 row affected (0.01 sec)
-</code></pre>
-<p>c. 查看现有的数据库</p>
-<pre><code class="language-bash">mysql&gt; show databases;
-+--------------------+
-| Database           |
-+--------------------+
-| data_system        |
-| information_schema |
-| mysql              |
-| performance_schema |
-| sys                |
-+--------------------+
-5 rows in set (0.01 sec)
-</code></pre>
 ]]></content>
     </entry>
 </feed>

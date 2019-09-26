@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>gitmoji-cli | 白罴</title>
+<title>Rails-Account | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,18 +80,18 @@
       <div class="content-container">
         <div class="post-detail">
           
-            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/gitmoji-cli.png')">
+            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/rails-account.jpg')">
             </div>
           
-          <h2 class="post-title">gitmoji-cli</h2>
+          <h2 class="post-title">Rails-Account</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-09-05</span>
+            <span><i class="icon-calendar-outline"></i> 2019-09-25</span>
             
               <span>
                 <i class="icon-pricetags-outline"></i>
                 
-                  <a href="https://flyweights.github.io/tag/WGoeu1iK-">
-                    Git
+                  <a href="https://flyweights.github.io/tag/4yGWlNgb1">
+                    rails
                     
                   </a>
                 
@@ -99,30 +99,68 @@
             
           </div>
           <div class="post-content">
-            <p>A <a href="https://gitmoji.carloscuesta.me/">gitmoji</a> interactive client for using gitmojis on commit messages.</p>
+            <p>Data Migration is the process of migrating data from one data environment to another.</p>
 <!-- more -->
-<h2 id="1-install">1. Install</h2>
-<pre><code class="language-bash">$ npm i -g gitmoji-cli
+<h2 id="1-表结构">1. 表结构</h2>
+<p>表名称：accounts</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段名字</th>
+<th>字段说明</th>
+<th>字段类型</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">name</td>
+<td>用户名称</td>
+<td>string</td>
+<td>必填</td>
+</tr>
+<tr>
+<td style="text-align:left">email</td>
+<td>注册邮箱</td>
+<td>string</td>
+<td>必填</td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td>密码</td>
+<td>string</td>
+<td>必填</td>
+</tr>
+<tr>
+<td style="text-align:left">role</td>
+<td>用户角色（控制权限）</td>
+<td>integer</td>
+<td>0普通用户 1管理员 2超级管理员</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td>用户状态（是否激活）</td>
+<td>integer</td>
+<td>0已激活 1未激活</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-迁移文件">2. 迁移文件</h2>
+<pre><code class="language-bash">$ rails g model Account name:string email:string password:string role:integer status:integer 
+Running via Spring preloader in process 39715
+      invoke  active_record
+      create    db/migrate/20190926015939_create_accounts.rb
+      create    app/models/account.rb
+      invoke    test_unit
+      create      test/models/account_test.rb
+      create      test/fixtures/accounts.yml
 </code></pre>
-<h2 id="2-usage">2. Usage</h2>
-<pre><code>$ gitmoji --help
-</code></pre>
-<pre><code>  A gitmoji client for using emojis on commit messages.
-
-  Usage
-    $ gitmoji
-  Options
-    --commit, -c    Interactively commit using the prompts
-    --config, -g    Setup gitmoji-cli preferences.
-    --init, -i      Initialize gitmoji as a commit hook
-    --list, -l      List all the available gitmojis
-    --remove, -r    Remove a previously initialized commit hook
-    --search, -s    Search gitmojis
-    --update, -u    Sync emoji list with the repo
-    --version, -v   Print gitmoji-cli installed version
-  Examples
-    $ gitmoji -l
-    $ gitmoji bug linter -s
+<h2 id="3-迁移操作">3. 迁移操作</h2>
+<pre><code class="language-bash">$ rails db:migrate
+== 20190926015939 CreateAccounts: migrating ===================================
+-- create_table(:accounts)
+   -&gt; 0.0103s
+== 20190926015939 CreateAccounts: migrated (0.0104s) ==========================
 </code></pre>
 
           </div>
@@ -130,9 +168,9 @@
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://flyweights.github.io/post/xcode-xcformat">
+            <a class="purple-link" href="https://flyweights.github.io/post/easy-swift-2">
               <h3 class="post-title">
-                下一篇：Xcode-XCFormat
+                下一篇：Easy-Swift-2
               </h3>
             </a>
           </div>
