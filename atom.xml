@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-09-27T02:11:49.429Z</updated>
+    <updated>2019-09-27T06:42:58.061Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -53,9 +53,46 @@ Loading development environment (Rails 6.0.0)
  =&gt; #&lt;Account id: 4, name: &quot;小狗&quot;, email: &quot;dog@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:10:01&quot;, updated_at: &quot;2019-09-27 02:10:01&quot;&gt; 
 </code></pre>
 <h2 id="2-read">2. Read</h2>
-<h2 id="3-update">3. Update</h2>
-<h2 id="4-delete">4. Delete</h2>
-<h2 id="5-other">5. Other</h2>
+<p>###（1）查找所有数据</p>
+<pre><code class="language-bash">2.6.0 :005 &gt; all = Account.all
+  Account Load (5.7ms)  SELECT `accounts`.* FROM `accounts` LIMIT 11
+ =&gt; #&lt;ActiveRecord::Relation [#&lt;Account id: 1, name: &quot;苹果&quot;, email: &quot;apple@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:03:14&quot;, updated_at: &quot;2019-09-27 02:03:14&quot;&gt;, #&lt;Account id: 2, name: &quot;男孩&quot;, email: &quot;boy@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:06:41&quot;, updated_at: &quot;2019-09-27 02:06:41&quot;&gt;, #&lt;Account id: 3, name: &quot;小猫&quot;, email: &quot;cat@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:09:02&quot;, updated_at: &quot;2019-09-27 02:09:02&quot;&gt;, #&lt;Account id: 4, name: &quot;小狗&quot;, email: &quot;dog@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:10:01&quot;, updated_at: &quot;2019-09-27 02:10:01&quot;&gt;]&gt; 
+</code></pre>
+<p>###（2）通过id查找数据</p>
+<pre><code class="language-bash">2.6.0 :006 &gt; one = Account.find(2)
+  Account Load (1.0ms)  SELECT `accounts`.* FROM `accounts` WHERE `accounts`.`id` = 2 LIMIT 1
+ =&gt; #&lt;Account id: 2, name: &quot;男孩&quot;, email: &quot;boy@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:06:41&quot;, updated_at: &quot;2019-09-27 02:06:41&quot;&gt; 
+</code></pre>
+<h3 id="3-通过条件查找数据">(3) 通过条件查找数据</h3>
+<pre><code class="language-bash">2.6.0 :007 &gt; results = Account.where(name: &quot;小狗&quot;)
+  Account Load (1.8ms)  SELECT `accounts`.* FROM `accounts` WHERE `accounts`.`name` = '小狗' LIMIT 11
+ =&gt; #&lt;ActiveRecord::Relation [#&lt;Account id: 4, name: &quot;小狗&quot;, email: &quot;dog@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:10:01&quot;, updated_at: &quot;2019-09-27 02:10:01&quot;&gt;]&gt; 
+</code></pre>
+<h2 id="3-update在read上再update">3. Update（在Read上，再Update）</h2>
+<pre><code class="language-bash">2.6.0 :008 &gt; Account.find(1).update(name: &quot;小猫猫&quot;)
+  Account Load (0.4ms)  SELECT `accounts`.* FROM `accounts` WHERE `accounts`.`id` = 1 LIMIT 1
+   (0.2ms)  BEGIN
+  Account Update (6.5ms)  UPDATE `accounts` SET `accounts`.`name` = '小猫猫', `accounts`.`updated_at` = '2019-09-27 06:35:22.936392' WHERE `accounts`.`id` = 1
+   (2.6ms)  COMMIT
+ =&gt; true 
+</code></pre>
+<pre><code class="language-bash">2.6.0 :009 &gt; Account.where(name: &quot;小狗&quot;).update_all(name: &quot;小狗狗&quot;)
+  Account Update All (3.4ms)  UPDATE `accounts` SET `accounts`.`name` = '小狗狗' WHERE `accounts`.`name` = '小狗'
+ =&gt; 1 
+</code></pre>
+<h2 id="4-delete在read上再delete">4. Delete（在Read上，再Delete）</h2>
+<pre><code class="language-bash">2.6.0 :015 &gt; Account.where(name: &quot;小狗狗&quot;).delete_all
+  Account Destroy (2.6ms)  DELETE FROM `accounts` WHERE `accounts`.`name` = '小狗狗'
+ =&gt; 1 
+</code></pre>
+<h2 id="5-order排序">5. Order（排序）</h2>
+<pre><code class="language-bash"># 将查询结果根据创建时间正序排序
+Account.where(name:&quot;小狗&quot;).order(created_at: :asc)
+# 将查询结果根据创建时间倒序排序
+Account.where(name:&quot;小狗&quot;).order(created_at: :desc)
+# 将查询结果先根据创建时间倒序排序，再根据修改时间正序排序
+Account.where(name:&quot;小狗&quot;).order(created_at: :desc,updated_at: :asc)
+</code></pre>
 ]]></content>
     </entry>
     <entry>
