@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-09-26T11:26:45.388Z</updated>
+    <updated>2019-09-27T02:11:49.429Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -11,9 +11,57 @@
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
     <entry>
-        <title type="html"><![CDATA[Rails-Account-Model]]></title>
-        <id>https://flyweights.github.io/post/rails-account-model</id>
-        <link href="https://flyweights.github.io/post/rails-account-model">
+        <title type="html"><![CDATA[Rails-Account-CRUD]]></title>
+        <id>https://flyweights.github.io/post/rails-account-crud</id>
+        <link href="https://flyweights.github.io/post/rails-account-crud">
+        </link>
+        <updated>2019-09-26T11:35:35.000Z</updated>
+        <summary type="html"><![CDATA[<p>This means we will modify the basic CRUD SQL statements for each database.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>This means we will modify the basic CRUD SQL statements for each database.</p>
+<!-- more -->
+<h2 id="0-rails的控制台">0. <code>Rails</code>的控制台</h2>
+<pre><code class="language-bash">$ rails s
+Running via Spring preloader in process 38846
+Loading development environment (Rails 6.0.0)
+2.6.0 :001 &gt; 
+</code></pre>
+<h2 id="1-create">1. Create</h2>
+<pre><code class="language-bash">2.6.0 :001 &gt; a = Account.create(name: &quot;苹果&quot;, email: &quot;apple@qq.com&quot;)
+   (2.0ms)  SET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483
+   (0.2ms)  BEGIN
+  Account Create (8.4ms)  INSERT INTO `accounts` (`name`, `email`, `created_at`, `updated_at`) VALUES ('苹果', 'apple@qq.com', '2019-09-27 02:03:14.054623', '2019-09-27 02:03:14.054623')
+   (1.0ms)  COMMIT
+ =&gt; #&lt;Account id: 1, name: &quot;苹果&quot;, email: &quot;apple@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:03:14&quot;, updated_at: &quot;2019-09-27 02:03:14&quot;&gt; 
+</code></pre>
+<pre><code class="language-bash">2.6.0 :002 &gt; b = Account.create(name: &quot;男孩&quot;, email: &quot;boy@qq.com&quot;)
+   (0.2ms)  BEGIN
+  Account Create (0.4ms)  INSERT INTO `accounts` (`name`, `email`, `created_at`, `updated_at`) VALUES ('男孩', 'boy@qq.com', '2019-09-27 02:06:41.395222', '2019-09-27 02:06:41.395222')
+   (0.8ms)  COMMIT
+ =&gt; #&lt;Account id: 2, name: &quot;男孩&quot;, email: &quot;boy@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:06:41&quot;, updated_at: &quot;2019-09-27 02:06:41&quot;&gt;
+</code></pre>
+<pre><code class="language-bash">2.6.0 :003 &gt; c = Account.create(name: &quot;小猫&quot;, email: &quot;cat@qq.com&quot;)
+   (0.2ms)  BEGIN
+  Account Create (0.4ms)  INSERT INTO `accounts` (`name`, `email`, `created_at`, `updated_at`) VALUES ('小猫', 'cat@qq.com', '2019-09-27 02:09:02.416938', '2019-09-27 02:09:02.416938')
+   (1.6ms)  COMMIT
+ =&gt; #&lt;Account id: 3, name: &quot;小猫&quot;, email: &quot;cat@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:09:02&quot;, updated_at: &quot;2019-09-27 02:09:02&quot;&gt; 
+</code></pre>
+<pre><code class="language-bash">2.6.0 :004 &gt; d = Account.create(name: &quot;小狗&quot;, email: &quot;dog@qq.com&quot;)
+   (0.2ms)  BEGIN
+  Account Create (0.4ms)  INSERT INTO `accounts` (`name`, `email`, `created_at`, `updated_at`) VALUES ('小狗', 'dog@qq.com', '2019-09-27 02:10:01.300719', '2019-09-27 02:10:01.300719')
+   (1.5ms)  COMMIT
+ =&gt; #&lt;Account id: 4, name: &quot;小狗&quot;, email: &quot;dog@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:10:01&quot;, updated_at: &quot;2019-09-27 02:10:01&quot;&gt; 
+</code></pre>
+<h2 id="2-read">2. Read</h2>
+<h2 id="3-update">3. Update</h2>
+<h2 id="4-delete">4. Delete</h2>
+<h2 id="5-other">5. Other</h2>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Rails-Account-Migrate]]></title>
+        <id>https://flyweights.github.io/post/rails-account-migrate</id>
+        <link href="https://flyweights.github.io/post/rails-account-migrate">
         </link>
         <updated>2019-09-25T01:46:53.000Z</updated>
         <summary type="html"><![CDATA[<p>Data Migration is the process of migrating data from one data environment to another.</p>
@@ -538,27 +586,6 @@ development:
 &lt;h1&gt;Hello, World!&lt;/h1&gt;
 </code></pre>
 <p><a href="http://localhost:3000">http://localhost:3000</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[DBngin-TablePlus]]></title>
-        <id>https://flyweights.github.io/post/dbngin-tableplus</id>
-        <link href="https://flyweights.github.io/post/dbngin-tableplus">
-        </link>
-        <updated>2019-08-30T01:39:59.000Z</updated>
-        <summary type="html"><![CDATA[<p>Database management made easy</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Database management made easy</p>
-<!-- more -->
-<h2 id="1-install">1. Install</h2>
-<pre><code class="language-bash">$ brew cask install dbngin
-$ brew cask install  tableplus
-</code></pre>
-<h2 id="2-dbngin">2. DBngin</h2>
-<p><img src="https://flyweights.github.io/post-images/1567127797151.png" alt=""><br>
-<img src="https://flyweights.github.io/post-images/1567127942707.png" alt=""></p>
-<h2 id="3-tableplus">3. TablePlus</h2>
-<figure data-type="image" tabindex="1"><img src="https://flyweights.github.io/post-images/1567127969486.png" alt=""></figure>
 ]]></content>
     </entry>
 </feed>

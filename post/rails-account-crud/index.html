@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>Mac-Vagrant-Ubuntu | 白罴</title>
+<title>Rails-Account-CRUD | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,18 +80,18 @@
       <div class="content-container">
         <div class="post-detail">
           
-            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/mac-vagrant-ubuntu.jpg')">
+            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/rails-account-crud.jpg')">
             </div>
           
-          <h2 class="post-title">Mac-Vagrant-Ubuntu</h2>
+          <h2 class="post-title">Rails-Account-CRUD</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-08-20</span>
+            <span><i class="icon-calendar-outline"></i> 2019-09-26</span>
             
               <span>
                 <i class="icon-pricetags-outline"></i>
                 
-                  <a href="https://flyweights.github.io/tag/vV8Khd02E">
-                    Mac
+                  <a href="https://flyweights.github.io/tag/p0I3-sfZt">
+                    Rails
                     
                   </a>
                 
@@ -99,35 +99,53 @@
             
           </div>
           <div class="post-content">
-            <p>Development Environments Made Easy</p>
+            <p>This means we will modify the basic CRUD SQL statements for each database.</p>
 <!-- more -->
-<h2 id="1-install">1. Install</h2>
-<pre><code class="language-bash">$ brew cask install virtualbox
-$ brew cask install vagrant
-$ brew cask install vagrant-manager
+<h2 id="0-rails的控制台">0. <code>Rails</code>的控制台</h2>
+<pre><code class="language-bash">$ rails s
+Running via Spring preloader in process 38846
+Loading development environment (Rails 6.0.0)
+2.6.0 :001 &gt; 
 </code></pre>
-<h2 id="2-init">2. Init</h2>
-<pre><code class="language-bash">$ mkdir rails-va
-$ cd rails-va
-$ vagrant init ubuntu/bionic64
+<h2 id="1-create">1. Create</h2>
+<pre><code class="language-bash">2.6.0 :001 &gt; a = Account.create(name: &quot;苹果&quot;, email: &quot;apple@qq.com&quot;)
+   (2.0ms)  SET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483
+   (0.2ms)  BEGIN
+  Account Create (8.4ms)  INSERT INTO `accounts` (`name`, `email`, `created_at`, `updated_at`) VALUES ('苹果', 'apple@qq.com', '2019-09-27 02:03:14.054623', '2019-09-27 02:03:14.054623')
+   (1.0ms)  COMMIT
+ =&gt; #&lt;Account id: 1, name: &quot;苹果&quot;, email: &quot;apple@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:03:14&quot;, updated_at: &quot;2019-09-27 02:03:14&quot;&gt; 
 </code></pre>
-<h2 id="3-usage">3. Usage</h2>
-<pre><code class="language-bash">$ cd rails-va
-$ vagrant status
-$ vagrant up
-$ vagrant ssh
-$ vagrant reload
-$ vagrant halt
+<pre><code class="language-bash">2.6.0 :002 &gt; b = Account.create(name: &quot;男孩&quot;, email: &quot;boy@qq.com&quot;)
+   (0.2ms)  BEGIN
+  Account Create (0.4ms)  INSERT INTO `accounts` (`name`, `email`, `created_at`, `updated_at`) VALUES ('男孩', 'boy@qq.com', '2019-09-27 02:06:41.395222', '2019-09-27 02:06:41.395222')
+   (0.8ms)  COMMIT
+ =&gt; #&lt;Account id: 2, name: &quot;男孩&quot;, email: &quot;boy@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:06:41&quot;, updated_at: &quot;2019-09-27 02:06:41&quot;&gt;
 </code></pre>
+<pre><code class="language-bash">2.6.0 :003 &gt; c = Account.create(name: &quot;小猫&quot;, email: &quot;cat@qq.com&quot;)
+   (0.2ms)  BEGIN
+  Account Create (0.4ms)  INSERT INTO `accounts` (`name`, `email`, `created_at`, `updated_at`) VALUES ('小猫', 'cat@qq.com', '2019-09-27 02:09:02.416938', '2019-09-27 02:09:02.416938')
+   (1.6ms)  COMMIT
+ =&gt; #&lt;Account id: 3, name: &quot;小猫&quot;, email: &quot;cat@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:09:02&quot;, updated_at: &quot;2019-09-27 02:09:02&quot;&gt; 
+</code></pre>
+<pre><code class="language-bash">2.6.0 :004 &gt; d = Account.create(name: &quot;小狗&quot;, email: &quot;dog@qq.com&quot;)
+   (0.2ms)  BEGIN
+  Account Create (0.4ms)  INSERT INTO `accounts` (`name`, `email`, `created_at`, `updated_at`) VALUES ('小狗', 'dog@qq.com', '2019-09-27 02:10:01.300719', '2019-09-27 02:10:01.300719')
+   (1.5ms)  COMMIT
+ =&gt; #&lt;Account id: 4, name: &quot;小狗&quot;, email: &quot;dog@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:10:01&quot;, updated_at: &quot;2019-09-27 02:10:01&quot;&gt; 
+</code></pre>
+<h2 id="2-read">2. Read</h2>
+<h2 id="3-update">3. Update</h2>
+<h2 id="4-delete">4. Delete</h2>
+<h2 id="5-other">5. Other</h2>
 
           </div>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://flyweights.github.io/post/song-bie">
+            <a class="purple-link" href="https://flyweights.github.io/post/rails-account-migrate">
               <h3 class="post-title">
-                下一篇：送别
+                下一篇：Rails-Account-Migrate
               </h3>
             </a>
           </div>
