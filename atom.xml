@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-09-27T06:42:58.061Z</updated>
+    <updated>2019-09-29T03:22:03.117Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -15,7 +15,7 @@
         <id>https://flyweights.github.io/post/rails-account-crud</id>
         <link href="https://flyweights.github.io/post/rails-account-crud">
         </link>
-        <updated>2019-09-26T11:35:35.000Z</updated>
+        <updated>2019-09-16T11:35:35.000Z</updated>
         <summary type="html"><![CDATA[<p>This means we will modify the basic CRUD SQL statements for each database.</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>This means we will modify the basic CRUD SQL statements for each database.</p>
@@ -100,7 +100,7 @@ Account.where(name:&quot;小狗&quot;).order(created_at: :desc,updated_at: :asc)
         <id>https://flyweights.github.io/post/rails-account-migrate</id>
         <link href="https://flyweights.github.io/post/rails-account-migrate">
         </link>
-        <updated>2019-09-25T01:46:53.000Z</updated>
+        <updated>2019-09-12T01:46:53.000Z</updated>
         <summary type="html"><![CDATA[<p>Data Migration is the process of migrating data from one data environment to another.</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Data Migration is the process of migrating data from one data environment to another.</p>
