@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-09-29T03:22:03.117Z</updated>
+    <updated>2019-09-30T04:01:29.124Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,235 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[Rails-layout.scss]]></title>
+        <id>https://flyweights.github.io/post/rails-layoutscss</id>
+        <link href="https://flyweights.github.io/post/rails-layoutscss">
+        </link>
+        <updated>2019-09-18T03:53:29.000Z</updated>
+        <summary type="html"><![CDATA[<p>Page layout.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Page layout.</p>
+<!-- more -->
+<h2 id="须知">须知</h2>
+<p>app/assets/stylesheets/layout.scss</p>
+<pre><code class="language-css">.navbar {
+  background: #f49bc1;
+  position: relative;
+  height: 60px;
+  z-index: 1000;
+
+  a {
+    color: #fff;
+  }
+
+  a:hover {
+    color: #ebebeb;
+  }
+}
+
+.navbar-brand {
+  float: left;
+
+  padding-left: 0;
+  line-height: 60px;
+  font-size: 30px;
+}
+
+.nav.left {
+  float: left;
+  margin-left: 40px;
+  font-size: 14px;
+}
+
+.nav.right {
+  float: right;
+}
+
+.nav li {
+  float: left;
+}
+
+.nav li a {
+  display: block;
+  font-size: 1.1em;
+  padding: 5px 10px;
+  margin: 15px 10px;
+}
+
+.nav li a:hover {
+  color: #000;
+  background: #fff;
+}
+
+.footer {
+  border-top: 1px solid #c5c5c5;
+  min-height: 200px;
+  margin: 3em 0;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background: #f8f5f0;
+}
+
+.home-banner {
+  height: 600px;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Rails-common.scss]]></title>
+        <id>https://flyweights.github.io/post/rails-commonscss</id>
+        <link href="https://flyweights.github.io/post/rails-commonscss">
+        </link>
+        <updated>2019-09-17T03:50:07.000Z</updated>
+        <summary type="html"><![CDATA[<p>In common.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>In common.</p>
+<!-- more -->
+<h2 id="须知">须知</h2>
+<p>app/assets/stylesheets/common.scss</p>
+<pre><code class="language-css">body {
+  font-family: sans-serif;
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: &quot; &quot;;
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #f5999d;
+}
+
+a:hover {
+  color: #845534;
+}
+
+.btn-primary {
+  color: white;
+  background: #f5999d;
+  border-color: #f49bc1;
+
+  &amp;:hover {
+    background-color: #f49bc1;
+    border-color: #845534;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+form {
+  input {
+    font-size: 21px;
+    width: 100%;
+    padding: 10px 12px;
+    color: #101010;
+    border: 1px solid #acacac;
+    outline: none
+  }
+
+  textarea {
+    height: 210px;
+    font-size: 21px;
+    width: 100%;
+    padding: 10px 12px;
+    color: #101010;
+    border: 1px solid #acacac;
+    outline: none
+  }
+
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #f5999d;
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  .error {
+    margin: 5px 0 9px 0;
+    color: #DB8A14;
+  }
+}
+
+.notice {
+  position: absolute;
+  background: #f5999d;
+  right: 50%;
+  bottom: 50%;
+  color: white;
+  padding: 20px;
+  -webkit-box-shadow: 6px 7px 9px -1px rgba(0, 0, 0, 0.68);
+  -moz-box-shadow: 6px 7px 9px -1px rgba(0, 0, 0, 0.68);
+  box-shadow: 6px 7px 9px -1px rgba(0, 0, 0, 0.68);
+}
+
+td {
+  text-align: center;
+  height: 40px;
+}
+
+th {
+  text-align: center;
+  height: 30px;
+}
+
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Rails-Account-CRUD]]></title>
         <id>https://flyweights.github.io/post/rails-account-crud</id>
@@ -443,186 +672,6 @@ row 2 col 1 | row 2 col 2
 <img src="https://flyweights.github.io/post-images/1567563975698.png" alt=""><br>
 <img src="https://flyweights.github.io/post-images/1567563981266.png" alt=""><br>
 <img src="https://flyweights.github.io/post-images/1567563986224.png" alt=""></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Easy-Ruby]]></title>
-        <id>https://flyweights.github.io/post/easy-ruby</id>
-        <link href="https://flyweights.github.io/post/easy-ruby">
-        </link>
-        <updated>2019-09-03T01:51:51.000Z</updated>
-        <summary type="html"><![CDATA[<p>A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.</p>
-<!-- more -->
-<h2 id="1-constant-variable">1. Constant &amp; Variable</h2>
-<pre><code class="language-ruby">my_name = &quot;小明&quot; // Variable
-MyName = &quot;小明&quot; // Constant
-</code></pre>
-<h2 id="2-control-flow">2. Control Flow</h2>
-<pre><code class="language-ruby">day = 5
-
-if day==0
-	puts &quot;星期日&quot;
-elsif day==6
-	puts &quot;星期六&quot;
-else
-	puts &quot;工作日&quot;
-end
-</code></pre>
-<h2 id="3-data-type">3. Data Type</h2>
-<ul>
-<li>Number</li>
-<li>String</li>
-<li>Range</li>
-<li>Array</li>
-<li>Hash</li>
-<li>Symbol</li>
-</ul>
-<h3 id="类型">类型</h3>
-<pre><code class="language-ruby">puts 5.class  # =&gt; Integer
-</code></pre>
-<h3 id="数字">数字</h3>
-<pre><code class="language-ruby">puts 10 + 3    # =&gt; 13
-puts 10 - 3    # =&gt; 7
-puts 10 * 3    # =&gt; 30
-puts 10 / 3    # =&gt; 3
-puts 10.0 / 3  # =&gt; 3.3333333333333335
-puts 10 / 3.0  # =&gt; 3.3333333333333335
-puts 10 % 3    # =&gt; 1
-</code></pre>
-<h3 id="字符串">字符串</h3>
-<pre><code class="language-ruby">name = &quot;小明&quot;
-age = 18
-
-puts &quot;你好，我是&quot; + name + &quot;，我今年&quot; + age.to_s + &quot;岁&quot; # =&gt; 你好，我是小明，我今年18岁
-
-puts &quot;你好，我是#{name}，我今年#{age}岁&quot; # =&gt; 你好，我是小明，我今年18岁
-</code></pre>
-<h3 id="范围">范围</h3>
-<pre><code class="language-ruby">(1..5).to_a   # 1 到 5
-(1...5).to_a  # 1 到 4
-</code></pre>
-<h3 id="数组">数组</h3>
-<pre><code class="language-ruby">thoughts = [&quot;儒家&quot;, &quot;道家&quot;, &quot;墨家&quot;, &quot;法家&quot;]
-p thoughts[1] # =&gt; 道家
-p thoughts[-1] # =&gt; 法家
-p thoughts.first # =&gt; 儒家
-p thoughts.last # =&gt; 法家
-</code></pre>
-<h3 id="字典">字典</h3>
-<pre><code class="language-ruby">thought_hash = {
-	儒家: &quot;孔子&quot;,
-	道家: &quot;老子&quot;,
-	墨家: &quot;墨子&quot;
-}
-
-puts thought_hash.keys  # =&gt; []
-puts thought_hash.values # =&gt; []
-
-profile.each do |key, value|
-  puts key
-  puts value
-end
-</code></pre>
-<h3 id="符号">符号</h3>
-<pre><code class="language-ruby">=begin
-  Symbol 是不可变的对象
-	Symbol 是带变量名的对象
-=end
-
-:hello
-</code></pre>
-<h2 id="3-methods">3. Methods</h2>
-<pre><code class="language-ruby">def say_hello_to(name=&quot;美女&quot;)
-	return &quot;hello, #{name}&quot;
-end
-
-p say_hello_to
-</code></pre>
-<h2 id="4-block">4. Block</h2>
-<pre><code class="language-ruby">def say_hello
-	puts &quot;开始&quot;
-	yield 123        # 把控制权暂时让给 Block
-	puts &quot;结束&quot;
-end
-
-say_hello { |x|
-	puts &quot;这里是 Block，我收到了#{x}&quot;
-}
-</code></pre>
-<h2 id="5-class">5. Class</h2>
-<pre><code class="language-ruby">class Cat
-  attr_accessor :name #属性 
-
-  def initialize(name, gender)
-    @name = name # 实例变量
-    @gender = gender
-  end
-    
-  def say_hello
-    puts &quot;hello, my name is #{@name}&quot; # =&gt; hello, my name is kitty
-  end
-end
-</code></pre>
-<h2 id="6-module">6. Module</h2>
-<pre><code class="language-ruby">module Flyable
-  def fly
-    puts &quot;I can fly!&quot;
-  end
-end
-
-class Cat
-  include Flyable
-end
-
-kitty = Cat.new
-kitty.fly        # =&gt; I can fly!
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Rails-Hello]]></title>
-        <id>https://flyweights.github.io/post/rails-hello</id>
-        <link href="https://flyweights.github.io/post/rails-hello">
-        </link>
-        <updated>2019-09-02T08:12:14.000Z</updated>
-        <summary type="html"><![CDATA[<p>return &quot;Hello , World&quot;</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>return &quot;Hello , World&quot;</p>
-<!-- more -->
-<h2 id="1-rails">1 .Rails</h2>
-<pre><code class="language-bash">$ gem install rails
-</code></pre>
-<h2 id="2-new">2. New</h2>
-<pre><code class="language-bash">$ rails new data_system -d mysql
-$ cd data_system/
-$ rails s
-</code></pre>
-<h2 id="3-database">3. Database</h2>
-<p>config/database.yml</p>
-<pre><code class="language-yml">default: &amp;default
-  adapter: mysql2
-  encoding: utf8mb4
-  pool: &lt;%= ENV.fetch(&quot;RAILS_MAX_THREADS&quot;) { 5 } %&gt;
-  username: 数据库用户名称
-  password: 数据库用户密码
-  host: localhost
-
-development:
-  &lt;&lt;: *default
-  database: 数据库名
-</code></pre>
-<h2 id="4-hello-world">4. Hello world</h2>
-<pre><code class="language-bash"> $ rails g controller home index
- $ mkdir app/views/home
- $ touch app/views/home/index.html.erb
-</code></pre>
-<pre><code class="language-html">&lt;!-- app/views/home/index.html.erb  --&gt;
-
-&lt;h1&gt;Hello, World!&lt;/h1&gt;
-</code></pre>
-<p><a href="http://localhost:3000">http://localhost:3000</a></p>
 ]]></content>
     </entry>
 </feed>

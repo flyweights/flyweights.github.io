@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>Mac-Vagrant-Ubuntu | 白罴</title>
+<title>Rails-common.scss | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,18 +80,18 @@
       <div class="content-container">
         <div class="post-detail">
           
-            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/mac-vagrant-ubuntu.jpg')">
+            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/rails-commonscss.jpg')">
             </div>
           
-          <h2 class="post-title">Mac-Vagrant-Ubuntu</h2>
+          <h2 class="post-title">Rails-common.scss</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-08-20</span>
+            <span><i class="icon-calendar-outline"></i> 2019-09-17</span>
             
               <span>
                 <i class="icon-pricetags-outline"></i>
                 
-                  <a href="https://flyweights.github.io/tag/vV8Khd02E">
-                    Mac
+                  <a href="https://flyweights.github.io/tag/p0I3-sfZt">
+                    Rails
                     
                   </a>
                 
@@ -99,25 +99,148 @@
             
           </div>
           <div class="post-content">
-            <p>Development Environments Made Easy</p>
+            <p>In common.</p>
 <!-- more -->
-<h2 id="1-install">1. Install</h2>
-<pre><code class="language-bash">$ brew cask install virtualbox
-$ brew cask install vagrant
-$ brew cask install vagrant-manager
-</code></pre>
-<h2 id="2-init">2. Init</h2>
-<pre><code class="language-bash">$ mkdir rails-va
-$ cd rails-va
-$ vagrant init ubuntu/bionic64
-</code></pre>
-<h2 id="3-usage">3. Usage</h2>
-<pre><code class="language-bash">$ cd rails-va
-$ vagrant status
-$ vagrant up
-$ vagrant ssh
-$ vagrant reload
-$ vagrant halt
+<h2 id="须知">须知</h2>
+<p>app/assets/stylesheets/common.scss</p>
+<pre><code class="language-css">body {
+  font-family: sans-serif;
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: &quot; &quot;;
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #f5999d;
+}
+
+a:hover {
+  color: #845534;
+}
+
+.btn-primary {
+  color: white;
+  background: #f5999d;
+  border-color: #f49bc1;
+
+  &amp;:hover {
+    background-color: #f49bc1;
+    border-color: #845534;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+form {
+  input {
+    font-size: 21px;
+    width: 100%;
+    padding: 10px 12px;
+    color: #101010;
+    border: 1px solid #acacac;
+    outline: none
+  }
+
+  textarea {
+    height: 210px;
+    font-size: 21px;
+    width: 100%;
+    padding: 10px 12px;
+    color: #101010;
+    border: 1px solid #acacac;
+    outline: none
+  }
+
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #f5999d;
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  .error {
+    margin: 5px 0 9px 0;
+    color: #DB8A14;
+  }
+}
+
+.notice {
+  position: absolute;
+  background: #f5999d;
+  right: 50%;
+  bottom: 50%;
+  color: white;
+  padding: 20px;
+  -webkit-box-shadow: 6px 7px 9px -1px rgba(0, 0, 0, 0.68);
+  -moz-box-shadow: 6px 7px 9px -1px rgba(0, 0, 0, 0.68);
+  box-shadow: 6px 7px 9px -1px rgba(0, 0, 0, 0.68);
+}
+
+td {
+  text-align: center;
+  height: 40px;
+}
+
+th {
+  text-align: center;
+  height: 30px;
+}
+
 </code></pre>
 
           </div>
@@ -125,9 +248,9 @@ $ vagrant halt
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://flyweights.github.io/post/song-bie">
+            <a class="purple-link" href="https://flyweights.github.io/post/rails-account-crud">
               <h3 class="post-title">
-                下一篇：送别
+                下一篇：Rails-Account-CRUD
               </h3>
             </a>
           </div>
