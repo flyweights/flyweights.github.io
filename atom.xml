@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-09-30T04:01:29.124Z</updated>
+    <updated>2019-09-30T08:46:48.074Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,61 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[Rails-home.scss]]></title>
+        <id>https://flyweights.github.io/post/rails-homescss</id>
+        <link href="https://flyweights.github.io/post/rails-homescss">
+        </link>
+        <updated>2019-09-19T08:42:12.000Z</updated>
+        <summary type="html"><![CDATA[<p>...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>...</p>
+<!-- more -->
+<h2 id="须知">须知</h2>
+<p>app/assets/stylesheets/home.scss</p>
+<pre><code class="language-css">.issue-list-header {
+  border-bottom: 1px solid #ddd;
+  margin-top: 0;
+  margin-bottom: 30px;
+  background: #f5999d;
+  color: #fff;
+
+  .issue-list-heading {
+    font-size: 2em;
+    font-weight: normal;
+  }
+}
+
+.align {
+  font-family: &quot;museo-sans-condensed&quot;;
+  font-size: 20px;
+  text-align: center;
+}
+
+.home-banner-links {
+  position: absolute;
+  left: 160px;
+  top: 280px;
+
+  .banner-btn {
+    padding: 10px 10px;
+    font-size: 1.2em;
+    font-weight: 300;
+    font-family: &quot;museo-sans-condensed&quot;;
+    border-radius: 5px;
+    color: #fff;
+    background: rgba(220, 20, 60, 0.2);
+    border: 1px solid transparent;
+
+    &amp;:hover {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Rails-layout.scss]]></title>
         <id>https://flyweights.github.io/post/rails-layoutscss</id>
@@ -655,23 +710,6 @@ row 2 col 1 | row 2 col 2
     $ gitmoji -l
     $ gitmoji bug linter -s
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Xcode-XCFormat]]></title>
-        <id>https://flyweights.github.io/post/xcode-xcformat</id>
-        <link href="https://flyweights.github.io/post/xcode-xcformat">
-        </link>
-        <updated>2019-09-04T02:16:31.000Z</updated>
-        <summary type="html"><![CDATA[<p>XCFormat includes an Xcode Source Editor Extension, allows you to format your code directly in Xcode.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>XCFormat includes an Xcode Source Editor Extension, allows you to format your code directly in Xcode.</p>
-<!-- more -->
-<p><img src="https://flyweights.github.io/post-images/1567563958104.png" alt=""><br>
-<img src="https://flyweights.github.io/post-images/1567563971012.png" alt=""><br>
-<img src="https://flyweights.github.io/post-images/1567563975698.png" alt=""><br>
-<img src="https://flyweights.github.io/post-images/1567563981266.png" alt=""><br>
-<img src="https://flyweights.github.io/post-images/1567563986224.png" alt=""></p>
 ]]></content>
     </entry>
 </feed>

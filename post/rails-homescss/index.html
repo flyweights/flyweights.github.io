@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>Rails-common.scss | 白罴</title>
+<title>Rails-home.scss | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,12 +80,12 @@
       <div class="content-container">
         <div class="post-detail">
           
-            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/rails-commonscss.jpg')">
+            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/rails-homescss.jpg')">
             </div>
           
-          <h2 class="post-title">Rails-common.scss</h2>
+          <h2 class="post-title">Rails-home.scss</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-09-17</span>
+            <span><i class="icon-calendar-outline"></i> 2019-09-19</span>
             
               <span>
                 <i class="icon-pricetags-outline"></i>
@@ -99,146 +99,48 @@
             
           </div>
           <div class="post-content">
-            <p>In common.</p>
+            <p>...</p>
 <!-- more -->
 <h2 id="须知">须知</h2>
-<p>app/assets/stylesheets/common.scss</p>
-<pre><code class="language-css">body {
-  font-family: sans-serif;
-  margin: 0;
-  font-size: 14px;
-  color: #666;
-}
-
-.container {
-  width: 1170px;
-  margin: 0 auto;
-}
-
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.clearfix:before,
-.clearfix:after {
-  content: &quot; &quot;;
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.clearfix {
-  *zoom: 1;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: #f5999d;
-}
-
-a:hover {
-  color: #845534;
-}
-
-.btn-primary {
-  color: white;
+<p>app/assets/stylesheets/home.scss</p>
+<pre><code class="language-css">.issue-list-header {
+  border-bottom: 1px solid #ddd;
+  margin-top: 0;
+  margin-bottom: 30px;
   background: #f5999d;
-  border-color: #f49bc1;
+  color: #fff;
 
-  &amp;:hover {
-    background-color: #f49bc1;
-    border-color: #845534;
+  .issue-list-heading {
+    font-size: 2em;
+    font-weight: normal;
   }
 }
 
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.428571429;
+.align {
+  font-family: &quot;museo-sans-condensed&quot;;
+  font-size: 20px;
   text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
 }
 
-form {
-  input {
-    font-size: 21px;
-    width: 100%;
-    padding: 10px 12px;
-    color: #101010;
-    border: 1px solid #acacac;
-    outline: none
-  }
-
-  textarea {
-    height: 210px;
-    font-size: 21px;
-    width: 100%;
-    padding: 10px 12px;
-    color: #101010;
-    border: 1px solid #acacac;
-    outline: none
-  }
-
-  label {
-    display: inline-block;
-    margin-bottom: 5px;
-    color: #f5999d;
-  }
-
-  dd {
-    margin: 0;
-  }
-
-  .error {
-    margin: 5px 0 9px 0;
-    color: #DB8A14;
-  }
-}
-
-.notice {
+.home-banner-links {
   position: absolute;
-  background: #f5999d;
-  right: 50%;
-  bottom: 50%;
-  color: white;
-  padding: 20px;
-  -webkit-box-shadow: 6px 7px 9px -1px rgba(0, 0, 0, 0.68);
-  -moz-box-shadow: 6px 7px 9px -1px rgba(0, 0, 0, 0.68);
-  box-shadow: 6px 7px 9px -1px rgba(0, 0, 0, 0.68);
-}
+  left: 160px;
+  top: 280px;
 
-td {
-  text-align: center;
-  height: 40px;
-}
+  .banner-btn {
+    padding: 10px 10px;
+    font-size: 1.2em;
+    font-weight: 300;
+    font-family: &quot;museo-sans-condensed&quot;;
+    border-radius: 5px;
+    color: #fff;
+    background: rgba(220, 20, 60, 0.2);
+    border: 1px solid transparent;
 
-th {
-  text-align: center;
-  height: 30px;
+    &amp;:hover {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  }
 }
 
 </code></pre>
@@ -248,9 +150,9 @@ th {
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://flyweights.github.io/post/rails-account-crud">
+            <a class="purple-link" href="https://flyweights.github.io/post/rails-layoutscss">
               <h3 class="post-title">
-                下一篇：Rails-Account-CRUD
+                下一篇：Rails-layout.scss
               </h3>
             </a>
           </div>
