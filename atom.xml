@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-11-04T06:31:59.170Z</updated>
+    <updated>2019-11-27T08:27:08.123Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,50 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[rails-json-router]]></title>
+        <id>https://flyweights.github.io/post/rails-json-router</id>
+        <link href="https://flyweights.github.io/post/rails-json-router">
+        </link>
+        <updated>2019-11-27T08:26:13.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="rails-json-router">rails-json-router</h2>
+<ul>
+<li>
+<p>GET /trains</p>
+</li>
+<li>
+<p>GET /trains/{列车编号}</p>
+</li>
+<li>
+<p>增- POST /reservations/{订票号码}</p>
+</li>
+<li>
+<p>删-DELETE /reservations/{订票号码}</p>
+</li>
+<li>
+<p>改-PATCH /reservations/{订票号码}</p>
+</li>
+<li>
+<p>查-GET /reservations/{订票号码}</p>
+</li>
+</ul>
+<pre><code class="language-ruby">Rails.application.routes.draw do
+  namespace :api, :defaults =&gt; { :format =&gt; :json } do
+    namespace :v1 do
+      get &quot;/trains&quot;  =&gt; &quot;trains#index&quot;, :as =&gt; :trains
+      get &quot;/trains/:train_number&quot; =&gt; &quot;trains#show&quot;, :as =&gt; :train
+
+      post &quot;/reservations&quot; =&gt; &quot;reservations#create&quot;, :as =&gt; :create_reservations
+      delete &quot;/reservations/:booking_code&quot; =&gt; &quot;reservations#destroy&quot;, :as =&gt; :cancel_reservation
+      patch &quot;/reservations/:booking_code&quot; =&gt; &quot;reservations#update&quot;, :as =&gt; :update_reservation
+      get &quot;/reservations/:booking_code&quot; =&gt; &quot;reservations#show&quot;, :as =&gt; :reservation
+    end
+  end
+end
+
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[VUE ESSENTIALS CHEAT SHEET]]></title>
         <id>https://flyweights.github.io/post/vue-essentials-cheat-sheet</id>
@@ -22,7 +66,8 @@ JavaScript Framework</p>
         <content type="html"><![CDATA[<p>The Progressive<br>
 JavaScript Framework</p>
 <!-- more -->
-<figure data-type="image" tabindex="1"><img src="https://flyweights.github.io/post-images/1572848957767.jpg" alt=""></figure>
+<p><img src="https://flyweights.github.io/post-images/1572848957767.jpg" alt=""><br>
+<img src="https://flyweights.github.io/post-images/1572849335367.jpg" alt=""></p>
 ]]></content>
     </entry>
     <entry>
@@ -556,140 +601,6 @@ let l = &quot;Less is more&quot;
 </tr>
 </tbody>
 </table>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[html-and-markdown]]></title>
-        <id>https://flyweights.github.io/post/html-and-markdown</id>
-        <link href="https://flyweights.github.io/post/html-and-markdown">
-        </link>
-        <updated>2019-09-06T01:51:38.000Z</updated>
-        <summary type="html"><![CDATA[<p>学习<code>HTML</code>，对比学习<code>Markdown</code>。<br>
-对比两种标记语言的异同，输出同一种效果。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>学习<code>HTML</code>，对比学习<code>Markdown</code>。<br>
-对比两种标记语言的异同，输出同一种效果。</p>
-<!-- more -->
-<h3 id="常用标签">常用标签</h3>
-<ol>
-<li>标题</li>
-<li>分割线</li>
-<li>换行</li>
-<li>段落</li>
-<li>超链接</li>
-<li>图片</li>
-<li>表格</li>
-<li>无序列表</li>
-<li>有序列表</li>
-<li>其它</li>
-</ol>
-<h3 id="1标题">1.标题</h3>
-<p><code>Markdown</code>的标题写法</p>
-<pre><code># 1号标题
-## 2号标题
-### 3号标题
-#### 4号标题
-##### 5号标题
-###### 6号标题
-</code></pre>
-<p><code>HTML</code>的标题写法</p>
-<pre><code class="language-html">&lt;h1&gt;1号标题&lt;/h1&gt;
-&lt;h2&gt;2号标题&lt;/h2&gt;
-&lt;h3&gt;3号标题&lt;/h3&gt;
-&lt;h4&gt;4号标题&lt;/h4&gt;
-&lt;h5&gt;5号标题&lt;/h5&gt;
-&lt;h6&gt;6号标题&lt;/h6&gt;
-</code></pre>
-<h3 id="2-分割线">2. 分割线</h3>
-<p><code>Markdown</code>的分割线写法</p>
-<pre><code>---
-</code></pre>
-<p><code>HTML</code>的分割线写法</p>
-<pre><code class="language-html">&lt;hr&gt;
-</code></pre>
-<h3 id="3-换行">3. 换行</h3>
-<p><code>Markdown</code>的换行写法（直接按一下回车就行了）</p>
-<pre><code>
-</code></pre>
-<p><code>HTML</code>的换行写法</p>
-<pre><code>&lt;br&gt;
-</code></pre>
-<h3 id="4-段落">4. 段落</h3>
-<p><code>Markdown</code>的段落写法（按照平时那样书写就行了）</p>
-<pre><code>这是一个段落哦
-这是另一个段落
-</code></pre>
-<p><code>HTML</code>的段落写法</p>
-<pre><code class="language-html">&lt;p&gt;这是一个段落哦&lt;/p&gt;
-&lt;p&gt;这是另一个段落&lt;/p&gt;
-</code></pre>
-<h3 id="5-超链接">5. 超链接</h3>
-<p><code>Markdown</code>的超链接写法</p>
-<pre><code>[点我在新窗口中打开-github](https://github.com/)
-</code></pre>
-<p><code>HTML</code>的超链接写法</p>
-<pre><code class="language-html">&lt;a href=&quot;https://github.com/&quot; target=&quot;_blank&quot;&gt;点我在新窗口中打开-github&lt;/a&gt;
-</code></pre>
-<h3 id="6-图片">6. 图片</h3>
-<p><code>Markdown</code>的图片写法</p>
-<pre><code>![image](https://help.github.com/assets/images/site/invertocat.png)
-</code></pre>
-<p><code>HTML</code>的图片写法</p>
-<pre><code class="language-html">&lt;img src=&quot;https://help.github.com/assets/images/site/invertocat.png&quot;&gt;
-</code></pre>
-<h3 id="7-表格">7. 表格</h3>
-<p><code>Markdown</code>的表格写法，<code>Markdown</code>不支持合并单元格</p>
-<pre><code>header 1 | header 2
----|---
-row 1 col 1 | row 1 col 2
-row 2 col 1 | row 2 col 2
-</code></pre>
-<p><code>HTML</code>的表格写法</p>
-<pre><code class="language-html">&lt;table border=&quot;1&quot;&gt;
-    &lt;tr&gt;
-        &lt;td&gt;第一行第一列&lt;/td&gt;
-        &lt;td&gt;第一行第二列&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td colspan=&quot;2&quot;&gt;合并单元格&lt;/td&gt;
-    &lt;/tr&gt;
-&lt;/table&gt;
-</code></pre>
-<h3 id="8无序列表">8.无序列表</h3>
-<p><code>Markdown</code>的无序列表写法</p>
-<pre><code>- Perl
-- PHP
-- Python
-- Ruby
-</code></pre>
-<p><code>HTML</code>的无序列表写法</p>
-<pre><code class="language-html">&lt;ul&gt;
-    &lt;li&gt;Perl/&lt;/li&gt;
-    &lt;li&gt;PHP&lt;/li&gt;
-    &lt;li&gt;Python&lt;/li&gt;
-    &lt;li&gt;Ruby&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre>
-<h3 id="9有序列表">9.有序列表</h3>
-<p><code>Markdown</code>的有序列表写法</p>
-<pre><code>- Linux
-- Apache
-- Mysql
-- PHP
-</code></pre>
-<p><code>HTML</code>的有序列表写法</p>
-<pre><code class="language-html">&lt;ol&gt;
-    &lt;li&gt;Linux&lt;/li&gt;
-    &lt;li&gt;Apache&lt;/li&gt;
-    &lt;li&gt;Mysql&lt;/li&gt;
-    &lt;li&gt;PHP&lt;/li&gt;
-&lt;/ol&gt;
-</code></pre>
-<h3 id="10其它">10.其它</h3>
-<p>两个无意义的标签</p>
-<pre><code class="language-html">&lt;div&gt;你好&lt;/div&gt;
-&lt;span&gt;Hello&lt;/span&gt;
-</code></pre>
 ]]></content>
     </entry>
 </feed>
