@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2019-11-27T08:27:08.123Z</updated>
+    <updated>2019-11-28T03:05:32.411Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,55 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[rails-restful]]></title>
+        <id>https://flyweights.github.io/post/rails-restful</id>
+        <link href="https://flyweights.github.io/post/rails-restful">
+        </link>
+        <updated>2019-11-28T03:03:14.000Z</updated>
+        <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th>HTTP Verb</th>
+<th>GET</th>
+<th>POST</th>
+<th>PUT</th>
+<th>DELETE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>groups_path<br />http://localhost:3000/groups</td>
+<td>index action</td>
+<td>create action</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>group_path(group)<br />http://localhost:3000/groups[id]</td>
+<td>show action</td>
+<td></td>
+<td>update action</td>
+<td>destroy action</td>
+</tr>
+<tr>
+<td>edit_group_path(group)<br />http://localhost:3000/groups[:id]/eidt</td>
+<td>edit action</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>new_group_path<br />http://localhost:3000/groups/new</td>
+<td>new action</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[rails-json-router]]></title>
         <id>https://flyweights.github.io/post/rails-json-router</id>
@@ -574,33 +623,6 @@ let l = &quot;Less is more&quot;
 <h2 id="set">Set</h2>
 <pre><code class="language-swift">var letter : Set = [&quot;apple&quot;, &quot;ball&quot;, &quot;cat&quot;, &quot;dog&quot;]
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Typora]]></title>
-        <id>https://flyweights.github.io/post/typora</id>
-        <link href="https://flyweights.github.io/post/typora">
-        </link>
-        <updated>2019-09-09T03:25:06.000Z</updated>
-        <summary type="html"><![CDATA[<p>/* NEW WAY TO READ &amp; WRITE MARKDOWN.| */</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>/* NEW WAY TO READ &amp; WRITE MARKDOWN.| */</p>
-<!-- more -->
-<h2 id="快捷键">快捷键</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">切换显示</th>
-<th style="text-align:left">⌘  + /</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">插入表格</td>
-<td style="text-align:left">⌥ + ⌘ + t</td>
-</tr>
-</tbody>
-</table>
 ]]></content>
     </entry>
 </feed>
