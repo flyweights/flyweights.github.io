@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1574910314099">
+<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1574913729814">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://flyweights.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://flyweights.github.io">
-        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1574910314099" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1574913729814" alt="" width="32px" height="32px">
       </a>
       <a href="https://flyweights.github.io">
         <h1 class="site-title">白罴</h1>
@@ -98,28 +98,28 @@
 </thead>
 <tbody>
 <tr>
-<td>groups_path<br />http://localhost:3000/groups</td>
+<td>groups_path  (http://localhost:3000/groups)</td>
 <td>index action</td>
 <td>create action</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>group_path(group)<br />http://localhost:3000/groups[id]</td>
+<td>group_path(group) (http://localhost:3000/groups[id])</td>
 <td>show action</td>
 <td></td>
 <td>update action</td>
 <td>destroy action</td>
 </tr>
 <tr>
-<td>edit_group_path(group)<br />http://localhost:3000/groups[:id]/eidt</td>
+<td>edit_group_path(group) (http://localhost:3000/groups[:id]/eidt)</td>
 <td>edit action</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>new_group_path<br />http://localhost:3000/groups/new</td>
+<td>new_group_path (http://localhost:3000/groups/new)</td>
 <td>new action</td>
 <td></td>
 <td></td>
@@ -127,6 +127,70 @@
 </tr>
 </tbody>
 </table>
+<ul>
+<li>index</li>
+</ul>
+<pre><code class="language-ruby">  def index
+    @groups = Group.all
+  end
+</code></pre>
+<ul>
+<li>show</li>
+</ul>
+<pre><code class="language-ruby">  def show
+    @group = Group.find(params[:id])
+  end
+</code></pre>
+<ul>
+<li>edit</li>
+</ul>
+<pre><code class="language-ruby">  def edit
+    @group = Group.find(params[:id])
+  end
+</code></pre>
+<ul>
+<li>new</li>
+</ul>
+<pre><code class="language-ruby">  def new
+  	@group = Group.new
+  end
+</code></pre>
+<ul>
+<li>create</li>
+</ul>
+<pre><code class="language-ruby">  def create
+    @group = Group.new(group_params)
+    @group.save
+    
+    redirect_to groups_path
+  end
+</code></pre>
+<ul>
+<li>update</li>
+</ul>
+<pre><code class="language-ruby">  def update
+    @group = Group.find(params[:id])
+    @group.update(group_params)
+    redirect_to groups_path, notice: &quot;Update Success&quot;
+  end
+</code></pre>
+<ul>
+<li>destory</li>
+</ul>
+<pre><code class="language-ruby">  def destroy
+  	@group = Group.find(params[:id])
+  	@group.destroy
+  	flash[:alert] = &quot;Group deleted&quot;
+  	redirect_to groups_path
+  end
+</code></pre>
+<ul>
+<li>private</li>
+</ul>
+<pre><code class="language-ruby">  def group_params
+    params.require(:group).permit(:title, :description)
+  end
+</code></pre>
 
           </div>
         </div>
