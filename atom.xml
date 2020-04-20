@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2020-03-20T08:36:46.435Z</updated>
+    <updated>2020-04-20T06:39:05.252Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, 白罴</rights>
     <entry>
         <title type="html"><![CDATA[rails-restful]]></title>
-        <id>https://flyweights.github.io/post/rails-restful</id>
-        <link href="https://flyweights.github.io/post/rails-restful">
+        <id>https://flyweights.github.io/post/rails-restful/</id>
+        <link href="https://flyweights.github.io/post/rails-restful/">
         </link>
         <updated>2019-11-28T03:03:14.000Z</updated>
         <summary type="html"><![CDATA[<p>Representational State Transfer</p>
@@ -125,12 +125,13 @@
     params.require(:group).permit(:title, :description)
   end
 </code></pre>
+<figure data-type="image" tabindex="1"><img src="https://flyweights.github.io/post-images/1587364731813.jpg" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[rails-json-router]]></title>
-        <id>https://flyweights.github.io/post/rails-json-router</id>
-        <link href="https://flyweights.github.io/post/rails-json-router">
+        <id>https://flyweights.github.io/post/rails-json-router/</id>
+        <link href="https://flyweights.github.io/post/rails-json-router/">
         </link>
         <updated>2019-11-27T08:26:13.000Z</updated>
         <content type="html"><![CDATA[<h2 id="rails-json-router">rails-json-router</h2>
@@ -173,8 +174,8 @@ end
     </entry>
     <entry>
         <title type="html"><![CDATA[VUE ESSENTIALS CHEAT SHEET]]></title>
-        <id>https://flyweights.github.io/post/vue-essentials-cheat-sheet</id>
-        <link href="https://flyweights.github.io/post/vue-essentials-cheat-sheet">
+        <id>https://flyweights.github.io/post/vue-essentials-cheat-sheet/</id>
+        <link href="https://flyweights.github.io/post/vue-essentials-cheat-sheet/">
         </link>
         <updated>2019-10-01T06:22:58.000Z</updated>
         <summary type="html"><![CDATA[<p>The Progressive<br>
@@ -183,14 +184,14 @@ JavaScript Framework</p>
         <content type="html"><![CDATA[<p>The Progressive<br>
 JavaScript Framework</p>
 <!-- more -->
-<p><img src="https://flyweights.github.io/post-images/1572848957767.jpg" alt=""><br>
-<img src="https://flyweights.github.io/post-images/1572849335367.jpg" alt=""></p>
+<p><img src="https://flyweights.github.io/post-images/1572848957767.jpg" alt="" loading="lazy"><br>
+<img src="https://flyweights.github.io/post-images/1572849335367.jpg" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Rails-home.scss]]></title>
-        <id>https://flyweights.github.io/post/rails-homescss</id>
-        <link href="https://flyweights.github.io/post/rails-homescss">
+        <id>https://flyweights.github.io/post/rails-homescss/</id>
+        <link href="https://flyweights.github.io/post/rails-homescss/">
         </link>
         <updated>2019-09-19T08:42:12.000Z</updated>
         <summary type="html"><![CDATA[<p>...</p>
@@ -244,8 +245,8 @@ JavaScript Framework</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Rails-layout.scss]]></title>
-        <id>https://flyweights.github.io/post/rails-layoutscss</id>
-        <link href="https://flyweights.github.io/post/rails-layoutscss">
+        <id>https://flyweights.github.io/post/rails-layoutscss/</id>
+        <link href="https://flyweights.github.io/post/rails-layoutscss/">
         </link>
         <updated>2019-09-18T03:53:29.000Z</updated>
         <summary type="html"><![CDATA[<p>Page layout.</p>
@@ -320,8 +321,8 @@ JavaScript Framework</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Rails-common.scss]]></title>
-        <id>https://flyweights.github.io/post/rails-commonscss</id>
-        <link href="https://flyweights.github.io/post/rails-commonscss">
+        <id>https://flyweights.github.io/post/rails-commonscss/</id>
+        <link href="https://flyweights.github.io/post/rails-commonscss/">
         </link>
         <updated>2019-09-17T03:50:07.000Z</updated>
         <summary type="html"><![CDATA[<p>In common.</p>
@@ -473,8 +474,8 @@ th {
     </entry>
     <entry>
         <title type="html"><![CDATA[Rails-Account-CRUD]]></title>
-        <id>https://flyweights.github.io/post/rails-account-crud</id>
-        <link href="https://flyweights.github.io/post/rails-account-crud">
+        <id>https://flyweights.github.io/post/rails-account-crud/</id>
+        <link href="https://flyweights.github.io/post/rails-account-crud/">
         </link>
         <updated>2019-09-16T11:35:35.000Z</updated>
         <summary type="html"><![CDATA[<p>This means we will modify the basic CRUD SQL statements for each database.</p>
@@ -558,8 +559,8 @@ Account.where(name:&quot;小狗&quot;).order(created_at: :desc,updated_at: :asc)
     </entry>
     <entry>
         <title type="html"><![CDATA[Rails-Account-Migrate]]></title>
-        <id>https://flyweights.github.io/post/rails-account-migrate</id>
-        <link href="https://flyweights.github.io/post/rails-account-migrate">
+        <id>https://flyweights.github.io/post/rails-account-migrate/</id>
+        <link href="https://flyweights.github.io/post/rails-account-migrate/">
         </link>
         <updated>2019-09-12T01:46:53.000Z</updated>
         <summary type="html"><![CDATA[<p>Data Migration is the process of migrating data from one data environment to another.</p>
@@ -632,8 +633,8 @@ Running via Spring preloader in process 39715
     </entry>
     <entry>
         <title type="html"><![CDATA[Easy-Swift-2]]></title>
-        <id>https://flyweights.github.io/post/easy-swift-2</id>
-        <link href="https://flyweights.github.io/post/easy-swift-2">
+        <id>https://flyweights.github.io/post/easy-swift-2/</id>
+        <link href="https://flyweights.github.io/post/easy-swift-2/">
         </link>
         <updated>2019-09-11T02:51:05.000Z</updated>
         <summary type="html"><![CDATA[<p>类是模具，对象是铸件。</p>
@@ -666,8 +667,8 @@ kitty.sayHello(name: &quot;Kitty&quot;)
     </entry>
     <entry>
         <title type="html"><![CDATA[Easy-Swift-1]]></title>
-        <id>https://flyweights.github.io/post/easy-swift-1</id>
-        <link href="https://flyweights.github.io/post/easy-swift-1">
+        <id>https://flyweights.github.io/post/easy-swift-1/</id>
+        <link href="https://flyweights.github.io/post/easy-swift-1/">
         </link>
         <updated>2019-09-10T03:49:12.000Z</updated>
         <summary type="html"><![CDATA[<p>The powerful programming language that is also easy to learn.</p>
