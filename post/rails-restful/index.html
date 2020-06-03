@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1587364735223">
+<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1591170745171">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://flyweights.github.io/styles/main.css">
 
@@ -30,7 +30,7 @@
   <div class="site-header">
     <div class="left">
       <a href="https://flyweights.github.io">
-        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1587364735223" alt="" width="32px" height="32px">
+        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1591170745171" alt="" width="32px" height="32px">
       </a>
       <a href="https://flyweights.github.io">
         <h1 class="site-title">白罴</h1>
@@ -197,6 +197,41 @@
   end
 </code></pre>
 <figure data-type="image" tabindex="1"><img src="https://flyweights.github.io/post-images/1587364731813.jpg" alt="" loading="lazy"></figure>
+<pre><code class="language-mermaid">graph LR
+A((用户id)) --- B[用户]
+C((姓名)) --- B[用户]
+D((生日)) --- B[用户]
+E((身份证号)) --- B[用户]
+F((电话)) --- B[用户]
+G((性别)) --- B[用户]
+H((登录名)) --- B[用户]
+I((密码)) --- B[用户]
+J((权限)) --- B[用户]
+K((公司名)) --- B[用户]
+W((人脸特征)) --- B
+X((指静脉特征)) --- B
+Y((指纹特征)) --- B
+L[模组] --- M((算法))
+Q[识别中心] --- R((识别id))
+Q[识别中心] --- S((被识别人id))
+Q[识别中心] --- T((识别时间))
+Q[识别中心] --- U((识别算法))
+Q[识别中心] --- V((识别结果))
+a[权限操作 ]---b((权限操作id))
+a --- c((操作者id))
+a --- d((被操作者id))
+a --- e((操作时间))
+a --- f((操作内容))
+B --- g{选择算法}
+g --- L
+B --- h{登陆}
+h{登陆} --- Q
+B --- i{管理}
+i{管理} --- a
+g --- Q
+​```
+
+</code></pre>
 
           </div>
         </div>
