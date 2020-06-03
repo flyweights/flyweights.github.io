@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2020-06-03T07:52:48.828Z</updated>
+    <updated>2020-06-03T09:43:29.386Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -11,722 +11,1025 @@
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 白罴</rights>
     <entry>
-        <title type="html"><![CDATA[rails-restful]]></title>
-        <id>https://flyweights.github.io/post/rails-restful/</id>
-        <link href="https://flyweights.github.io/post/rails-restful/">
+        <title type="html"><![CDATA[Objc and Ruby relationships 5]]></title>
+        <id>https://flyweights.github.io/post/objc-and-ruby-relationships-5/</id>
+        <link href="https://flyweights.github.io/post/objc-and-ruby-relationships-5/">
         </link>
-        <updated>2019-11-28T03:03:14.000Z</updated>
-        <summary type="html"><![CDATA[<p>Representational State Transfer</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Representational State Transfer</p>
-<!-- more -->
-<table>
-<thead>
-<tr>
-<th>HTTP Verb</th>
-<th>GET</th>
-<th>POST</th>
-<th>PUT</th>
-<th>DELETE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>groups_path  (http://localhost:3000/groups)</td>
-<td>index action</td>
-<td>create action</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>group_path(group) (http://localhost:3000/groups[id])</td>
-<td>show action</td>
-<td></td>
-<td>update action</td>
-<td>destroy action</td>
-</tr>
-<tr>
-<td>edit_group_path(group) (http://localhost:3000/groups[:id]/eidt)</td>
-<td>edit action</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>new_group_path (http://localhost:3000/groups/new)</td>
-<td>new action</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>index</li>
-</ul>
-<pre><code class="language-ruby">  def index
-    @groups = Group.all
-  end
+        <updated>2020-02-06T09:38:05.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="cocoapods-rubygems">cocoapods &amp; rubygems</h3>
+<blockquote>
+<p>https://cocoapods.org/</p>
+</blockquote>
+<blockquote>
+<p>https://rubygems.org/</p>
+</blockquote>
+<h3 id="对应文件">对应文件</h3>
+<p><code>iOS</code>-<code>Podfile</code></p>
+<p><code>rails</code>-<code>Gemfile</code></p>
+<h3 id="版本号">版本号</h3>
+<pre><code>pod 'AFNetworking', '~&gt; 3.1.0' # 差不多
 </code></pre>
-<ul>
-<li>show</li>
-</ul>
-<pre><code class="language-ruby">  def show
-    @group = Group.find(params[:id])
-  end
+<pre><code>gem 'rails', '&gt;= 5.0.0', '&lt; 5.1' # 大于等于，小于
 </code></pre>
-<ul>
-<li>edit</li>
-</ul>
-<pre><code class="language-ruby">  def edit
-    @group = Group.find(params[:id])
-  end
+<h3 id="安装库">安装库</h3>
+<pre><code>$ pod install # cocoapods的命令
 </code></pre>
-<ul>
-<li>new</li>
-</ul>
-<pre><code class="language-ruby">  def new
-  	@group = Group.new
-  end
+<pre><code>$ bundle install # rubygems的命令
 </code></pre>
-<ul>
-<li>create</li>
-</ul>
-<pre><code class="language-ruby">  def create
-    @group = Group.new(group_params)
-    @group.save
-    
-    redirect_to groups_path
-  end
-</code></pre>
-<ul>
-<li>update</li>
-</ul>
-<pre><code class="language-ruby">  def update
-    @group = Group.find(params[:id])
-    @group.update(group_params)
-    redirect_to groups_path, notice: &quot;Update Success&quot;
-  end
-</code></pre>
-<ul>
-<li>destory</li>
-</ul>
-<pre><code class="language-ruby">  def destroy
-  	@group = Group.find(params[:id])
-  	@group.destroy
-  	flash[:alert] = &quot;Group deleted&quot;
-  	redirect_to groups_path
-  end
-</code></pre>
-<ul>
-<li>private</li>
-</ul>
-<pre><code class="language-ruby">  def group_params
-    params.require(:group).permit(:title, :description)
-  end
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://flyweights.github.io/post-images/1587364731813.jpg" alt="" loading="lazy"></figure>
-<pre><code class="language-mermaid">graph LR
-A((用户id)) --- B[用户]
-C((姓名)) --- B[用户]
-D((生日)) --- B[用户]
-E((身份证号)) --- B[用户]
-F((电话)) --- B[用户]
-G((性别)) --- B[用户]
-H((登录名)) --- B[用户]
-I((密码)) --- B[用户]
-J((权限)) --- B[用户]
-K((公司名)) --- B[用户]
-W((人脸特征)) --- B
-X((指静脉特征)) --- B
-Y((指纹特征)) --- B
-L[模组] --- M((算法))
-Q[识别中心] --- R((识别id))
-Q[识别中心] --- S((被识别人id))
-Q[识别中心] --- T((识别时间))
-Q[识别中心] --- U((识别算法))
-Q[识别中心] --- V((识别结果))
-a[权限操作 ]---b((权限操作id))
-a --- c((操作者id))
-a --- d((被操作者id))
-a --- e((操作时间))
-a --- f((操作内容))
-B --- g{选择算法}
-g --- L
-B --- h{登陆}
-h{登陆} --- Q
-B --- i{管理}
-i{管理} --- a
-g --- Q
-​```
-
-</code></pre>
+<h3 id="常用库">常用库</h3>
+<h4 id="ios">iOS</h4>
+<p><a href="https://github.com/vsouza/awesome-ios">awesome-ios</a></p>
+<h4 id="rails">Rails</h4>
+<p><a href="https://github.com/hothero/awesome-rails-gem">awesome-rails-gem</a></p>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[rails-json-router]]></title>
-        <id>https://flyweights.github.io/post/rails-json-router/</id>
-        <link href="https://flyweights.github.io/post/rails-json-router/">
+        <title type="html"><![CDATA[Objc and Ruby relationships 4]]></title>
+        <id>https://flyweights.github.io/post/objc-and-ruby-relationships-4/</id>
+        <link href="https://flyweights.github.io/post/objc-and-ruby-relationships-4/">
         </link>
-        <updated>2019-11-27T08:26:13.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="rails-json-router">rails-json-router</h2>
-<ul>
-<li>
-<p>GET /trains</p>
-</li>
-<li>
-<p>GET /trains/{列车编号}</p>
-</li>
-<li>
-<p>增- POST /reservations/{订票号码}</p>
-</li>
-<li>
-<p>删-DELETE /reservations/{订票号码}</p>
-</li>
-<li>
-<p>改-PATCH /reservations/{订票号码}</p>
-</li>
-<li>
-<p>查-GET /reservations/{订票号码}</p>
-</li>
-</ul>
-<pre><code class="language-ruby">Rails.application.routes.draw do
-  namespace :api, :defaults =&gt; { :format =&gt; :json } do
-    namespace :v1 do
-      get &quot;/trains&quot;  =&gt; &quot;trains#index&quot;, :as =&gt; :trains
-      get &quot;/trains/:train_number&quot; =&gt; &quot;trains#show&quot;, :as =&gt; :train
+        <updated>2020-02-05T09:36:47.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="类">类</h2>
+<h3 id="定义类">定义类</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// Cat.h
 
-      post &quot;/reservations&quot; =&gt; &quot;reservations#create&quot;, :as =&gt; :create_reservations
-      delete &quot;/reservations/:booking_code&quot; =&gt; &quot;reservations#destroy&quot;, :as =&gt; :cancel_reservation
-      patch &quot;/reservations/:booking_code&quot; =&gt; &quot;reservations#update&quot;, :as =&gt; :update_reservation
-      get &quot;/reservations/:booking_code&quot; =&gt; &quot;reservations#show&quot;, :as =&gt; :reservation
-    end
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface Cat : NSObject
+-(void)eat:(NSString*)food;
+@end
+</code></pre>
+<pre><code class="language-objc">// Cat.m
+
+#import &quot;Cat.h&quot;
+
+@implementation Cat
+-(void)eat:(NSString*)food{
+	NSLog(@&quot;%@, 好好吃！&quot;,food);
+}
+@end
+</code></pre>
+<pre><code class="language-objc">// main.m
+
+#import &lt;Foundation/Foundation.h&gt;
+#import &quot;Cat.h&quot;
+int main(int argc, char *argv[]) {
+	@autoreleasepool {
+		Cat * cat = [Cat new];
+	    [cat eat:@&quot;小鱼&quot;];
+	}
+}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">class Cat
+	def eat(food)
+		puts &quot;#{food}，好好吃!&quot;
+	end
+end
+
+kitty = Cat.new
+kitty.eat &quot;小魚&quot;  #=&gt; 小魚，好好吃!
+</code></pre>
+<h3 id="初始化方法">初始化方法</h3>
+<p>objc:</p>
+<pre><code class="language-objc">...
+- (instancetype)init
+{
+    if(self = [super init])//说明父类的init方法执行成功
+    {
+     // 初始化子类自己的属性;
+    }
+    return self;
+}
+...
+
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">class Cat
+  def initialize(name, gender)
+    @name = name
+    @gender = gender
+  end
+
+  def say_hello
+    puts &quot;hello, my name is #{@name}&quot;
   end
 end
 
+kitty = Cat.new(&quot;kitty&quot;, &quot;female&quot;)
+kitty.say_hello    # =&gt; hello, my name is kitty
 </code></pre>
+<h3 id="实例变量和属性">实例变量和属性</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// Cat.h
+
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface Cat : NSObject
+@property(nonatomic, strong)NSString *name; // 属性
+-(id)initWithName:(NSString*)name andGender:(NSString*)gender;
+-(void)sayHello;
+@end
+</code></pre>
+<pre><code class="language-objc">// Cat.m
+
+#import &quot;Cat.h&quot;
+@interface Cat ()
+{
+	NSString* _name; // 实例变量
+	NSString* _gender;
+}
+@end
+@implementation Cat
+-(id)initWithName:(NSString*)name andGender:(NSString*)gender{
+	if(self = [super init])
+	{
+		_name = name;
+		_gender = gender;
+	}
+	return self;
+}
+
+-(void)sayHello{
+	NSLog(@&quot;hello, my name is %@&quot;, _name);
+}
+@end
+</code></pre>
+<pre><code class="language-objc">// main.m
+
+#import &lt;Foundation/Foundation.h&gt;
+#import &quot;Cat.h&quot;
+int main(int argc, char *argv[]) {
+	@autoreleasepool {
+		Cat * cat = [[Cat alloc]initWithName:@&quot;kitty&quot; andGender:@&quot;female&quot;];
+	    [cat sayHello];  // =&gt; hello, my name is kitty
+	}
+}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">class Cat
+  attr_accessor :name #属性 
+
+  def initialize(name, gender)
+    @name = name # 实例变量
+    @gender = gender
+  end
+    
+  def say_hello
+    puts &quot;hello, my name is #{@name}&quot; # =&gt; hello, my name is kitty
+  end
+end
+</code></pre>
+<h3 id="类方法和对象方法">类方法和对象方法</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// Cat.m
+
+#import &quot;Cat.h&quot;
+@interface Cat ()
+@end
+@implementation Cat
++(void)info{
+//	类方法
+}
+-(void)sayHello{
+// 对象方法
+}
+@end
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">class Cat
+  # 类方法
+  def self.info 
+    # ...
+  end
+
+ # 对象方法
+  def say_hello
+    # ...
+  end
+end
+</code></pre>
+<h2 id="模块">模块</h2>
+<p>objc:</p>
+<pre><code class="language-objc">// NSObject+Flyable.h
+
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface NSObject (Flyable)
+-(void)fly;
+@end
+</code></pre>
+<pre><code class="language-objc">// NSObject+Flyable.m
+
+#import &quot;NSObject+Flyable.h&quot;
+
+@implementation NSObject (Flyable)
+-(void)fly{
+	NSLog(@&quot;I can fly!&quot;);
+}
+@end
+</code></pre>
+<pre><code class="language-objc">// Cat.h
+
+#import &lt;Foundation/Foundation.h&gt;
+#import &quot;NSObject+Flyable.h&quot;
+
+@interface Cat : NSObject
+@end
+</code></pre>
+<pre><code class="language-objc">// Cat.m
+
+#import &quot;Cat.h&quot;
+
+@implementation Cat
+@end
+</code></pre>
+<pre><code>// main.m
+
+#import &lt;Foundation/Foundation.h&gt;
+#import &quot;Cat.h&quot;
+int main(int argc, char *argv[]) {
+	@autoreleasepool {
+	    Cat * cat = [Cat new];
+	    [cat fly];  // =&gt; I can fly!
+	}
+}
+
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">module Flyable
+  def fly
+    puts &quot;I can fly!&quot;
+  end
+end
+
+class Cat
+  include Flyable
+end
+
+kitty = Cat.new
+kitty.fly        # =&gt; I can fly!
+</code></pre>
+<hr>
+<p>参考资料：<br>
+<a href="https://railsbook.tw/">railsbook</a></p>
+<hr>
+<ul>
+<li>持续更新。</li>
+<li>若有更好的资料，感谢交流。</li>
+<li>若有错误的内容，感谢斧正。</li>
+</ul>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Vue Essentials CHEAT SHEET]]></title>
-        <id>https://flyweights.github.io/post/vue-essentials-cheat-sheet/</id>
-        <link href="https://flyweights.github.io/post/vue-essentials-cheat-sheet/">
+        <title type="html"><![CDATA[Objc and Ruby relationships 3]]></title>
+        <id>https://flyweights.github.io/post/objc-and-ruby-relationships-3/</id>
+        <link href="https://flyweights.github.io/post/objc-and-ruby-relationships-3/">
         </link>
-        <updated>2019-10-01T06:22:58.000Z</updated>
-        <summary type="html"><![CDATA[<p>The Progressive<br>
-JavaScript Framework</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>The Progressive<br>
-JavaScript Framework</p>
-<!-- more -->
-<p><img src="https://flyweights.github.io/post-images/1572848957767.jpg" alt="" loading="lazy"><br>
-<img src="https://flyweights.github.io/post-images/1572849335367.jpg" alt="" loading="lazy"></p>
+        <updated>2020-02-04T09:35:42.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="方法">方法</h2>
+<h3 id="定义方法">定义方法</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// Demo.h
+
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface Demo : NSObject
+-(void)sayHelloTo:(NSString*)name;
+@end
+</code></pre>
+<pre><code class="language-objc">// Demo.m
+
+#import &quot;Demo.h&quot;
+
+@implementation Demo
+
+-(void)sayHelloTo:(NSString*)name{
+	NSLog(@&quot;hello, %@&quot;, name);
+}
+
+@end
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">def say_hello_to(name)
+  puts &quot;hello, #{name}&quot;
+end
+</code></pre>
+<h3 id="调用方法">调用方法</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// main.m
+
+#import &lt;Foundation/Foundation.h&gt;
+#import &quot;Demo.h&quot;
+int main(int argc, char *argv[]) {
+	@autoreleasepool {
+		[[Demo new] sayHelloTo:@&quot;帅哥&quot;];
+	}
+}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">say_hello_to(&quot;帅哥&quot;) 
+</code></pre>
+<h3 id="参数的默认值">参数的默认值</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// Demo.h
+
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface Demo : NSObject
+-(void)sayHelloTo:(NSString*)name;
+@end
+</code></pre>
+<pre><code class="language-objc">// Demo.m
+
+#import &quot;Demo.h&quot;
+
+@implementation Demo
+
+-(void)sayHelloTo:(NSString*)name{
+	if (!name) {
+		name = @&quot;美女&quot;;
+	}
+	NSLog(@&quot;hello, %@&quot;, name);
+}
+
+@end
+</code></pre>
+<pre><code class="language-objc">// main.m
+
+#import &lt;Foundation/Foundation.h&gt;
+#import &quot;Demo.h&quot;
+int main(int argc, char *argv[]) {
+	@autoreleasepool {
+		[[Demo new] sayHelloTo:nil];
+	}
+}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">def say_hello_to(name=&quot;美女&quot;)
+	puts &quot;hello, #{name}&quot;
+end
+</code></pre>
+<h3 id="方法的返回值">方法的返回值</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// Demo.h
+
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface Demo : NSObject
+
+-(NSString*)sayHelloTo:(NSString*)name;
+
+@end
+</code></pre>
+<pre><code class="language-objc">// Demo.m
+
+#import &quot;Demo.h&quot;
+
+@implementation Demo
+
+-(NSString*)sayHelloTo:(NSString*)name{
+	return name;
+}
+
+@end
+</code></pre>
+<pre><code class="language-objc">// main.m
+
+#import &lt;Foundation/Foundation.h&gt;
+#import &quot;Demo.h&quot;
+int main(int argc, char *argv[]) {
+	@autoreleasepool {
+		NSLog(@&quot;%@&quot;, [[Demo new] sayHelloTo:@&quot;美女&quot;]);
+	}
+}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">def say_hello_to(name=&quot;美女&quot;)
+	return &quot;hello, #{name}&quot;
+end
+
+p say_hello_to
+</code></pre>
+<h2 id="代码块">代码块</h2>
+<h3 id="声明和调用块">声明和调用块</h3>
+<p>objc:</p>
+<pre><code class="language-objc">dispatch_block_t sayHello;
+
+sayHello = ^(){
+	NSLog(@&quot;这里是 Block&quot;);	
+};
+
+NSLog(@&quot;开始&quot;);	
+sayHello();
+NSLog(@&quot;结束&quot;);	
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">def say_hello &amp;block
+	puts &quot;开始&quot;
+	block.call          # 把控制权暂时让给 Block
+	puts &quot;结束&quot;
+end
+
+say_hello {
+	puts &quot;这里是 Block&quot;
+}
+
+# 或者
+
+def say_hello
+	puts &quot;开始&quot;
+	yield          # 把控制权暂时让给 Block
+	puts &quot;结束&quot;
+end
+
+say_hello {
+	puts &quot;这里是 Block&quot;
+}
+</code></pre>
+<h3 id="传参数给块">传参数给块</h3>
+<p>objc:</p>
+<pre><code class="language-objc">typedef void (^SayHello)(NSInteger);
+SayHello sayHello;
+	
+sayHello = ^(NSInteger x){
+	NSLog(@&quot;这里是 Block，我收到了%ld&quot;, x);
+};
+	
+NSLog(@&quot;开始&quot;);
+sayHello(123);
+NSLog(@&quot;结束&quot;);
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">def say_hello
+	puts &quot;开始&quot;
+	yield 123        # 把控制权暂时让给 Block
+	puts &quot;结束&quot;
+end
+
+say_hello { |x|
+	puts &quot;这里是 Block，我收到了#{x}&quot;
+}
+</code></pre>
+<h3 id="块的回调">块的回调</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// 逻辑部分
+typedef BOOL (^LogicBlock)(NSNumber *);
+LogicBlock logic = ^BOOL(NSNumber * num){
+	if (num.integerValue % 2==0) {
+		return YES;
+	}else {
+		return NO;
+	}
+};
+
+// Block
+typedef NSArray* (^PickBlock)(NSArray*, LogicBlock);
+PickBlock pick = ^(NSArray* list, LogicBlock logic){
+	NSMutableArray * result = @[].mutableCopy;
+	
+	[list enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+		NSNumber * num = obj;
+		if (logic(num)) {
+			[result addObject:num];
+		}
+	}];
+	return [result copy];
+};
+
+// 得到结果
+NSArray * dataList = @[@(1), @(2), @(3), @(4), @(5), @(6), @(7), @(8), @(9),@(10)];
+NSLog(@&quot;%@&quot;, pick(dataList, logic));// =&gt; (2, 4, 6, 8, 10)
+
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">def pick(list)
+	result = []
+	list.each do |i|
+		result &lt;&lt; i if yield(i)     # 如果 yield 的返回值是 true 的話...
+	end
+	return result
+end
+
+p pick([*1..10]) {
+    |x| x % 2 == 0 # 逻辑部分
+  }
+  # =&gt; [2, 4, 6, 8, 10]
+</code></pre>
+<ul>
+<li>代码块的本质，就是将一块代码抽离出来</li>
+<li><code>ruby</code>的<code>block</code>是代码的直接替换代码，简单而又直观</li>
+<li><code>objC</code>的<code>block</code>是代码的间接来回指向，强调一来一回</li>
+</ul>
+<hr>
+<p>参考资料：<br>
+<a href="https://railsbook.tw/">railsbook</a><br>
+<a href="http://goshdarnblocksyntax.com/">goshdarnblocksyntax</a></p>
+<hr>
+<ul>
+<li>持续更新。</li>
+<li>若有更好的资料，感谢交流。</li>
+<li>若有错误的内容，感谢斧正。</li>
+</ul>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Rails-home.scss]]></title>
-        <id>https://flyweights.github.io/post/rails-homescss/</id>
-        <link href="https://flyweights.github.io/post/rails-homescss/">
+        <title type="html"><![CDATA[Objc and Ruby relationships 2]]></title>
+        <id>https://flyweights.github.io/post/objc-and-ruby-relationships-2/</id>
+        <link href="https://flyweights.github.io/post/objc-and-ruby-relationships-2/">
         </link>
-        <updated>2019-09-19T08:42:12.000Z</updated>
-        <summary type="html"><![CDATA[<p>...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>...</p>
-<!-- more -->
-<h2 id="须知">须知</h2>
-<p>app/assets/stylesheets/home.scss</p>
-<pre><code class="language-css">.issue-list-header {
-  border-bottom: 1px solid #ddd;
-  margin-top: 0;
-  margin-bottom: 30px;
-  background: #f5999d;
-  color: #fff;
-
-  .issue-list-heading {
-    font-size: 2em;
-    font-weight: normal;
-  }
-}
-
-.align {
-  font-family: &quot;museo-sans-condensed&quot;;
-  font-size: 20px;
-  text-align: center;
-}
-
-.home-banner-links {
-  position: absolute;
-  left: 160px;
-  top: 280px;
-
-  .banner-btn {
-    padding: 10px 10px;
-    font-size: 1.2em;
-    font-weight: 300;
-    font-family: &quot;museo-sans-condensed&quot;;
-    border-radius: 5px;
-    color: #fff;
-    background: rgba(220, 20, 60, 0.2);
-    border: 1px solid transparent;
-
-    &amp;:hover {
-      border: 1px solid rgba(0, 0, 0, 0.2);
-    }
-  }
-}
-
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Rails-layout.scss]]></title>
-        <id>https://flyweights.github.io/post/rails-layoutscss/</id>
-        <link href="https://flyweights.github.io/post/rails-layoutscss/">
-        </link>
-        <updated>2019-09-18T03:53:29.000Z</updated>
-        <summary type="html"><![CDATA[<p>Page layout.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Page layout.</p>
-<!-- more -->
-<h2 id="须知">须知</h2>
-<p>app/assets/stylesheets/layout.scss</p>
-<pre><code class="language-css">.navbar {
-  background: #f49bc1;
-  position: relative;
-  height: 60px;
-  z-index: 1000;
-
-  a {
-    color: #fff;
-  }
-
-  a:hover {
-    color: #ebebeb;
-  }
-}
-
-.navbar-brand {
-  float: left;
-
-  padding-left: 0;
-  line-height: 60px;
-  font-size: 30px;
-}
-
-.nav.left {
-  float: left;
-  margin-left: 40px;
-  font-size: 14px;
-}
-
-.nav.right {
-  float: right;
-}
-
-.nav li {
-  float: left;
-}
-
-.nav li a {
-  display: block;
-  font-size: 1.1em;
-  padding: 5px 10px;
-  margin: 15px 10px;
-}
-
-.nav li a:hover {
-  color: #000;
-  background: #fff;
-}
-
-.footer {
-  border-top: 1px solid #c5c5c5;
-  min-height: 200px;
-  margin: 3em 0;
-  padding-top: 3em;
-  padding-bottom: 3em;
-  background: #f8f5f0;
-}
-
-.home-banner {
-  height: 600px;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Rails-common.scss]]></title>
-        <id>https://flyweights.github.io/post/rails-commonscss/</id>
-        <link href="https://flyweights.github.io/post/rails-commonscss/">
-        </link>
-        <updated>2019-09-17T03:50:07.000Z</updated>
-        <summary type="html"><![CDATA[<p>In common.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>In common.</p>
-<!-- more -->
-<h2 id="须知">须知</h2>
-<p>app/assets/stylesheets/common.scss</p>
-<pre><code class="language-css">body {
-  font-family: sans-serif;
-  margin: 0;
-  font-size: 14px;
-  color: #666;
-}
-
-.container {
-  width: 1170px;
-  margin: 0 auto;
-}
-
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.clearfix:before,
-.clearfix:after {
-  content: &quot; &quot;;
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.clearfix {
-  *zoom: 1;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: #f5999d;
-}
-
-a:hover {
-  color: #845534;
-}
-
-.btn-primary {
-  color: white;
-  background: #f5999d;
-  border-color: #f49bc1;
-
-  &amp;:hover {
-    background-color: #f49bc1;
-    border-color: #845534;
-  }
-}
-
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.428571429;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  white-space: nowrap;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-
-form {
-  input {
-    font-size: 21px;
-    width: 100%;
-    padding: 10px 12px;
-    color: #101010;
-    border: 1px solid #acacac;
-    outline: none
-  }
-
-  textarea {
-    height: 210px;
-    font-size: 21px;
-    width: 100%;
-    padding: 10px 12px;
-    color: #101010;
-    border: 1px solid #acacac;
-    outline: none
-  }
-
-  label {
-    display: inline-block;
-    margin-bottom: 5px;
-    color: #f5999d;
-  }
-
-  dd {
-    margin: 0;
-  }
-
-  .error {
-    margin: 5px 0 9px 0;
-    color: #DB8A14;
-  }
-}
-
-.notice {
-  position: absolute;
-  background: #f5999d;
-  right: 50%;
-  bottom: 50%;
-  color: white;
-  padding: 20px;
-  -webkit-box-shadow: 6px 7px 9px -1px rgba(0, 0, 0, 0.68);
-  -moz-box-shadow: 6px 7px 9px -1px rgba(0, 0, 0, 0.68);
-  box-shadow: 6px 7px 9px -1px rgba(0, 0, 0, 0.68);
-}
-
-td {
-  text-align: center;
-  height: 40px;
-}
-
-th {
-  text-align: center;
-  height: 30px;
-}
-
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Rails-Account-CRUD]]></title>
-        <id>https://flyweights.github.io/post/rails-account-crud/</id>
-        <link href="https://flyweights.github.io/post/rails-account-crud/">
-        </link>
-        <updated>2019-09-16T11:35:35.000Z</updated>
-        <summary type="html"><![CDATA[<p>This means we will modify the basic CRUD SQL statements for each database.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>This means we will modify the basic CRUD SQL statements for each database.</p>
-<!-- more -->
-<h2 id="0-rails的控制台">0. <code>Rails</code>的控制台</h2>
-<pre><code class="language-bash">$ rails s
-Running via Spring preloader in process 38846
-Loading development environment (Rails 6.0.0)
-2.6.0 :001 &gt; 
-</code></pre>
-<h2 id="1-create">1. Create</h2>
-<pre><code class="language-bash">2.6.0 :001 &gt; a = Account.create(name: &quot;苹果&quot;, email: &quot;apple@qq.com&quot;)
-   (2.0ms)  SET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483
-   (0.2ms)  BEGIN
-  Account Create (8.4ms)  INSERT INTO `accounts` (`name`, `email`, `created_at`, `updated_at`) VALUES ('苹果', 'apple@qq.com', '2019-09-27 02:03:14.054623', '2019-09-27 02:03:14.054623')
-   (1.0ms)  COMMIT
- =&gt; #&lt;Account id: 1, name: &quot;苹果&quot;, email: &quot;apple@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:03:14&quot;, updated_at: &quot;2019-09-27 02:03:14&quot;&gt; 
-</code></pre>
-<pre><code class="language-bash">2.6.0 :002 &gt; b = Account.create(name: &quot;男孩&quot;, email: &quot;boy@qq.com&quot;)
-   (0.2ms)  BEGIN
-  Account Create (0.4ms)  INSERT INTO `accounts` (`name`, `email`, `created_at`, `updated_at`) VALUES ('男孩', 'boy@qq.com', '2019-09-27 02:06:41.395222', '2019-09-27 02:06:41.395222')
-   (0.8ms)  COMMIT
- =&gt; #&lt;Account id: 2, name: &quot;男孩&quot;, email: &quot;boy@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:06:41&quot;, updated_at: &quot;2019-09-27 02:06:41&quot;&gt;
-</code></pre>
-<pre><code class="language-bash">2.6.0 :003 &gt; c = Account.create(name: &quot;小猫&quot;, email: &quot;cat@qq.com&quot;)
-   (0.2ms)  BEGIN
-  Account Create (0.4ms)  INSERT INTO `accounts` (`name`, `email`, `created_at`, `updated_at`) VALUES ('小猫', 'cat@qq.com', '2019-09-27 02:09:02.416938', '2019-09-27 02:09:02.416938')
-   (1.6ms)  COMMIT
- =&gt; #&lt;Account id: 3, name: &quot;小猫&quot;, email: &quot;cat@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:09:02&quot;, updated_at: &quot;2019-09-27 02:09:02&quot;&gt; 
-</code></pre>
-<pre><code class="language-bash">2.6.0 :004 &gt; d = Account.create(name: &quot;小狗&quot;, email: &quot;dog@qq.com&quot;)
-   (0.2ms)  BEGIN
-  Account Create (0.4ms)  INSERT INTO `accounts` (`name`, `email`, `created_at`, `updated_at`) VALUES ('小狗', 'dog@qq.com', '2019-09-27 02:10:01.300719', '2019-09-27 02:10:01.300719')
-   (1.5ms)  COMMIT
- =&gt; #&lt;Account id: 4, name: &quot;小狗&quot;, email: &quot;dog@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:10:01&quot;, updated_at: &quot;2019-09-27 02:10:01&quot;&gt; 
-</code></pre>
-<h2 id="2-read">2. Read</h2>
-<p>###（1）查找所有数据</p>
-<pre><code class="language-bash">2.6.0 :005 &gt; all = Account.all
-  Account Load (5.7ms)  SELECT `accounts`.* FROM `accounts` LIMIT 11
- =&gt; #&lt;ActiveRecord::Relation [#&lt;Account id: 1, name: &quot;苹果&quot;, email: &quot;apple@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:03:14&quot;, updated_at: &quot;2019-09-27 02:03:14&quot;&gt;, #&lt;Account id: 2, name: &quot;男孩&quot;, email: &quot;boy@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:06:41&quot;, updated_at: &quot;2019-09-27 02:06:41&quot;&gt;, #&lt;Account id: 3, name: &quot;小猫&quot;, email: &quot;cat@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:09:02&quot;, updated_at: &quot;2019-09-27 02:09:02&quot;&gt;, #&lt;Account id: 4, name: &quot;小狗&quot;, email: &quot;dog@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:10:01&quot;, updated_at: &quot;2019-09-27 02:10:01&quot;&gt;]&gt; 
-</code></pre>
-<p>###（2）通过id查找数据</p>
-<pre><code class="language-bash">2.6.0 :006 &gt; one = Account.find(2)
-  Account Load (1.0ms)  SELECT `accounts`.* FROM `accounts` WHERE `accounts`.`id` = 2 LIMIT 1
- =&gt; #&lt;Account id: 2, name: &quot;男孩&quot;, email: &quot;boy@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:06:41&quot;, updated_at: &quot;2019-09-27 02:06:41&quot;&gt; 
-</code></pre>
-<h3 id="3-通过条件查找数据">(3) 通过条件查找数据</h3>
-<pre><code class="language-bash">2.6.0 :007 &gt; results = Account.where(name: &quot;小狗&quot;)
-  Account Load (1.8ms)  SELECT `accounts`.* FROM `accounts` WHERE `accounts`.`name` = '小狗' LIMIT 11
- =&gt; #&lt;ActiveRecord::Relation [#&lt;Account id: 4, name: &quot;小狗&quot;, email: &quot;dog@qq.com&quot;, password: nil, role: nil, status: nil, created_at: &quot;2019-09-27 02:10:01&quot;, updated_at: &quot;2019-09-27 02:10:01&quot;&gt;]&gt; 
-</code></pre>
-<h2 id="3-update在read上再update">3. Update（在Read上，再Update）</h2>
-<pre><code class="language-bash">2.6.0 :008 &gt; Account.find(1).update(name: &quot;小猫猫&quot;)
-  Account Load (0.4ms)  SELECT `accounts`.* FROM `accounts` WHERE `accounts`.`id` = 1 LIMIT 1
-   (0.2ms)  BEGIN
-  Account Update (6.5ms)  UPDATE `accounts` SET `accounts`.`name` = '小猫猫', `accounts`.`updated_at` = '2019-09-27 06:35:22.936392' WHERE `accounts`.`id` = 1
-   (2.6ms)  COMMIT
- =&gt; true 
-</code></pre>
-<pre><code class="language-bash">2.6.0 :009 &gt; Account.where(name: &quot;小狗&quot;).update_all(name: &quot;小狗狗&quot;)
-  Account Update All (3.4ms)  UPDATE `accounts` SET `accounts`.`name` = '小狗狗' WHERE `accounts`.`name` = '小狗'
- =&gt; 1 
-</code></pre>
-<h2 id="4-delete在read上再delete">4. Delete（在Read上，再Delete）</h2>
-<pre><code class="language-bash">2.6.0 :015 &gt; Account.where(name: &quot;小狗狗&quot;).delete_all
-  Account Destroy (2.6ms)  DELETE FROM `accounts` WHERE `accounts`.`name` = '小狗狗'
- =&gt; 1 
-</code></pre>
-<h2 id="5-order排序">5. Order（排序）</h2>
-<pre><code class="language-bash"># 将查询结果根据创建时间正序排序
-Account.where(name:&quot;小狗&quot;).order(created_at: :asc)
-# 将查询结果根据创建时间倒序排序
-Account.where(name:&quot;小狗&quot;).order(created_at: :desc)
-# 将查询结果先根据创建时间倒序排序，再根据修改时间正序排序
-Account.where(name:&quot;小狗&quot;).order(created_at: :desc,updated_at: :asc)
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Rails-Account-Migrate]]></title>
-        <id>https://flyweights.github.io/post/rails-account-migrate/</id>
-        <link href="https://flyweights.github.io/post/rails-account-migrate/">
-        </link>
-        <updated>2019-09-12T01:46:53.000Z</updated>
-        <summary type="html"><![CDATA[<p>Data Migration is the process of migrating data from one data environment to another.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Data Migration is the process of migrating data from one data environment to another.</p>
-<!-- more -->
-<p>tips： 表-命名习惯小写复数，模型-习惯命名大写单数</p>
-<h2 id="1-表结构">1. 表结构</h2>
-<p>表名称：accounts</p>
+        <updated>2020-02-03T09:17:43.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="两者对比">两者对比</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">字段名字</th>
-<th>字段说明</th>
-<th>字段类型</th>
-<th>备注</th>
+<th>Objc</th>
+<th>Ruby</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">name</td>
-<td>用户名称</td>
-<td>string</td>
-<td>必填</td>
+<td>NSNumber</td>
+<td>Number</td>
 </tr>
 <tr>
-<td style="text-align:left">email</td>
-<td>注册邮箱</td>
-<td>string</td>
-<td>必填</td>
+<td>NSMutableString</td>
+<td>String</td>
 </tr>
 <tr>
-<td style="text-align:left">password</td>
-<td>密码</td>
-<td>string</td>
-<td>必填</td>
+<td>NSRange</td>
+<td>Range</td>
 </tr>
 <tr>
-<td style="text-align:left">role</td>
-<td>用户角色（控制权限）</td>
-<td>integer</td>
-<td>0普通用户 1管理员 2超级管理员</td>
+<td>NSMutableArray</td>
+<td>Array</td>
 </tr>
 <tr>
-<td style="text-align:left">status</td>
-<td>用户状态（是否激活）</td>
-<td>integer</td>
-<td>0已激活 1未激活</td>
+<td>NSMutableDictionary</td>
+<td>Hash</td>
+</tr>
+<tr>
+<td>NSString + SEL</td>
+<td>Symbol</td>
 </tr>
 </tbody>
 </table>
-<h2 id="2-迁移文件">2. 迁移文件</h2>
-<pre><code class="language-bash">$ rails g model Account name:string email:string password:string role:integer status:integer 
-Running via Spring preloader in process 39715
-      invoke  active_record
-      create    db/migrate/20190926015939_create_accounts.rb
-      create    app/models/account.rb
-      invoke    test_unit
-      create      test/models/account_test.rb
-      create      test/fixtures/accounts.yml
+<h2 id="数字">数字</h2>
+<h3 id="四则运算">四则运算</h3>
+<p>objc:</p>
+<pre><code class="language-objc">NSLog(@&quot;=&gt; %@&quot;, @( (10 + 3) ) );       // =&gt; 13
+NSLog(@&quot;=&gt; %@&quot;, @( (10 - 3) ) );       // =&gt; 7
+NSLog(@&quot;=&gt; %@&quot;, @( (10 * 3) ) );       // =&gt; 30
+NSLog(@&quot;=&gt; %@&quot;, @( (10 / 3) ) );       // =&gt; 3
+NSLog(@&quot;=&gt; %@&quot;, @( (10 / 3.0) ) );     // =&gt; 3.333333333333333
+NSLog(@&quot;=&gt; %@&quot;, @( (10.0 / 3.0) ) );   // =&gt; 3.333333333333333
+NSLog(@&quot;=&gt; %@&quot;, @( (10.0/3.0) ) );     // =&gt; 3.333333333333333
 </code></pre>
-<h2 id="3-迁移操作">3. 迁移操作</h2>
-<pre><code class="language-bash">$ rails db:migrate
-== 20190926015939 CreateAccounts: migrating ===================================
--- create_table(:accounts)
-   -&gt; 0.0103s
-== 20190926015939 CreateAccounts: migrated (0.0104s) ==========================
+<p>ruby:</p>
+<pre><code class="language-ruby">puts 10 + 3    # =&gt; 13
+puts 10 - 3    # =&gt; 7
+puts 10 * 3    # =&gt; 30
+puts 10 / 3    # =&gt; 3
+puts 10.0 / 3  # =&gt; 3.3333333333333335
+puts 10 / 3.0  # =&gt; 3.3333333333333335
+puts 10 % 3    # =&gt; 1
 </code></pre>
+<h3 id="查看对象类型">查看对象类型</h3>
+<p>objc:</p>
+<pre><code class="language-objc">NSLog(@&quot;%@&quot;, NSStringFromClass( @(5).class ) );  // =&gt; __NSCFNumber
+</code></pre>
+<p>ruby:</p>
+<pre><code>puts 5.class  # =&gt; Integer
+</code></pre>
+<h3 id="浮点运算的不准确性">浮点运算的不准确性</h3>
+<p>objc:</p>
+<pre><code class="language-objc">printf(&quot;%f\n&quot;, (3.51212 + 1)); // =&gt; 4.512120
+printf(&quot;%d\n&quot;, ( 4.51212 == (3.51212 + 1) ));  // =&gt; 0
+
+// NSDecimalNumber
+NSDecimalNumber * d0 = [NSDecimalNumber decimalNumberWithString:@&quot;4.51212&quot;];
+NSDecimalNumber * d1 = [NSDecimalNumber decimalNumberWithString:@&quot;3.51212&quot;];
+NSDecimalNumber * d2 = [NSDecimalNumber decimalNumberWithString:@&quot;1&quot;];
+NSDecimalNumber * d3 =  [d1 decimalNumberByAdding:d2];
+printf(&quot;%d\n&quot;, ( d0.doubleValue == d3.doubleValue ));  // =&gt; 1
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">puts (3.51212 + 1)   # =&gt; 4.5121199999999995
+puts 4.51212 == (3.51212 + 1)  # =&gt; false
+
+# bigdecimal
+require 'bigdecimal'
+puts BigDecimal(&quot;4.51212&quot;) == BigDecimal(&quot;3.51212&quot;) + BigDecimal(&quot;1&quot;)    # =&gt; true
+</code></pre>
+<h3 id="问题如何判断数字的奇偶数">问题：如何判断数字的奇偶数</h3>
+<p>objc:</p>
+<pre><code class="language-objc">int n=10;
+if(n!=0 &amp;&amp; n%2==0){
+	NSLog(@&quot;该数是偶数&quot;);
+}else if(n%2==1){
+	NSLog(@&quot;该数是奇数&quot;);
+}else{
+	NSLog(@&quot;该数是0&quot;);
+}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">num = 10
+
+if num % 2 == 0
+	puts &quot;偶数&quot;
+else
+	puts &quot;奇数&quot;
+end
+
+puts 10.odd?    # =&gt; false
+puts 10.even?   # =&gt; true
+</code></pre>
+<h3 id="问题数字如何四舍五入保留两位小数">问题：数字如何四舍五入保留两位小数</h3>
+<p>objc:</p>
+<pre><code class="language-objc">printf(&quot;%.2f\n&quot;,3.333); // =&gt; 3.333
+printf(&quot;%.2f\n&quot;,4.518); // =&gt; 4.518
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">puts 3.333.round(2)   # =&gt; 3.33
+puts 4.518.round(2)   # =&gt; 4.52
+</code></pre>
+<h2 id="字符串">字符串</h2>
+<h3 id="使用方法">使用方法</h3>
+<p>objc:</p>
+<pre><code class="language-objc">NSMutableString * name = @&quot;编程&quot;.mutableCopy;
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">name = &quot;编程&quot;
+</code></pre>
+<h3 id="字符串修改">字符串修改</h3>
+<p>objc:</p>
+<pre><code class="language-objc">NSMutableString * name = @&quot;小明&quot;.mutableCopy;
+NSNumber * age = @(18);
+
+NSMutableString * tmpStr = @&quot;你好，我是&quot;.mutableCopy;
+[tmpStr appendString:name];
+[tmpStr appendString:@&quot;，我今年&quot;];
+[tmpStr appendString:age.stringValue];
+[tmpStr appendString:@&quot;岁&quot;];
+NSLog(@&quot;%@&quot;, tmpStr); // 你好，我是小明，我今年18岁
+
+NSLog(@&quot;你好，我是%@，我今年%@岁&quot;, name, age); // 你好，我是小明，我今年18岁
+</code></pre>
+<h3 id="字符串-数组">字符串 =&gt; 数组</h3>
+<p>ruby:</p>
+<pre><code class="language-ruby">name = &quot;小明&quot;
+age = 18
+
+puts &quot;你好，我是&quot; + name + &quot;，我今年&quot; + age.to_s + &quot;岁&quot; # =&gt; 你好，我是小明，我今年18岁
+
+puts &quot;你好，我是#{name}，我今年#{age}岁&quot; # =&gt; 你好，我是小明，我今年18岁
+</code></pre>
+<h3 id="引号中的引号">引号中的引号</h3>
+<p>objc:</p>
+<pre><code class="language-objc">NSLog(@&quot;\&quot;小明\&quot;&quot;); // &quot;小明&quot;
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">puts &quot;\&quot;小明\&quot;&quot;
+puts %q(&quot;小明&quot;) 
+puts %Q(&quot;小明&quot;)
+</code></pre>
+<h2 id="范围">范围</h2>
+<p>objc:</p>
+<pre><code class="language-objc">NSRange range = NSMakeRange(0, 10);
+NSLog(@&quot;位置:%ld  长度:%ld&quot;, range.location, range.length); // # =&gt; 位置:0  长度:10
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">(1..5).to_a   # 1 到 5
+(1...5).to_a  # 1 到 4
+
+('a'..'z').to_a
+('A'..'Z').to_a
+
+</code></pre>
+<ul>
+<li>OC的NSRange是结构体，ruby的Range的对象</li>
+<li>NSRange常用于字符串截取</li>
+<li>Range可转为Array</li>
+</ul>
+<h2 id="数组">数组</h2>
+<h3 id="数组初始化">数组初始化</h3>
+<p>objc:</p>
+<pre><code class="language-objc">NSMutableArray * thoughts = @[@&quot;甲&quot;, @&quot;乙&quot;, @&quot;丙&quot;, @&quot;丁&quot;].mutableCopy;
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">thoughts = [&quot;甲&quot;, &quot;乙&quot;, &quot;丙&quot;, &quot;丁&quot;]
+</code></pre>
+<h3 id="数组取值">数组取值</h3>
+<p>objc:</p>
+<pre><code class="language-objc">NSMutableArray * thought = @[@&quot;甲&quot;, @&quot;乙&quot;, @&quot;丙&quot;, @&quot;丁&quot;].mutableCopy;
+NSLog(@&quot;%@&quot;, thought[1]); // 乙
+NSLog(@&quot;%@&quot;, thought.firstObject); // 甲
+NSLog(@&quot;%@&quot;, thought.lastObject); // 丁	
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">thoughts = [&quot;甲&quot;, &quot;乙&quot;, &quot;丙&quot;, &quot;丁&quot;]
+p thoughts[1] # =&gt; 乙
+p thoughts[-1] # =&gt; 丁
+p thoughts.first # =&gt; 甲
+p thoughts.last # =&gt; 丁
+</code></pre>
+<ul>
+<li><code>ruby</code>索引值可为负数，代表方向取值</li>
+</ul>
+<h3 id="问题把数组-1-2-3-4-5-变成-1-3-5-7-9">问题：把数组 [1, 2, 3, 4, 5] 变成 [1, 3, 5, 7, 9]</h3>
+<p>objc:</p>
+<pre><code class="language-objc">NSMutableArray * arr = @[@(1), @(2), @(3), @(4), @(5)].mutableCopy;
+NSMutableArray * arr2 = @[].mutableCopy;
+[arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+	NSNumber * num = obj;
+	NSInteger i = num.integerValue;
+	[arr2 addObject:@( (i * 2 - 1) )];
+}];
+NSLog(@&quot;%@&quot;, arr2);//  =&gt;  (1, 3, 5, 7, 9)
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">list = [1, 2, 3, 4, 5]
+list.map { 
+	|i| i * 2 - 1 
+}
+p list # [1, 3, 5, 7, 9]
+</code></pre>
+<h2 id="哈希">哈希</h2>
+<h3 id="hash的生成和取值"><code>hash</code>的生成和取值</h3>
+<p>objc:</p>
+<pre><code class="language-objc">NSMutableDictionary * thoughtDict = @{
+							    @&quot;a&quot;: @&quot;甲&quot;,
+							    @&quot;b&quot;: @&quot;乙&quot;,
+							    @&quot;c&quot;: @&quot;丙&quot;
+							   }.mutableCopy;
+NSLog(@&quot;%@&quot;,thoughtDict[@&quot;b&quot;]); // =&gt; 乙
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">thought_hash = {
+	a: &quot;甲&quot;,
+	b: &quot;乙&quot;,
+	c: &quot;丙&quot;
+}
+
+puts th_hash[:b] # =&gt; 乙
+</code></pre>
+<h3 id="hash的所有键和所有值"><code>hash</code>的所有键和所有值</h3>
+<p>objc:</p>
+<pre><code class="language-objc">NSMutableDictionary * thoughtDict = @{
+							   @&quot;a&quot;: @&quot;甲&quot;,
+							   @&quot;b&quot;: @&quot;乙&quot;,
+							   @&quot;c&quot;: @&quot;丙&quot;
+							   }.mutableCopy;
+NSLog(@&quot;%@&quot;,thoughtDict.allKeys);
+/*
+*/
+
+NSLog(@&quot;%@&quot;,thoughtDict.allValues);
+/*
+*/
+
+[thoughtDict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+	NSLog(@&quot;%@&quot;, key);
+	NSLog(@&quot;%@&quot;, obj);
+}];
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">thought_hash = {
+	a: &quot;甲&quot;,
+	b: &quot;乙&quot;,
+	c: &quot;丙&quot;
+}
+
+puts thought_hash.keys  # =&gt; []
+puts thought_hash.values # =&gt; []
+
+profile.each do |key, value|
+  puts key
+  puts value
+end
+</code></pre>
+<h2 id="符号">符号</h2>
+<h3 id="定义">定义</h3>
+<p>objc:</p>
+<pre><code class="language-objc">NSString * hello = @&quot;hello&quot;;
+</code></pre>
+<p>ruby:</p>
+<pre><code>:hello
+</code></pre>
+<ul>
+<li><code>Symbol</code> 是不可变的对象</li>
+<li><code>Symbol</code> 是带变量名的对象</li>
+</ul>
+<hr>
+<p>参考资料：<br>
+<a href="https://railsbook.tw/">railsbook</a></p>
+<hr>
+<ul>
+<li>持续更新。</li>
+<li>若有更好的资料，感谢交流。</li>
+<li>若有错误的内容，感谢斧正。</li>
+</ul>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Easy-Swift-2]]></title>
-        <id>https://flyweights.github.io/post/easy-swift-2/</id>
-        <link href="https://flyweights.github.io/post/easy-swift-2/">
+        <title type="html"><![CDATA[Objc and Ruby relationships 1]]></title>
+        <id>https://flyweights.github.io/post/objc-and-ruby-relationships-1/</id>
+        <link href="https://flyweights.github.io/post/objc-and-ruby-relationships-1/">
         </link>
-        <updated>2019-09-11T02:51:05.000Z</updated>
-        <summary type="html"><![CDATA[<p>类是模具，对象是铸件。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>类是模具，对象是铸件。</p>
-<!-- more -->
-<h2 id="class">Class</h2>
-<pre><code class="language-swift">class Cat {
-	var name: String?
-	var age: Int?
+        <updated>2020-02-02T09:07:09.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="流程控制">流程控制</h2>
+<h3 id="判断">判断</h3>
+<h4 id="ifelsifelse"><code>if···elsif···else···</code></h4>
+<p>objc:</p>
+<pre><code class="language-objc">NSInteger day = 5;
+
+if (day==0) {
+	NSLog(@&quot;星期日&quot;);
+}else if (day==6){
+	NSLog(@&quot;星期六&quot;);
+}else {
+	NSLog(@&quot;工作日&quot;);
 }
-
-var kitty = Cat()
-kitty.name = &quot;Hello Kitty&quot;
-kitty.age = 45
 </code></pre>
-<h2 id="method">Method</h2>
-<pre><code class="language-swift">class Cat {
+<p>ruby:</p>
+<pre><code class="language-ruby">day = 5
 
-    func sayHello(name:String) -&gt; Bool {
-		print(&quot;Hello, my name is \(name)&quot;)		
-		return true
+if day==0
+	puts &quot;星期日&quot;
+elsif day==6
+	puts &quot;星期六&quot;
+else
+	puts &quot;工作日&quot;
+end
+</code></pre>
+<h4 id="三目运算符">三目运算符</h4>
+<p>objc:</p>
+<pre><code class="language-objc">NSInteger day = 5;
+NSString * result = (day==6 || day==0) ? @&quot;休息日&quot; : @&quot;工作日&quot;;
+NSLog(@&quot;%@&quot;, result);
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">day = 5;
+result = (day==6 || day==0) ? &quot;休息日&quot; : &quot;工作日&quot;;
+puts result
+</code></pre>
+<h4 id="case-when"><code>case ... when ...</code></h4>
+<p>objc</p>
+<pre><code class="language-objc">NSInteger day=5;
+
+switch (day) {
+	case 1:
+		NSLog(@&quot;工作日-星期一&quot;);
+		break;
+	
+	case 2:
+		NSLog(@&quot;工作日-星期二&quot;);
+		break;
+	
+	case 3:
+		NSLog(@&quot;工作日-星期三&quot;);
+		break;
+		
+	case 4:
+		NSLog(@&quot;工作日-星期四&quot;);
+		break;
+	
+	case 5:
+		NSLog(@&quot;工作日-星期五&quot;);
+		break;
+	
+	case 6:
+		NSLog(@&quot;休息日-星期六&quot;);
+		break;
+	
+	case 0:
+		NSLog(@&quot;休息日-星期日&quot;);
+		break;
+		
+	default:
+        NSLog(@&quot;未知&quot;);
 	}
-}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">day = 5
 
-var kitty = Cat()
-kitty.sayHello(name: &quot;Kitty&quot;)
+case day
+when 1..5
+	puts &quot;工作日&quot;
+when 0
+	puts &quot;星期日&quot;
+when 6
+	puts &quot;星期六&quot;
+else
+	puts &quot;未知&quot;
+end
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Easy-Swift-1]]></title>
-        <id>https://flyweights.github.io/post/easy-swift-1/</id>
-        <link href="https://flyweights.github.io/post/easy-swift-1/">
-        </link>
-        <updated>2019-09-10T03:49:12.000Z</updated>
-        <summary type="html"><![CDATA[<p>The powerful programming language that is also easy to learn.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>The powerful programming language that is also easy to learn.</p>
-<!-- more -->
-<h2 id="variable-constant">Variable &amp; Constant</h2>
-<pre><code class="language-swift">var v = 10
-let l = 100
+<h3 id="循环">循环</h3>
+<h4 id="while"><code>while</code></h4>
+<p>objc:</p>
+<pre><code class="language-objc">NSInteger counter = 0;
+
+while (counter &lt; 5) {
+	NSLog(@&quot;hi, %ld&quot;, counter);
+	counter += 1;
+}
 </code></pre>
-<h2 id="string">String</h2>
-<pre><code class="language-swift">var v = &quot;Less is more&quot;
-let l = &quot;Less is more&quot;
+<h5 id="ruby">ruby:</h5>
+<pre><code class="language-ruby">counter = 0
+
+while counter &lt; 5
+  puts &quot;hi, #{counter}&quot;
+  counter += 1
+end
 </code></pre>
-<h2 id="array">Array</h2>
-<pre><code class="language-swift">var letters : String[] = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;]
+<h4 id="for-in"><code>for in</code></h4>
+<p>objc:</p>
+<pre><code class="language-objc">NSMutableArray * thoughts =  @[@&quot;儒家&quot;, @&quot;道家&quot;, @&quot;墨家&quot;, @&quot;法家&quot;].mutableCopy;
+for (NSString * thought in thoughts) {
+	NSLog(@&quot;%@&quot;, thought);
+}
 </code></pre>
-<h2 id="dictionary">Dictionary</h2>
-<pre><code class="language-swift">var letters : [String : String] = [&quot;A&quot; : &quot;apple&quot;, &quot;B&quot; : &quot;ball&quot;, &quot;C&quot; : &quot;cat&quot;, &quot;D&quot; : &quot;dog&quot;]
+<p>ruby:</p>
+<pre><code class="language-ruby">thoughts = [&quot;儒家&quot;, &quot;道家&quot;, &quot;墨家&quot;, &quot;法家&quot;]
+for thought in thoughts
+	puts thought
+end
 </code></pre>
-<h2 id="set">Set</h2>
-<pre><code class="language-swift">var letter : Set = [&quot;apple&quot;, &quot;ball&quot;, &quot;cat&quot;, &quot;dog&quot;]
+<h4 id="upto-downto"><code>upto &amp; downto</code></h4>
+<p>objc:</p>
+<pre><code class="language-objc">for (NSInteger i = 1; i &lt;= 5 ; i++) {
+	NSLog(@&quot;hi, %ld&quot;, i);
+}
+/*
+hi, 1
+hi, 2
+hi, 3
+hi, 4
+hi, 5
+*/
+
+
+for (NSInteger i = 5; i &gt;= 1 ; i--) {
+	NSLog(@&quot;hi, %ld&quot;, i);
+}
+/*
+hi, 5
+hi, 4
+hi, 3
+hi, 2
+hi, 1
+*/
 </code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">1.upto(5) do |i|
+  puts &quot;hi, #{i}&quot;
+end
+
+=begin
+hi, 1
+hi, 2
+hi, 3
+hi, 4
+hi, 5
+=end
+
+
+5.downto(1) do |i|
+  puts &quot;hi, #{i}&quot;
+end
+
+=begin
+hi, 5
+hi, 4
+hi, 3
+hi, 2
+hi, 1
+=end
+</code></pre>
+<h4 id="iteration"><code>iteration</code></h4>
+<p>objc:</p>
+<pre><code class="language-objc">NSMutableArray * thoughts =  @[@&quot;甲&quot;, @&quot;乙&quot;, @&quot;丙&quot;, @&quot;丁&quot;].mutableCopy;
+[thoughts enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+	NSString * thought = obj;
+	NSLog(@&quot;%@&quot;, thought);
+}];
+</code></pre>
+<h5 id="ruby-2">ruby:</h5>
+<pre><code>thoughts = [&quot;甲&quot;, &quot;乙&quot;, &quot;丙&quot;, &quot;丁&quot;]
+thoughts.each do |thought|
+	puts thought
+end
+</code></pre>
+<hr>
+<p>参考资料：<br>
+<a href="https://railsbook.tw/">railsbook</a></p>
+<hr>
+<ul>
+<li>持续更新。</li>
+<li>若有更好的资料，感谢交流。</li>
+<li>若有错误的内容，感谢斧正。</li>
+</ul>
 ]]></content>
     </entry>
 </feed>

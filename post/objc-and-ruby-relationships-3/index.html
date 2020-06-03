@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Objc and Ruby relationships 3 | 白罴</title>
+<meta name="description" content="闲坐竹林里，淡泊寻常心。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1591177377307">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://flyweights.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://flyweights.github.io">
+        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1591177377307" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://flyweights.github.io">
+        <h1 class="site-title">白罴</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">Objc and Ruby relationships 3</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-02-04</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://flyweights.github.io/tag/PJ-nsua5m/">
+                    Objc
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://flyweights.github.io/tag/tUS-dEnxm/">
+                    Ruby
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h2 id="方法">方法</h2>
+<h3 id="定义方法">定义方法</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// Demo.h
+
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface Demo : NSObject
+-(void)sayHelloTo:(NSString*)name;
+@end
+</code></pre>
+<pre><code class="language-objc">// Demo.m
+
+#import &quot;Demo.h&quot;
+
+@implementation Demo
+
+-(void)sayHelloTo:(NSString*)name{
+	NSLog(@&quot;hello, %@&quot;, name);
+}
+
+@end
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">def say_hello_to(name)
+  puts &quot;hello, #{name}&quot;
+end
+</code></pre>
+<h3 id="调用方法">调用方法</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// main.m
+
+#import &lt;Foundation/Foundation.h&gt;
+#import &quot;Demo.h&quot;
+int main(int argc, char *argv[]) {
+	@autoreleasepool {
+		[[Demo new] sayHelloTo:@&quot;帅哥&quot;];
+	}
+}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">say_hello_to(&quot;帅哥&quot;) 
+</code></pre>
+<h3 id="参数的默认值">参数的默认值</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// Demo.h
+
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface Demo : NSObject
+-(void)sayHelloTo:(NSString*)name;
+@end
+</code></pre>
+<pre><code class="language-objc">// Demo.m
+
+#import &quot;Demo.h&quot;
+
+@implementation Demo
+
+-(void)sayHelloTo:(NSString*)name{
+	if (!name) {
+		name = @&quot;美女&quot;;
+	}
+	NSLog(@&quot;hello, %@&quot;, name);
+}
+
+@end
+</code></pre>
+<pre><code class="language-objc">// main.m
+
+#import &lt;Foundation/Foundation.h&gt;
+#import &quot;Demo.h&quot;
+int main(int argc, char *argv[]) {
+	@autoreleasepool {
+		[[Demo new] sayHelloTo:nil];
+	}
+}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">def say_hello_to(name=&quot;美女&quot;)
+	puts &quot;hello, #{name}&quot;
+end
+</code></pre>
+<h3 id="方法的返回值">方法的返回值</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// Demo.h
+
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface Demo : NSObject
+
+-(NSString*)sayHelloTo:(NSString*)name;
+
+@end
+</code></pre>
+<pre><code class="language-objc">// Demo.m
+
+#import &quot;Demo.h&quot;
+
+@implementation Demo
+
+-(NSString*)sayHelloTo:(NSString*)name{
+	return name;
+}
+
+@end
+</code></pre>
+<pre><code class="language-objc">// main.m
+
+#import &lt;Foundation/Foundation.h&gt;
+#import &quot;Demo.h&quot;
+int main(int argc, char *argv[]) {
+	@autoreleasepool {
+		NSLog(@&quot;%@&quot;, [[Demo new] sayHelloTo:@&quot;美女&quot;]);
+	}
+}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">def say_hello_to(name=&quot;美女&quot;)
+	return &quot;hello, #{name}&quot;
+end
+
+p say_hello_to
+</code></pre>
+<h2 id="代码块">代码块</h2>
+<h3 id="声明和调用块">声明和调用块</h3>
+<p>objc:</p>
+<pre><code class="language-objc">dispatch_block_t sayHello;
+
+sayHello = ^(){
+	NSLog(@&quot;这里是 Block&quot;);	
+};
+
+NSLog(@&quot;开始&quot;);	
+sayHello();
+NSLog(@&quot;结束&quot;);	
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">def say_hello &amp;block
+	puts &quot;开始&quot;
+	block.call          # 把控制权暂时让给 Block
+	puts &quot;结束&quot;
+end
+
+say_hello {
+	puts &quot;这里是 Block&quot;
+}
+
+# 或者
+
+def say_hello
+	puts &quot;开始&quot;
+	yield          # 把控制权暂时让给 Block
+	puts &quot;结束&quot;
+end
+
+say_hello {
+	puts &quot;这里是 Block&quot;
+}
+</code></pre>
+<h3 id="传参数给块">传参数给块</h3>
+<p>objc:</p>
+<pre><code class="language-objc">typedef void (^SayHello)(NSInteger);
+SayHello sayHello;
+	
+sayHello = ^(NSInteger x){
+	NSLog(@&quot;这里是 Block，我收到了%ld&quot;, x);
+};
+	
+NSLog(@&quot;开始&quot;);
+sayHello(123);
+NSLog(@&quot;结束&quot;);
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">def say_hello
+	puts &quot;开始&quot;
+	yield 123        # 把控制权暂时让给 Block
+	puts &quot;结束&quot;
+end
+
+say_hello { |x|
+	puts &quot;这里是 Block，我收到了#{x}&quot;
+}
+</code></pre>
+<h3 id="块的回调">块的回调</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// 逻辑部分
+typedef BOOL (^LogicBlock)(NSNumber *);
+LogicBlock logic = ^BOOL(NSNumber * num){
+	if (num.integerValue % 2==0) {
+		return YES;
+	}else {
+		return NO;
+	}
+};
+
+// Block
+typedef NSArray* (^PickBlock)(NSArray*, LogicBlock);
+PickBlock pick = ^(NSArray* list, LogicBlock logic){
+	NSMutableArray * result = @[].mutableCopy;
+	
+	[list enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+		NSNumber * num = obj;
+		if (logic(num)) {
+			[result addObject:num];
+		}
+	}];
+	return [result copy];
+};
+
+// 得到结果
+NSArray * dataList = @[@(1), @(2), @(3), @(4), @(5), @(6), @(7), @(8), @(9),@(10)];
+NSLog(@&quot;%@&quot;, pick(dataList, logic));// =&gt; (2, 4, 6, 8, 10)
+
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">def pick(list)
+	result = []
+	list.each do |i|
+		result &lt;&lt; i if yield(i)     # 如果 yield 的返回值是 true 的話...
+	end
+	return result
+end
+
+p pick([*1..10]) {
+    |x| x % 2 == 0 # 逻辑部分
+  }
+  # =&gt; [2, 4, 6, 8, 10]
+</code></pre>
+<ul>
+<li>代码块的本质，就是将一块代码抽离出来</li>
+<li><code>ruby</code>的<code>block</code>是代码的直接替换代码，简单而又直观</li>
+<li><code>objC</code>的<code>block</code>是代码的间接来回指向，强调一来一回</li>
+</ul>
+<hr>
+<p>参考资料：<br>
+<a href="https://railsbook.tw/">railsbook</a><br>
+<a href="http://goshdarnblocksyntax.com/">goshdarnblocksyntax</a></p>
+<hr>
+<ul>
+<li>持续更新。</li>
+<li>若有更好的资料，感谢交流。</li>
+<li>若有错误的内容，感谢斧正。</li>
+</ul>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://flyweights.github.io/post/objc-and-ruby-relationships-2/">
+              <h3 class="post-title">
+                下一篇：Objc and Ruby relationships 2
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">闲坐竹林里，淡泊寻常心。</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://flyweights.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Objc and Ruby relationships 1 | 白罴</title>
+<meta name="description" content="闲坐竹林里，淡泊寻常心。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1591177377307">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://flyweights.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://flyweights.github.io">
+        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1591177377307" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://flyweights.github.io">
+        <h1 class="site-title">白罴</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">Objc and Ruby relationships 1</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-02-02</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://flyweights.github.io/tag/PJ-nsua5m/">
+                    Objc
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://flyweights.github.io/tag/tUS-dEnxm/">
+                    Ruby
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h2 id="流程控制">流程控制</h2>
+<h3 id="判断">判断</h3>
+<h4 id="ifelsifelse"><code>if···elsif···else···</code></h4>
+<p>objc:</p>
+<pre><code class="language-objc">NSInteger day = 5;
+
+if (day==0) {
+	NSLog(@&quot;星期日&quot;);
+}else if (day==6){
+	NSLog(@&quot;星期六&quot;);
+}else {
+	NSLog(@&quot;工作日&quot;);
+}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">day = 5
+
+if day==0
+	puts &quot;星期日&quot;
+elsif day==6
+	puts &quot;星期六&quot;
+else
+	puts &quot;工作日&quot;
+end
+</code></pre>
+<h4 id="三目运算符">三目运算符</h4>
+<p>objc:</p>
+<pre><code class="language-objc">NSInteger day = 5;
+NSString * result = (day==6 || day==0) ? @&quot;休息日&quot; : @&quot;工作日&quot;;
+NSLog(@&quot;%@&quot;, result);
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">day = 5;
+result = (day==6 || day==0) ? &quot;休息日&quot; : &quot;工作日&quot;;
+puts result
+</code></pre>
+<h4 id="case-when"><code>case ... when ...</code></h4>
+<p>objc</p>
+<pre><code class="language-objc">NSInteger day=5;
+
+switch (day) {
+	case 1:
+		NSLog(@&quot;工作日-星期一&quot;);
+		break;
+	
+	case 2:
+		NSLog(@&quot;工作日-星期二&quot;);
+		break;
+	
+	case 3:
+		NSLog(@&quot;工作日-星期三&quot;);
+		break;
+		
+	case 4:
+		NSLog(@&quot;工作日-星期四&quot;);
+		break;
+	
+	case 5:
+		NSLog(@&quot;工作日-星期五&quot;);
+		break;
+	
+	case 6:
+		NSLog(@&quot;休息日-星期六&quot;);
+		break;
+	
+	case 0:
+		NSLog(@&quot;休息日-星期日&quot;);
+		break;
+		
+	default:
+        NSLog(@&quot;未知&quot;);
+	}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">day = 5
+
+case day
+when 1..5
+	puts &quot;工作日&quot;
+when 0
+	puts &quot;星期日&quot;
+when 6
+	puts &quot;星期六&quot;
+else
+	puts &quot;未知&quot;
+end
+</code></pre>
+<h3 id="循环">循环</h3>
+<h4 id="while"><code>while</code></h4>
+<p>objc:</p>
+<pre><code class="language-objc">NSInteger counter = 0;
+
+while (counter &lt; 5) {
+	NSLog(@&quot;hi, %ld&quot;, counter);
+	counter += 1;
+}
+</code></pre>
+<h5 id="ruby">ruby:</h5>
+<pre><code class="language-ruby">counter = 0
+
+while counter &lt; 5
+  puts &quot;hi, #{counter}&quot;
+  counter += 1
+end
+</code></pre>
+<h4 id="for-in"><code>for in</code></h4>
+<p>objc:</p>
+<pre><code class="language-objc">NSMutableArray * thoughts =  @[@&quot;儒家&quot;, @&quot;道家&quot;, @&quot;墨家&quot;, @&quot;法家&quot;].mutableCopy;
+for (NSString * thought in thoughts) {
+	NSLog(@&quot;%@&quot;, thought);
+}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">thoughts = [&quot;儒家&quot;, &quot;道家&quot;, &quot;墨家&quot;, &quot;法家&quot;]
+for thought in thoughts
+	puts thought
+end
+</code></pre>
+<h4 id="upto-downto"><code>upto &amp; downto</code></h4>
+<p>objc:</p>
+<pre><code class="language-objc">for (NSInteger i = 1; i &lt;= 5 ; i++) {
+	NSLog(@&quot;hi, %ld&quot;, i);
+}
+/*
+hi, 1
+hi, 2
+hi, 3
+hi, 4
+hi, 5
+*/
+
+
+for (NSInteger i = 5; i &gt;= 1 ; i--) {
+	NSLog(@&quot;hi, %ld&quot;, i);
+}
+/*
+hi, 5
+hi, 4
+hi, 3
+hi, 2
+hi, 1
+*/
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">1.upto(5) do |i|
+  puts &quot;hi, #{i}&quot;
+end
+
+=begin
+hi, 1
+hi, 2
+hi, 3
+hi, 4
+hi, 5
+=end
+
+
+5.downto(1) do |i|
+  puts &quot;hi, #{i}&quot;
+end
+
+=begin
+hi, 5
+hi, 4
+hi, 3
+hi, 2
+hi, 1
+=end
+</code></pre>
+<h4 id="iteration"><code>iteration</code></h4>
+<p>objc:</p>
+<pre><code class="language-objc">NSMutableArray * thoughts =  @[@&quot;甲&quot;, @&quot;乙&quot;, @&quot;丙&quot;, @&quot;丁&quot;].mutableCopy;
+[thoughts enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+	NSString * thought = obj;
+	NSLog(@&quot;%@&quot;, thought);
+}];
+</code></pre>
+<h5 id="ruby-2">ruby:</h5>
+<pre><code>thoughts = [&quot;甲&quot;, &quot;乙&quot;, &quot;丙&quot;, &quot;丁&quot;]
+thoughts.each do |thought|
+	puts thought
+end
+</code></pre>
+<hr>
+<p>参考资料：<br>
+<a href="https://railsbook.tw/">railsbook</a></p>
+<hr>
+<ul>
+<li>持续更新。</li>
+<li>若有更好的资料，感谢交流。</li>
+<li>若有错误的内容，感谢斧正。</li>
+</ul>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://flyweights.github.io/post/objc-and-ruby-relationships-0/">
+              <h3 class="post-title">
+                下一篇：Objc and Ruby relationships 0
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">闲坐竹林里，淡泊寻常心。</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://flyweights.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

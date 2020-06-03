@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Objc and Ruby relationships 4 | 白罴</title>
+<meta name="description" content="闲坐竹林里，淡泊寻常心。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://flyweights.github.io/favicon.ico?v=1591177377307">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://flyweights.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://flyweights.github.io">
+        <img class="avatar" src="https://flyweights.github.io/images/avatar.png?v=1591177377307" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://flyweights.github.io">
+        <h1 class="site-title">白罴</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">Objc and Ruby relationships 4</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-02-05</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://flyweights.github.io/tag/PJ-nsua5m/">
+                    Objc
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://flyweights.github.io/tag/tUS-dEnxm/">
+                    Ruby
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h2 id="类">类</h2>
+<h3 id="定义类">定义类</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// Cat.h
+
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface Cat : NSObject
+-(void)eat:(NSString*)food;
+@end
+</code></pre>
+<pre><code class="language-objc">// Cat.m
+
+#import &quot;Cat.h&quot;
+
+@implementation Cat
+-(void)eat:(NSString*)food{
+	NSLog(@&quot;%@, 好好吃！&quot;,food);
+}
+@end
+</code></pre>
+<pre><code class="language-objc">// main.m
+
+#import &lt;Foundation/Foundation.h&gt;
+#import &quot;Cat.h&quot;
+int main(int argc, char *argv[]) {
+	@autoreleasepool {
+		Cat * cat = [Cat new];
+	    [cat eat:@&quot;小鱼&quot;];
+	}
+}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">class Cat
+	def eat(food)
+		puts &quot;#{food}，好好吃!&quot;
+	end
+end
+
+kitty = Cat.new
+kitty.eat &quot;小魚&quot;  #=&gt; 小魚，好好吃!
+</code></pre>
+<h3 id="初始化方法">初始化方法</h3>
+<p>objc:</p>
+<pre><code class="language-objc">...
+- (instancetype)init
+{
+    if(self = [super init])//说明父类的init方法执行成功
+    {
+     // 初始化子类自己的属性;
+    }
+    return self;
+}
+...
+
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">class Cat
+  def initialize(name, gender)
+    @name = name
+    @gender = gender
+  end
+
+  def say_hello
+    puts &quot;hello, my name is #{@name}&quot;
+  end
+end
+
+kitty = Cat.new(&quot;kitty&quot;, &quot;female&quot;)
+kitty.say_hello    # =&gt; hello, my name is kitty
+</code></pre>
+<h3 id="实例变量和属性">实例变量和属性</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// Cat.h
+
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface Cat : NSObject
+@property(nonatomic, strong)NSString *name; // 属性
+-(id)initWithName:(NSString*)name andGender:(NSString*)gender;
+-(void)sayHello;
+@end
+</code></pre>
+<pre><code class="language-objc">// Cat.m
+
+#import &quot;Cat.h&quot;
+@interface Cat ()
+{
+	NSString* _name; // 实例变量
+	NSString* _gender;
+}
+@end
+@implementation Cat
+-(id)initWithName:(NSString*)name andGender:(NSString*)gender{
+	if(self = [super init])
+	{
+		_name = name;
+		_gender = gender;
+	}
+	return self;
+}
+
+-(void)sayHello{
+	NSLog(@&quot;hello, my name is %@&quot;, _name);
+}
+@end
+</code></pre>
+<pre><code class="language-objc">// main.m
+
+#import &lt;Foundation/Foundation.h&gt;
+#import &quot;Cat.h&quot;
+int main(int argc, char *argv[]) {
+	@autoreleasepool {
+		Cat * cat = [[Cat alloc]initWithName:@&quot;kitty&quot; andGender:@&quot;female&quot;];
+	    [cat sayHello];  // =&gt; hello, my name is kitty
+	}
+}
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">class Cat
+  attr_accessor :name #属性 
+
+  def initialize(name, gender)
+    @name = name # 实例变量
+    @gender = gender
+  end
+    
+  def say_hello
+    puts &quot;hello, my name is #{@name}&quot; # =&gt; hello, my name is kitty
+  end
+end
+</code></pre>
+<h3 id="类方法和对象方法">类方法和对象方法</h3>
+<p>objc:</p>
+<pre><code class="language-objc">// Cat.m
+
+#import &quot;Cat.h&quot;
+@interface Cat ()
+@end
+@implementation Cat
++(void)info{
+//	类方法
+}
+-(void)sayHello{
+// 对象方法
+}
+@end
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">class Cat
+  # 类方法
+  def self.info 
+    # ...
+  end
+
+ # 对象方法
+  def say_hello
+    # ...
+  end
+end
+</code></pre>
+<h2 id="模块">模块</h2>
+<p>objc:</p>
+<pre><code class="language-objc">// NSObject+Flyable.h
+
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface NSObject (Flyable)
+-(void)fly;
+@end
+</code></pre>
+<pre><code class="language-objc">// NSObject+Flyable.m
+
+#import &quot;NSObject+Flyable.h&quot;
+
+@implementation NSObject (Flyable)
+-(void)fly{
+	NSLog(@&quot;I can fly!&quot;);
+}
+@end
+</code></pre>
+<pre><code class="language-objc">// Cat.h
+
+#import &lt;Foundation/Foundation.h&gt;
+#import &quot;NSObject+Flyable.h&quot;
+
+@interface Cat : NSObject
+@end
+</code></pre>
+<pre><code class="language-objc">// Cat.m
+
+#import &quot;Cat.h&quot;
+
+@implementation Cat
+@end
+</code></pre>
+<pre><code>// main.m
+
+#import &lt;Foundation/Foundation.h&gt;
+#import &quot;Cat.h&quot;
+int main(int argc, char *argv[]) {
+	@autoreleasepool {
+	    Cat * cat = [Cat new];
+	    [cat fly];  // =&gt; I can fly!
+	}
+}
+
+</code></pre>
+<p>ruby:</p>
+<pre><code class="language-ruby">module Flyable
+  def fly
+    puts &quot;I can fly!&quot;
+  end
+end
+
+class Cat
+  include Flyable
+end
+
+kitty = Cat.new
+kitty.fly        # =&gt; I can fly!
+</code></pre>
+<hr>
+<p>参考资料：<br>
+<a href="https://railsbook.tw/">railsbook</a></p>
+<hr>
+<ul>
+<li>持续更新。</li>
+<li>若有更好的资料，感谢交流。</li>
+<li>若有错误的内容，感谢斧正。</li>
+</ul>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://flyweights.github.io/post/objc-and-ruby-relationships-3/">
+              <h3 class="post-title">
+                下一篇：Objc and Ruby relationships 3
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
+  <div class="slogan">闲坐竹林里，淡泊寻常心。</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://flyweights.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
