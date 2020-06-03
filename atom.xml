@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2020-06-03T09:43:29.386Z</updated>
+    <updated>2020-06-03T09:52:32.670Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 白罴</rights>
     <entry>
-        <title type="html"><![CDATA[Objc and Ruby relationships 5]]></title>
+        <title type="html"><![CDATA[Objc and Ruby relationships 5 PackageManager]]></title>
         <id>https://flyweights.github.io/post/objc-and-ruby-relationships-5/</id>
         <link href="https://flyweights.github.io/post/objc-and-ruby-relationships-5/">
         </link>
@@ -44,7 +44,7 @@
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Objc and Ruby relationships 4]]></title>
+        <title type="html"><![CDATA[Objc and Ruby relationships 4 Class&Module]]></title>
         <id>https://flyweights.github.io/post/objc-and-ruby-relationships-4/</id>
         <link href="https://flyweights.github.io/post/objc-and-ruby-relationships-4/">
         </link>
@@ -245,7 +245,7 @@ end
 @implementation Cat
 @end
 </code></pre>
-<pre><code>// main.m
+<pre><code class="language-objc">// main.m
 
 #import &lt;Foundation/Foundation.h&gt;
 #import &quot;Cat.h&quot;
@@ -283,7 +283,7 @@ kitty.fly        # =&gt; I can fly!
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Objc and Ruby relationships 3]]></title>
+        <title type="html"><![CDATA[Objc and Ruby relationships 3 Method&Block]]></title>
         <id>https://flyweights.github.io/post/objc-and-ruby-relationships-3/</id>
         <link href="https://flyweights.github.io/post/objc-and-ruby-relationships-3/">
         </link>
@@ -535,7 +535,7 @@ p pick([*1..10]) {
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Objc and Ruby relationships 2]]></title>
+        <title type="html"><![CDATA[Objc and Ruby relationships 2 Type]]></title>
         <id>https://flyweights.github.io/post/objc-and-ruby-relationships-2/</id>
         <link href="https://flyweights.github.io/post/objc-and-ruby-relationships-2/">
         </link>
@@ -833,7 +833,7 @@ end
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Objc and Ruby relationships 1]]></title>
+        <title type="html"><![CDATA[Objc and Ruby relationships 1 ProcessControl]]></title>
         <id>https://flyweights.github.io/post/objc-and-ruby-relationships-1/</id>
         <link href="https://flyweights.github.io/post/objc-and-ruby-relationships-1/">
         </link>
