@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2020-06-03T09:52:32.670Z</updated>
+    <updated>2020-06-05T13:07:40.321Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,102 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[Rails + Nginx in Mac]]></title>
+        <id>https://flyweights.github.io/post/rails-nginx-in-mac/</id>
+        <link href="https://flyweights.github.io/post/rails-nginx-in-mac/">
+        </link>
+        <updated>2020-02-29T13:06:01.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="step1-rails-项目准备">Step1. Rails 项目准备</h2>
+<pre><code class="language-bash">$ rails new deploy_demo
+$ rails g controller welcome index
+$ rails s
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/5FVitUgMuqseYnQ.png" alt="rails_s.png" loading="lazy"></figure>
+<pre><code class="language-bash">$ cd deploy_demo
+$ git init
+$ git add .
+$ git commit -m &quot;Init commit&quot;
+</code></pre>
+<h2 id="step2-nginx-安装和启动">Step2. Nginx 安装和启动</h2>
+<pre><code class="language-bash"># 安装
+$ brew install nginx 
+
+# 开启
+$ brew services start nginx
+
+# 关闭
+$ brew services stop nginx
+
+# 重启
+$ brew services restart nginx
+
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/04/15/Mf42UpOgJTZEPyk.png" alt="iShot2020-04-1513.55.44.png" loading="lazy"></figure>
+<h2 id="step3-nginx-配置">Step3. Nginx 配置</h2>
+<pre><code class="language-bash">$ touch /usr/local/etc/nginx/servers/rails_nginx.conf
+</code></pre>
+<pre><code>upstream app {
+    # 改成实际 puma.sock 的文件路径
+    server unix://Users/liangyk/rails_project/deploy_demo/tmp/sockets/puma.sock;
+}
+
+server {
+    listen 1234;
+    # 改成实际服务器域名
+    server_name localhost;
+
+    # 改成实际 APP 路径
+    root /Users/liangyk/rails_project/deploy_demo/public;
+
+    try_files $uri/index.html $uri @app;
+
+    location @app {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+        proxy_pass http://app;
+    }
+
+    error_page 500 502 503 504 /500.html;
+    keepalive_timeout 10;
+}
+</code></pre>
+<h2 id="step4-puma-配置">Step4. Puma 配置</h2>
+<pre><code class="language-ruby">config/puma.rb
+
+# port        ENV.fetch(&quot;PORT&quot;) { 3000 }
++ bind &quot;unix://tmp/sockets/puma.sock&quot;
++ daemonize true
+</code></pre>
+<h2 id="step5-脚本控制">Step5. 脚本控制</h2>
+<pre><code class="language-bash">$ touch pumactrl.sh
+</code></pre>
+<pre><code class="language-bash">#!/bin/bash
+
+case &quot;$1&quot; in
+    &quot;&quot;)
+        echo -n &quot;please provide a parameter (start, stop, reload).&quot;
+        ;;
+    start)
+        echo -n &quot;starting db:migrate...&quot;
+        bin/rails db:migrate
+        echo -n &quot;starting assets:precompile...&quot;
+        bin/rails assets:precompile
+        echo -n &quot;starting puma...&quot;
+        puma -e production
+        ;;
+    stop)
+        echo &quot;stoping puma...&quot;
+        kill `cat &quot;tmp/pids/server.pid&quot;`
+        ;;
+esac
+</code></pre>
+<pre><code class="language-bash">$  bash ./pumactrl.sh start
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://i.loli.net/2020/04/15/soBl13AqgwjDLOH.png" alt="iShot2020-04-1515.29.23.png" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Objc and Ruby relationships 5 PackageManager]]></title>
         <id>https://flyweights.github.io/post/objc-and-ruby-relationships-5/</id>
@@ -821,206 +917,6 @@ end
 <li><code>Symbol</code> 是不可变的对象</li>
 <li><code>Symbol</code> 是带变量名的对象</li>
 </ul>
-<hr>
-<p>参考资料：<br>
-<a href="https://railsbook.tw/">railsbook</a></p>
-<hr>
-<ul>
-<li>持续更新。</li>
-<li>若有更好的资料，感谢交流。</li>
-<li>若有错误的内容，感谢斧正。</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Objc and Ruby relationships 1 ProcessControl]]></title>
-        <id>https://flyweights.github.io/post/objc-and-ruby-relationships-1/</id>
-        <link href="https://flyweights.github.io/post/objc-and-ruby-relationships-1/">
-        </link>
-        <updated>2020-02-02T09:07:09.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="流程控制">流程控制</h2>
-<h3 id="判断">判断</h3>
-<h4 id="ifelsifelse"><code>if···elsif···else···</code></h4>
-<p>objc:</p>
-<pre><code class="language-objc">NSInteger day = 5;
-
-if (day==0) {
-	NSLog(@&quot;星期日&quot;);
-}else if (day==6){
-	NSLog(@&quot;星期六&quot;);
-}else {
-	NSLog(@&quot;工作日&quot;);
-}
-</code></pre>
-<p>ruby:</p>
-<pre><code class="language-ruby">day = 5
-
-if day==0
-	puts &quot;星期日&quot;
-elsif day==6
-	puts &quot;星期六&quot;
-else
-	puts &quot;工作日&quot;
-end
-</code></pre>
-<h4 id="三目运算符">三目运算符</h4>
-<p>objc:</p>
-<pre><code class="language-objc">NSInteger day = 5;
-NSString * result = (day==6 || day==0) ? @&quot;休息日&quot; : @&quot;工作日&quot;;
-NSLog(@&quot;%@&quot;, result);
-</code></pre>
-<p>ruby:</p>
-<pre><code class="language-ruby">day = 5;
-result = (day==6 || day==0) ? &quot;休息日&quot; : &quot;工作日&quot;;
-puts result
-</code></pre>
-<h4 id="case-when"><code>case ... when ...</code></h4>
-<p>objc</p>
-<pre><code class="language-objc">NSInteger day=5;
-
-switch (day) {
-	case 1:
-		NSLog(@&quot;工作日-星期一&quot;);
-		break;
-	
-	case 2:
-		NSLog(@&quot;工作日-星期二&quot;);
-		break;
-	
-	case 3:
-		NSLog(@&quot;工作日-星期三&quot;);
-		break;
-		
-	case 4:
-		NSLog(@&quot;工作日-星期四&quot;);
-		break;
-	
-	case 5:
-		NSLog(@&quot;工作日-星期五&quot;);
-		break;
-	
-	case 6:
-		NSLog(@&quot;休息日-星期六&quot;);
-		break;
-	
-	case 0:
-		NSLog(@&quot;休息日-星期日&quot;);
-		break;
-		
-	default:
-        NSLog(@&quot;未知&quot;);
-	}
-</code></pre>
-<p>ruby:</p>
-<pre><code class="language-ruby">day = 5
-
-case day
-when 1..5
-	puts &quot;工作日&quot;
-when 0
-	puts &quot;星期日&quot;
-when 6
-	puts &quot;星期六&quot;
-else
-	puts &quot;未知&quot;
-end
-</code></pre>
-<h3 id="循环">循环</h3>
-<h4 id="while"><code>while</code></h4>
-<p>objc:</p>
-<pre><code class="language-objc">NSInteger counter = 0;
-
-while (counter &lt; 5) {
-	NSLog(@&quot;hi, %ld&quot;, counter);
-	counter += 1;
-}
-</code></pre>
-<h5 id="ruby">ruby:</h5>
-<pre><code class="language-ruby">counter = 0
-
-while counter &lt; 5
-  puts &quot;hi, #{counter}&quot;
-  counter += 1
-end
-</code></pre>
-<h4 id="for-in"><code>for in</code></h4>
-<p>objc:</p>
-<pre><code class="language-objc">NSMutableArray * thoughts =  @[@&quot;儒家&quot;, @&quot;道家&quot;, @&quot;墨家&quot;, @&quot;法家&quot;].mutableCopy;
-for (NSString * thought in thoughts) {
-	NSLog(@&quot;%@&quot;, thought);
-}
-</code></pre>
-<p>ruby:</p>
-<pre><code class="language-ruby">thoughts = [&quot;儒家&quot;, &quot;道家&quot;, &quot;墨家&quot;, &quot;法家&quot;]
-for thought in thoughts
-	puts thought
-end
-</code></pre>
-<h4 id="upto-downto"><code>upto &amp; downto</code></h4>
-<p>objc:</p>
-<pre><code class="language-objc">for (NSInteger i = 1; i &lt;= 5 ; i++) {
-	NSLog(@&quot;hi, %ld&quot;, i);
-}
-/*
-hi, 1
-hi, 2
-hi, 3
-hi, 4
-hi, 5
-*/
-
-
-for (NSInteger i = 5; i &gt;= 1 ; i--) {
-	NSLog(@&quot;hi, %ld&quot;, i);
-}
-/*
-hi, 5
-hi, 4
-hi, 3
-hi, 2
-hi, 1
-*/
-</code></pre>
-<p>ruby:</p>
-<pre><code class="language-ruby">1.upto(5) do |i|
-  puts &quot;hi, #{i}&quot;
-end
-
-=begin
-hi, 1
-hi, 2
-hi, 3
-hi, 4
-hi, 5
-=end
-
-
-5.downto(1) do |i|
-  puts &quot;hi, #{i}&quot;
-end
-
-=begin
-hi, 5
-hi, 4
-hi, 3
-hi, 2
-hi, 1
-=end
-</code></pre>
-<h4 id="iteration"><code>iteration</code></h4>
-<p>objc:</p>
-<pre><code class="language-objc">NSMutableArray * thoughts =  @[@&quot;甲&quot;, @&quot;乙&quot;, @&quot;丙&quot;, @&quot;丁&quot;].mutableCopy;
-[thoughts enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-	NSString * thought = obj;
-	NSLog(@&quot;%@&quot;, thought);
-}];
-</code></pre>
-<h5 id="ruby-2">ruby:</h5>
-<pre><code>thoughts = [&quot;甲&quot;, &quot;乙&quot;, &quot;丙&quot;, &quot;丁&quot;]
-thoughts.each do |thought|
-	puts thought
-end
-</code></pre>
 <hr>
 <p>参考资料：<br>
 <a href="https://railsbook.tw/">railsbook</a></p>

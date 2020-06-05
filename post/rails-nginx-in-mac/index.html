@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>Mac-Homebrew | 白罴</title>
+<title>Rails + Nginx in Mac | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,15 +80,26 @@
       <div class="content-container">
         <div class="post-detail">
           
-            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/mac-homebrew.png')">
-            </div>
-          
-          <h2 class="post-title">Mac-Homebrew</h2>
+          <h2 class="post-title">Rails + Nginx in Mac</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-08-23</span>
+            <span><i class="icon-calendar-outline"></i> 2020-02-29</span>
             
               <span>
                 <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://flyweights.github.io/tag/FwRs09UO-/">
+                    Nginx
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://flyweights.github.io/tag/p0I3-sfZt/">
+                    Rails
+                    
+                      ，
+                    
+                  </a>
                 
                   <a href="https://flyweights.github.io/tag/vV8Khd02E/">
                     Mac
@@ -99,36 +110,103 @@
             
           </div>
           <div class="post-content">
-            <p>The missing package manager for macOS (or Linux)</p>
-<!-- more -->
-<h2 id="1-install">1. Install</h2>
-<pre><code class="language-bash">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+            <h2 id="step1-rails-项目准备">Step1. Rails 项目准备</h2>
+<pre><code class="language-bash">$ rails new deploy_demo
+$ rails g controller welcome index
+$ rails s
 </code></pre>
-<h2 id="2-usage">2. Usage</h2>
-<pre><code class="language-bash">$ brew install wget
-$ brew cask install firefox
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/5FVitUgMuqseYnQ.png" alt="rails_s.png" loading="lazy"></figure>
+<pre><code class="language-bash">$ cd deploy_demo
+$ git init
+$ git add .
+$ git commit -m &quot;Init commit&quot;
+</code></pre>
+<h2 id="step2-nginx-安装和启动">Step2. Nginx 安装和启动</h2>
+<pre><code class="language-bash"># 安装
+$ brew install nginx 
 
-$ brew uninstall wget
-$ brew cask uninstall firefox
+# 开启
+$ brew services start nginx
+
+# 关闭
+$ brew services stop nginx
+
+# 重启
+$ brew services restart nginx
+
 </code></pre>
-<h2 id="3-search">3. Search</h2>
-<pre><code class="language-bash">$ brew search git
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/04/15/Mf42UpOgJTZEPyk.png" alt="iShot2020-04-1513.55.44.png" loading="lazy"></figure>
+<h2 id="step3-nginx-配置">Step3. Nginx 配置</h2>
+<pre><code class="language-bash">$ touch /usr/local/etc/nginx/servers/rails_nginx.conf
 </code></pre>
-<h2 id="4-info">4. Info</h2>
-<pre><code class="language-bash">$ brew info git
+<pre><code>upstream app {
+    # 改成实际 puma.sock 的文件路径
+    server unix://Users/liangyk/rails_project/deploy_demo/tmp/sockets/puma.sock;
+}
+
+server {
+    listen 1234;
+    # 改成实际服务器域名
+    server_name localhost;
+
+    # 改成实际 APP 路径
+    root /Users/liangyk/rails_project/deploy_demo/public;
+
+    try_files $uri/index.html $uri @app;
+
+    location @app {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+        proxy_pass http://app;
+    }
+
+    error_page 500 502 503 504 /500.html;
+    keepalive_timeout 10;
+}
 </code></pre>
-<h2 id="5-list">5. List</h2>
-<pre><code class="language-bash">$ brew list
+<h2 id="step4-puma-配置">Step4. Puma 配置</h2>
+<pre><code class="language-ruby">config/puma.rb
+
+# port        ENV.fetch(&quot;PORT&quot;) { 3000 }
++ bind &quot;unix://tmp/sockets/puma.sock&quot;
++ daemonize true
 </code></pre>
+<h2 id="step5-脚本控制">Step5. 脚本控制</h2>
+<pre><code class="language-bash">$ touch pumactrl.sh
+</code></pre>
+<pre><code class="language-bash">#!/bin/bash
+
+case &quot;$1&quot; in
+    &quot;&quot;)
+        echo -n &quot;please provide a parameter (start, stop, reload).&quot;
+        ;;
+    start)
+        echo -n &quot;starting db:migrate...&quot;
+        bin/rails db:migrate
+        echo -n &quot;starting assets:precompile...&quot;
+        bin/rails assets:precompile
+        echo -n &quot;starting puma...&quot;
+        puma -e production
+        ;;
+    stop)
+        echo &quot;stoping puma...&quot;
+        kill `cat &quot;tmp/pids/server.pid&quot;`
+        ;;
+esac
+</code></pre>
+<pre><code class="language-bash">$  bash ./pumactrl.sh start
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://i.loli.net/2020/04/15/soBl13AqgwjDLOH.png" alt="iShot2020-04-1515.29.23.png" loading="lazy"></figure>
 
           </div>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://flyweights.github.io/post/nvm/">
+            <a class="purple-link" href="https://flyweights.github.io/post/objc-and-ruby-relationships-5/">
               <h3 class="post-title">
-                下一篇：NVM
+                下一篇：Objc and Ruby relationships 5 PackageManager
               </h3>
             </a>
           </div>
