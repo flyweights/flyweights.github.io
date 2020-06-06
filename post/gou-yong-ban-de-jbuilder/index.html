@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>rails-restful | 白罴</title>
+<title>够用版的 jbuilder | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,157 +80,123 @@
       <div class="content-container">
         <div class="post-detail">
           
-            <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/rails-restful.png')">
-            </div>
-          
-          <h2 class="post-title">rails-restful</h2>
+          <h2 class="post-title">够用版的 jbuilder</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-11-28</span>
+            <span><i class="icon-calendar-outline"></i> 2020-06-06</span>
             
           </div>
           <div class="post-content">
-            <p>Representational State Transfer</p>
-<!-- more -->
-<table>
-<thead>
-<tr>
-<th>HTTP Verb</th>
-<th>GET</th>
-<th>POST</th>
-<th>PUT</th>
-<th>DELETE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>groups_path  (http://localhost:3000/groups)</td>
-<td>index action</td>
-<td>create action</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>group_path(group) (http://localhost:3000/groups[id])</td>
-<td>show action</td>
-<td></td>
-<td>update action</td>
-<td>destroy action</td>
-</tr>
-<tr>
-<td>edit_group_path(group) (http://localhost:3000/groups[:id]/eidt)</td>
-<td>edit action</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>new_group_path (http://localhost:3000/groups/new)</td>
-<td>new action</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>index</li>
-</ul>
-<pre><code class="language-ruby">  def index
-    @groups = Group.all
-  end
+            <h2 id="step1-_itemjsonjbuilder">Step1. _item.json.jbuilder</h2>
+<pre><code class="language-bash">$ touch app/views/api/v1/articles/_item.json.jbuilder
 </code></pre>
-<ul>
-<li>show</li>
-</ul>
-<pre><code class="language-ruby">  def show
-    @group = Group.find(params[:id])
-  end
-</code></pre>
-<ul>
-<li>edit</li>
-</ul>
-<pre><code class="language-ruby">  def edit
-    @group = Group.find(params[:id])
-  end
-</code></pre>
-<ul>
-<li>new</li>
-</ul>
-<pre><code class="language-ruby">  def new
-  	@group = Group.new
-  end
-</code></pre>
-<ul>
-<li>create</li>
-</ul>
-<pre><code class="language-ruby">  def create
-    @group = Group.new(group_params)
-    @group.save
-    
-    redirect_to groups_path
-  end
-</code></pre>
-<ul>
-<li>update</li>
-</ul>
-<pre><code class="language-ruby">  def update
-    @group = Group.find(params[:id])
-    @group.update(group_params)
-    redirect_to groups_path, notice: &quot;Update Success&quot;
-  end
-</code></pre>
-<ul>
-<li>destory</li>
-</ul>
-<pre><code class="language-ruby">  def destroy
-  	@group = Group.find(params[:id])
-  	@group.destroy
-  	flash[:alert] = &quot;Group deleted&quot;
-  	redirect_to groups_path
-  end
-</code></pre>
-<ul>
-<li>private</li>
-</ul>
-<pre><code class="language-ruby">  def group_params
-    params.require(:group).permit(:title, :description)
-  end
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://flyweights.github.io/post-images/1587364731813.jpg" alt="" loading="lazy"></figure>
-<pre><code class="language-mermaid">graph LR
-A((用户id)) --- B[用户]
-C((姓名)) --- B[用户]
-D((生日)) --- B[用户]
-E((身份证号)) --- B[用户]
-F((电话)) --- B[用户]
-G((性别)) --- B[用户]
-H((登录名)) --- B[用户]
-I((密码)) --- B[用户]
-J((权限)) --- B[用户]
-K((公司名)) --- B[用户]
-W((人脸特征)) --- B
-X((指静脉特征)) --- B
-Y((指纹特征)) --- B
-L[模组] --- M((算法))
-Q[识别中心] --- R((识别id))
-Q[识别中心] --- S((被识别人id))
-Q[识别中心] --- T((识别时间))
-Q[识别中心] --- U((识别算法))
-Q[识别中心] --- V((识别结果))
-a[权限操作 ]---b((权限操作id))
-a --- c((操作者id))
-a --- d((被操作者id))
-a --- e((操作时间))
-a --- f((操作内容))
-B --- g{选择算法}
-g --- L
-B --- h{登陆}
-h{登陆} --- Q
-B --- i{管理}
-i{管理} --- a
-g --- Q
-​```
+<pre><code class="language-ruby"># app/views/api/v1/articles/_item.json.jbuilder
 
+json.title article.title
+json.content article.content
+</code></pre>
+<h2 id="step2-showjsonjbuilder">Step2. show.json.jbuilder</h2>
+<pre><code class="language-bash">$ touch app/views/api/v1/articles/show.json.jbuilder
+</code></pre>
+<pre><code class="language-ruby"># app/views/api/v1/articles/show.json.jbuilder
+
+json.article do
+  json.partial! 'item', article: @article
+end
+
+</code></pre>
+<p>⬇️</p>
+<pre><code class="language-json">{
+  &quot;article&quot;: {
+    &quot;title&quot;: &quot;明明&quot;,
+    &quot;content&quot;: &quot;sun and moon&quot;
+  }
+}
+</code></pre>
+<h2 id="step3-indexjsonjbuilder">Step3. index.json.jbuilder</h2>
+<pre><code class="language-bash">$ app/views/api/v1/articles/index.json.jbuilder
+</code></pre>
+<pre><code class="language-ruby"># app/views/api/v1/articles/index.json.jbuilder
+
+json.list do
+  json.array! @articles, partial: 'item', as: :article
+end
+
+</code></pre>
+<p>⬇️</p>
+<pre><code class="language-ruby">{
+  &quot;articles&quot;: [
+    {
+      &quot;title&quot;: &quot;明明&quot;,
+      &quot;content&quot;: &quot;sun and moon&quot;
+    },
+    {
+      &quot;title&quot;: &quot;小红&quot;,
+      &quot;content&quot;: &quot;我爱你小红&quot;
+    }
+  ]
+}
+</code></pre>
+<h2 id="step4-gem-will_paginate">Step4. gem 'will_paginate'</h2>
+<pre><code class="language-ruby">+ gem 'will_paginate'
+</code></pre>
+<pre><code class="language-bash">$ bundle
+</code></pre>
+<pre><code class="language-ruby"># app/controllers/api/v1/articles_controller.rb
+
+  def index
+    #@articles = Article.all
+    @articles = Article.paginate(page: params[:page])
+  end
+</code></pre>
+<pre><code class="language-ruby"># app/views/api/v1/articles/index.json.jbuilder
+
+piece = @articles
+json.meta do
+  json.current_page piece.current_page
+  json.total_pages piece.total_pages
+  json.per_page piece.per_page
+  json.total_entries piece.total_entries
+end
+
+json.articles do
+  json.array! @articles, partial: 'item', as: :article
+end
+
+</code></pre>
+<p>⬇️</p>
+<pre><code>http://localhost:3000/api/v1/articles?auth_token=_DnWEG22XTfW4U8s5M5x&amp;page=2
+</code></pre>
+<p>⬇️</p>
+<pre><code class="language-json">{
+  &quot;meta&quot;: {
+    &quot;current_page&quot;: 2,
+    &quot;total_pages&quot;: 3,
+    &quot;per_page&quot;: 5,
+    &quot;total_entries&quot;: 11
+  },
+  &quot;articles&quot;: [
+    {
+      &quot;title&quot;: &quot;小红4&quot;,
+      &quot;content&quot;: &quot;我爱你小红&quot;
+    },
+    {
+      &quot;title&quot;: &quot;小红5&quot;,
+      &quot;content&quot;: &quot;我爱你小红&quot;
+    },
+    {
+      &quot;title&quot;: &quot;小红6&quot;,
+      &quot;content&quot;: &quot;我爱你小红&quot;
+    },
+    {
+      &quot;title&quot;: &quot;小红7&quot;,
+      &quot;content&quot;: &quot;我爱你小红&quot;
+    },
+    {
+      &quot;title&quot;: &quot;小红8&quot;,
+      &quot;content&quot;: &quot;我爱你小红&quot;
+    }
+  ]
+}
 </code></pre>
 
           </div>
@@ -238,9 +204,9 @@ g --- Q
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://flyweights.github.io/post/rails-json-router/">
+            <a class="purple-link" href="https://flyweights.github.io/post/rails-nginx-in-mac/">
               <h3 class="post-title">
-                下一篇：rails-json-router
+                下一篇：Rails + Nginx in Mac
               </h3>
             </a>
           </div>
