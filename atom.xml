@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyweights.github.io</id>
     <title>白罴</title>
-    <updated>2020-07-31T00:54:28.251Z</updated>
+    <updated>2020-08-01T02:46:33.250Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyweights.github.io"/>
     <link rel="self" href="https://flyweights.github.io/atom.xml"/>
@@ -10,6 +10,82 @@
     <logo>https://flyweights.github.io/images/avatar.png</logo>
     <icon>https://flyweights.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[node-blog-init]]></title>
+        <id>https://flyweights.github.io/post/node-blog-init/</id>
+        <link href="https://flyweights.github.io/post/node-blog-init/">
+        </link>
+        <updated>2020-07-02T02:41:49.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="目录机构">目录机构</h3>
+<pre><code class="language-bash">$ mkdir blog1 &amp;&amp; cd blog1
+$ mkdir bin &amp;&amp; touch ./bin/www.js
+$ touch app.js
+$ npm init -y
+</code></pre>
+<pre><code>.
+├── app.js
+├── bin
+│   └── www.js
+└── package.json
+</code></pre>
+<h3 id="安装依赖">安装依赖</h3>
+<pre><code class="language-bash">$ npm install cross-env --save-dev
+$ npm install nodemon --save-dev
+</code></pre>
+<h3 id="修改packagejson">修改<code>package.json</code></h3>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;blog1&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;bin/www.js&quot;,
+  &quot;bin&quot;: {
+    &quot;blog1&quot;: &quot;www.js&quot;
+  },
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
+    &quot;dev&quot;: &quot;cross-env NODE_ENV=dev nodemon ./bin/www.js&quot;,
+    &quot;prd&quot;: &quot;cross-env NODE_ENV=production nodemon ./bin/www.js&quot;
+  },
+  &quot;keywords&quot;: [],
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;devDependencies&quot;: {
+    &quot;cross-env&quot;: &quot;^7.0.2&quot;,
+    &quot;nodemon&quot;: &quot;^2.0.4&quot;
+  }
+}
+</code></pre>
+<pre><code class="language-js">// app.js
+
+const serverHandle = (req, res) =&gt; {
+  res.setHeader('Content-Type','application/json')
+
+  const resData = {
+    name: 'xiaokang',
+    env: process.env.NODE_ENV
+  }
+
+  res.end(
+    JSON.stringify(resData)
+  )
+}
+
+module.exports = serverHandle
+
+</code></pre>
+<pre><code class="language-js">// www.js
+
+const http = require('http');
+
+const PORT = 8000
+const serverHandle = require('../app');
+
+const server = http.createServer(serverHandle)
+server.listen(PORT)
+
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[node-http]]></title>
         <id>https://flyweights.github.io/post/node-http/</id>
@@ -462,39 +538,6 @@ end
   ]
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Objc and Ruby relationships 5 PackageManager]]></title>
-        <id>https://flyweights.github.io/post/objc-and-ruby-relationships-5/</id>
-        <link href="https://flyweights.github.io/post/objc-and-ruby-relationships-5/">
-        </link>
-        <updated>2020-02-06T09:38:05.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="cocoapods-rubygems">cocoapods &amp; rubygems</h3>
-<blockquote>
-<p>https://cocoapods.org/</p>
-</blockquote>
-<blockquote>
-<p>https://rubygems.org/</p>
-</blockquote>
-<h3 id="对应文件">对应文件</h3>
-<p><code>iOS</code>-<code>Podfile</code></p>
-<p><code>rails</code>-<code>Gemfile</code></p>
-<h3 id="版本号">版本号</h3>
-<pre><code>pod 'AFNetworking', '~&gt; 3.1.0' # 差不多
-</code></pre>
-<pre><code>gem 'rails', '&gt;= 5.0.0', '&lt; 5.1' # 大于等于，小于
-</code></pre>
-<h3 id="安装库">安装库</h3>
-<pre><code>$ pod install # cocoapods的命令
-</code></pre>
-<pre><code>$ bundle install # rubygems的命令
-</code></pre>
-<h3 id="常用库">常用库</h3>
-<h4 id="ios">iOS</h4>
-<p><a href="https://github.com/vsouza/awesome-ios">awesome-ios</a></p>
-<h4 id="rails">Rails</h4>
-<p><a href="https://github.com/hothero/awesome-rails-gem">awesome-rails-gem</a></p>
 ]]></content>
     </entry>
 </feed>

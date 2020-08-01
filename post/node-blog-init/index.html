@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>Swift Playground | 白罴</title>
+<title>node-blog-init | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,18 +80,103 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">Swift Playground</h2>
+          <h2 class="post-title">node-blog-init</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-08-27</span>
+            <span><i class="icon-calendar-outline"></i> 2020-07-02</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://flyweights.github.io/tag/Vt0UL9M-P/">
+                    javascript
+                    
+                  </a>
+                
+              </span>
             
           </div>
           <div class="post-content">
-            <h2 id="1">1.</h2>
+            <h3 id="目录机构">目录机构</h3>
+<pre><code class="language-bash">$ mkdir blog1 &amp;&amp; cd blog1
+$ mkdir bin &amp;&amp; touch ./bin/www.js
+$ touch app.js
+$ npm init -y
+</code></pre>
+<pre><code>.
+├── app.js
+├── bin
+│   └── www.js
+└── package.json
+</code></pre>
+<h3 id="安装依赖">安装依赖</h3>
+<pre><code class="language-bash">$ npm install cross-env --save-dev
+$ npm install nodemon --save-dev
+</code></pre>
+<h3 id="修改packagejson">修改<code>package.json</code></h3>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;blog1&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;bin/www.js&quot;,
+  &quot;bin&quot;: {
+    &quot;blog1&quot;: &quot;www.js&quot;
+  },
+  &quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
+    &quot;dev&quot;: &quot;cross-env NODE_ENV=dev nodemon ./bin/www.js&quot;,
+    &quot;prd&quot;: &quot;cross-env NODE_ENV=production nodemon ./bin/www.js&quot;
+  },
+  &quot;keywords&quot;: [],
+  &quot;author&quot;: &quot;&quot;,
+  &quot;license&quot;: &quot;ISC&quot;,
+  &quot;devDependencies&quot;: {
+    &quot;cross-env&quot;: &quot;^7.0.2&quot;,
+    &quot;nodemon&quot;: &quot;^2.0.4&quot;
+  }
+}
+</code></pre>
+<pre><code class="language-js">// app.js
+
+const serverHandle = (req, res) =&gt; {
+  res.setHeader('Content-Type','application/json')
+
+  const resData = {
+    name: 'xiaokang',
+    env: process.env.NODE_ENV
+  }
+
+  res.end(
+    JSON.stringify(resData)
+  )
+}
+
+module.exports = serverHandle
+
+</code></pre>
+<pre><code class="language-js">// www.js
+
+const http = require('http');
+
+const PORT = 8000
+const serverHandle = require('../app');
+
+const server = http.createServer(serverHandle)
+server.listen(PORT)
+
+</code></pre>
 
           </div>
         </div>
 
         
+          <div class="next-post">
+            <a class="purple-link" href="https://flyweights.github.io/post/node-http/">
+              <h3 class="post-title">
+                下一篇：node-http
+              </h3>
+            </a>
+          </div>
+          
       </div>
 
       
