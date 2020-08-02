@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>Xcode | 白罴</title>
+<title>node-blog-route | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -78,86 +78,137 @@
 
 
       <div class="content-container">
-
-        <div class="current-tag-container">
-          <h2 class="title">
-            <i class="icon icon-pricetags-outline"></i> Xcode
-          </h2> 
-        </div>
-
-        
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyweights.github.io/post/xcode-xcformat/">
-        <h2 class="post-title">Xcode-XCFormat</h2>
-      </a>
-      <div class="post-abstract">
-        <p>XCFormat includes an Xcode Source Editor Extension, allows you to format your code directly in Xcode.</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-09-04</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
+        <div class="post-detail">
+          
+          <h2 class="post-title">node-blog-route</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-07-03</span>
             
-              <a href="https://flyweights.github.io/tag/MU_thBpha/">
-                Xcode
+              <span>
+                <i class="icon-pricetags-outline"></i>
                 
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyweights.github.io/post/xcode-xcformat/">
-        <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/xcode-xcformat.png')">
-        </div>
-      </a>
-    
-  </section>
-
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyweights.github.io/post/xcode/">
-        <h2 class="post-title">Xcode</h2>
-      </a>
-      <div class="post-abstract">
-        <p>Xcode is an integrated development environment for macOS containing a suite of software development tools developed by Apple for developing software for macOS, iOS, iPadOS, watchOS, and tvOS.</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-08-27</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://flyweights.github.io/tag/MU_thBpha/">
-                Xcode
+                  <a href="https://flyweights.github.io/tag/nqWB0mCjU/">
+                    Node.js
+                    
+                  </a>
                 
-              </a>
+              </span>
             
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyweights.github.io/post/xcode/">
-        <div class="feature-container" style="background-image: url('https://flyweights.github.io/post-images/xcode.jpg')">
+          </div>
+          <div class="post-content">
+            <h3 id="添加路由">添加路由</h3>
+<pre><code class="language-js">// src/router/blog.js
+
+const handleBlogRouter = (req, res) =&gt; {
+  const method = req.method
+  const path = req.path
+
+  if (method === 'GET' &amp;&amp; path === '/api/blog/list') {
+    return {
+      msg: 'GET Blog List'
+    }
+  }
+
+  if (method === 'GET' &amp;&amp; path === '/api/blog/detail') {
+    return {
+      msg: 'GET Blog Detail'
+    }
+  }
+
+  if (method === 'POST' &amp;&amp; path === '/api/blog/new') {
+    return {
+      msg: 'POST Blog New'
+    }
+  }
+
+  if (method === 'POST' &amp;&amp; path === '/api/blog/update') {
+    return {
+      msg: 'POST Blog update'
+    }
+  }
+
+  if (method === 'POST' &amp;&amp; path === '/api/blog/del') {
+    return {
+      msg: 'POST Blog delete'
+    }
+  }
+}
+
+module.exports = handleBlogRouter
+
+</code></pre>
+<pre><code class="language-js">// src/router/user.js
+
+const handleUserRouter = (req, res) =&gt; {
+  const method = req.method
+  const path = req.path
+
+  if (method === 'POST' &amp;&amp; path === '/api/user/login') {
+    return {
+      msg: 'POST User login'
+    }
+  }
+
+}
+
+module.exports = handleUserRouter
+</code></pre>
+<h3 id="修改入口文件">修改入口文件</h3>
+<pre><code class="language-js">// app.js
+
+const querystring = require('querystring');
+
+const handleBlogRouter = require('./src/router/blog')
+const handleUserRouter = require('./src/router/user')
+
+const serverHandle = (req, res) =&gt; {
+  res.setHeader('Content-Type','application/json')
+
+  const url = req.url
+  req.path = url.split('?')[0]
+  req.query = querystring.parse(url.split('?')[1])
+
+  const blogData = handleBlogRouter(req, res)
+  if (blogData) {
+    res.end(
+      JSON.stringify(blogData)
+    )
+    return
+  }
+
+  const userData = handleUserRouter(req, res)
+  if (userData) {
+    res.end(
+      JSON.stringify(userData)
+    )
+    return
+  }
+
+  // 404
+  res.writeHead(404, { 'Content-Type': 'text/plain' })
+  res.write('404 Not Found')
+  res.end()
+}
+
+module.exports = serverHandle
+
+</code></pre>
+
+          </div>
         </div>
-      </a>
-    
-  </section>
 
-
-<div class="pagination-container">
-  
-  
-</div>
-
-
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://flyweights.github.io/post/node-blog-init/">
+              <h3 class="post-title">
+                下一篇：node-blog-init
+              </h3>
+            </a>
+          </div>
+          
       </div>
+
+      
 
       <div class="site-footer">
   <div class="slogan">闲坐竹林里，淡泊寻常心。</div>
