@@ -1,19 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://flyweights.github.io</id>
+    <id>https://flyway.xyz</id>
     <title>白罴</title>
-    <updated>2020-08-02T14:52:51.396Z</updated>
+    <updated>2020-08-02T15:04:21.585Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://flyweights.github.io"/>
-    <link rel="self" href="https://flyweights.github.io/atom.xml"/>
+    <link rel="alternate" href="https://flyway.xyz"/>
+    <link rel="self" href="https://flyway.xyz/atom.xml"/>
     <subtitle>闲坐竹林里，淡泊寻常心。</subtitle>
-    <logo>https://flyweights.github.io/images/avatar.png</logo>
-    <icon>https://flyweights.github.io/favicon.ico</icon>
+    <logo>https://flyway.xyz/images/avatar.png</logo>
+    <icon>https://flyway.xyz/favicon.ico</icon>
     <rights>All rights reserved 2020, 白罴</rights>
     <entry>
+        <title type="html"><![CDATA[funtion-callback-promise]]></title>
+        <id>https://flyway.xyz/post/funtion-callback-promise/</id>
+        <link href="https://flyway.xyz/post/funtion-callback-promise/">
+        </link>
+        <updated>2020-07-04T14:59:37.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="目录结构">目录结构</h3>
+<pre><code>.
+├── files
+│   ├── a.json
+│   ├── b.json
+│   └── c.json
+├── funtion.js
+├── callback.js
+└── promise.js
+</code></pre>
+<h3 id="function">function</h3>
+<pre><code class="language-js">const fs = require('fs');
+const path = require('path');
+
+const filename = 'a.json'
+const fileUrl = path.resolve(__dirname, 'files', filename)
+fs.readFile(fileUrl, 'utf8', (err, data) =&gt; {
+  if (err) {
+    console.log(err);
+    return
+  }
+
+  console.log(data.toString());
+})
+</code></pre>
+<h3 id="callback">callback</h3>
+<pre><code class="language-js">const fs = require('fs');
+const path = require('path');
+
+function getFileContent (filename, callback) {
+  const fileUrl = path.resolve(__dirname, 'files', filename)
+  fs.readFile(fileUrl, 'utf8', (err, data) =&gt; {
+    callback(
+      err,
+      JSON.parse(data.toString())
+    )
+  })
+}
+
+const filename = 'a.json'
+getFileContent(filename, (err, data) =&gt; {
+  console.log(data.message);
+  getFileContent(data.next, (err, data) =&gt; {
+    console.log(data.message);
+    getFileContent(data.next, (err, data) =&gt; {
+      console.log(data.message);
+    })
+  })
+})
+</code></pre>
+<h3 id=""></h3>
+<pre><code class="language-js">const fs = require('fs');
+const path = require('path');
+
+function getFileContent (filename) {
+  const promise = new Promise((resolve, reject) =&gt; {
+    const fileUrl = path.resolve(__dirname, 'files', filename)
+    fs.readFile(fileUrl, 'utf8', (err, data) =&gt; {
+      if (err) {
+        reject(err)
+        return
+      }
+      resolve(
+        JSON.parse(data.toString())
+      )
+    })
+  })
+  return promise
+}
+
+const filename = 'a.json'
+getFileContent(filename).then((data) =&gt; {
+  console.log(data);
+  return getFileContent (data.next)
+}).then((data) =&gt; {
+  console.log(data);
+  return getFileContent(data.next)
+}).then((data) =&gt; {
+  console.log(data);
+})
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[node-blog-route]]></title>
-        <id>https://flyweights.github.io/post/node-blog-route/</id>
-        <link href="https://flyweights.github.io/post/node-blog-route/">
+        <id>https://flyway.xyz/post/node-blog-route/</id>
+        <link href="https://flyway.xyz/post/node-blog-route/">
         </link>
         <updated>2020-07-03T14:44:50.000Z</updated>
         <content type="html"><![CDATA[<h3 id="添加路由">添加路由</h3>
@@ -117,8 +206,8 @@ module.exports = serverHandle
     </entry>
     <entry>
         <title type="html"><![CDATA[node-blog-init]]></title>
-        <id>https://flyweights.github.io/post/node-blog-init/</id>
-        <link href="https://flyweights.github.io/post/node-blog-init/">
+        <id>https://flyway.xyz/post/node-blog-init/</id>
+        <link href="https://flyway.xyz/post/node-blog-init/">
         </link>
         <updated>2020-07-02T02:41:49.000Z</updated>
         <content type="html"><![CDATA[<h3 id="目录机构">目录机构</h3>
@@ -193,8 +282,8 @@ server.listen(PORT)
     </entry>
     <entry>
         <title type="html"><![CDATA[node-http]]></title>
-        <id>https://flyweights.github.io/post/node-http/</id>
-        <link href="https://flyweights.github.io/post/node-http/">
+        <id>https://flyway.xyz/post/node-http/</id>
+        <link href="https://flyway.xyz/post/node-http/">
         </link>
         <updated>2020-07-01T00:51:19.000Z</updated>
         <content type="html"><![CDATA[<pre><code class="language-js">const http = require('http');
@@ -242,8 +331,8 @@ console.log('OK');
     </entry>
     <entry>
         <title type="html"><![CDATA[swift 的基础知识!]]></title>
-        <id>https://flyweights.github.io/post/swift-de-ji-chu-zhi-shi/</id>
-        <link href="https://flyweights.github.io/post/swift-de-ji-chu-zhi-shi/">
+        <id>https://flyway.xyz/post/swift-de-ji-chu-zhi-shi/</id>
+        <link href="https://flyway.xyz/post/swift-de-ji-chu-zhi-shi/">
         </link>
         <updated>2020-06-01T11:27:10.000Z</updated>
         <content type="html"><![CDATA[<h2 id="1-from-objc-to-swift">1. from objc to swift</h2>
@@ -427,102 +516,6 @@ if let hobbyValue = hobby {
  */
 
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Rails + Nginx in Mac]]></title>
-        <id>https://flyweights.github.io/post/rails-nginx-in-mac/</id>
-        <link href="https://flyweights.github.io/post/rails-nginx-in-mac/">
-        </link>
-        <updated>2020-02-29T13:06:01.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="step1-rails-项目准备">Step1. Rails 项目准备</h2>
-<pre><code class="language-bash">$ rails new deploy_demo
-$ rails g controller welcome index
-$ rails s
-</code></pre>
-<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/04/15/5FVitUgMuqseYnQ.png" alt="rails_s.png" loading="lazy"></figure>
-<pre><code class="language-bash">$ cd deploy_demo
-$ git init
-$ git add .
-$ git commit -m &quot;Init commit&quot;
-</code></pre>
-<h2 id="step2-nginx-安装和启动">Step2. Nginx 安装和启动</h2>
-<pre><code class="language-bash"># 安装
-$ brew install nginx 
-
-# 开启
-$ brew services start nginx
-
-# 关闭
-$ brew services stop nginx
-
-# 重启
-$ brew services restart nginx
-
-</code></pre>
-<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/04/15/Mf42UpOgJTZEPyk.png" alt="iShot2020-04-1513.55.44.png" loading="lazy"></figure>
-<h2 id="step3-nginx-配置">Step3. Nginx 配置</h2>
-<pre><code class="language-bash">$ touch /usr/local/etc/nginx/servers/rails_nginx.conf
-</code></pre>
-<pre><code>upstream app {
-    # 改成实际 puma.sock 的文件路径
-    server unix://Users/liangyk/rails_project/deploy_demo/tmp/sockets/puma.sock;
-}
-
-server {
-    listen 1234;
-    # 改成实际服务器域名
-    server_name localhost;
-
-    # 改成实际 APP 路径
-    root /Users/liangyk/rails_project/deploy_demo/public;
-
-    try_files $uri/index.html $uri @app;
-
-    location @app {
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $http_host;
-        proxy_redirect off;
-        proxy_pass http://app;
-    }
-
-    error_page 500 502 503 504 /500.html;
-    keepalive_timeout 10;
-}
-</code></pre>
-<h2 id="step4-puma-配置">Step4. Puma 配置</h2>
-<pre><code class="language-ruby">config/puma.rb
-
-# port        ENV.fetch(&quot;PORT&quot;) { 3000 }
-+ bind &quot;unix://tmp/sockets/puma.sock&quot;
-+ daemonize true
-</code></pre>
-<h2 id="step5-脚本控制">Step5. 脚本控制</h2>
-<pre><code class="language-bash">$ touch pumactrl.sh
-</code></pre>
-<pre><code class="language-bash">#!/bin/bash
-
-case &quot;$1&quot; in
-    &quot;&quot;)
-        echo -n &quot;please provide a parameter (start, stop, reload).&quot;
-        ;;
-    start)
-        echo -n &quot;starting db:migrate...&quot;
-        bin/rails db:migrate
-        echo -n &quot;starting assets:precompile...&quot;
-        bin/rails assets:precompile
-        echo -n &quot;starting puma...&quot;
-        puma -e production
-        ;;
-    stop)
-        echo &quot;stoping puma...&quot;
-        kill `cat &quot;tmp/pids/server.pid&quot;`
-        ;;
-esac
-</code></pre>
-<pre><code class="language-bash">$  bash ./pumactrl.sh start
-</code></pre>
-<figure data-type="image" tabindex="3"><img src="https://i.loli.net/2020/04/15/soBl13AqgwjDLOH.png" alt="iShot2020-04-1515.29.23.png" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>

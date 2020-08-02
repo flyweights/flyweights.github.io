@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>markdown | 白罴</title>
+<title>funtion-callback-promise | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -78,94 +78,121 @@
 
 
       <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">funtion-callback-promise</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-07-04</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://flyway.xyz/tag/Vt0UL9M-P/">
+                    javascript
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <h3 id="目录结构">目录结构</h3>
+<pre><code>.
+├── files
+│   ├── a.json
+│   ├── b.json
+│   └── c.json
+├── funtion.js
+├── callback.js
+└── promise.js
+</code></pre>
+<h3 id="function">function</h3>
+<pre><code class="language-js">const fs = require('fs');
+const path = require('path');
 
-        <div class="current-tag-container">
-          <h2 class="title">
-            <i class="icon icon-pricetags-outline"></i> markdown
-          </h2> 
+const filename = 'a.json'
+const fileUrl = path.resolve(__dirname, 'files', filename)
+fs.readFile(fileUrl, 'utf8', (err, data) =&gt; {
+  if (err) {
+    console.log(err);
+    return
+  }
+
+  console.log(data.toString());
+})
+</code></pre>
+<h3 id="callback">callback</h3>
+<pre><code class="language-js">const fs = require('fs');
+const path = require('path');
+
+function getFileContent (filename, callback) {
+  const fileUrl = path.resolve(__dirname, 'files', filename)
+  fs.readFile(fileUrl, 'utf8', (err, data) =&gt; {
+    callback(
+      err,
+      JSON.parse(data.toString())
+    )
+  })
+}
+
+const filename = 'a.json'
+getFileContent(filename, (err, data) =&gt; {
+  console.log(data.message);
+  getFileContent(data.next, (err, data) =&gt; {
+    console.log(data.message);
+    getFileContent(data.next, (err, data) =&gt; {
+      console.log(data.message);
+    })
+  })
+})
+</code></pre>
+<h3 id=""></h3>
+<pre><code class="language-js">const fs = require('fs');
+const path = require('path');
+
+function getFileContent (filename) {
+  const promise = new Promise((resolve, reject) =&gt; {
+    const fileUrl = path.resolve(__dirname, 'files', filename)
+    fs.readFile(fileUrl, 'utf8', (err, data) =&gt; {
+      if (err) {
+        reject(err)
+        return
+      }
+      resolve(
+        JSON.parse(data.toString())
+      )
+    })
+  })
+  return promise
+}
+
+const filename = 'a.json'
+getFileContent(filename).then((data) =&gt; {
+  console.log(data);
+  return getFileContent (data.next)
+}).then((data) =&gt; {
+  console.log(data);
+  return getFileContent(data.next)
+}).then((data) =&gt; {
+  console.log(data);
+})
+</code></pre>
+
+          </div>
         </div>
 
         
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyway.xyz/post/typora/">
-        <h2 class="post-title">Typora</h2>
-      </a>
-      <div class="post-abstract">
-        <p>/* NEW WAY TO READ &amp; WRITE MARKDOWN.| */</p>
-
+          <div class="next-post">
+            <a class="purple-link" href="https://flyway.xyz/post/node-blog-route/">
+              <h3 class="post-title">
+                下一篇：node-blog-route
+              </h3>
+            </a>
+          </div>
+          
       </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-09-09</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://flyway.xyz/tag/d9SZd8DVkr/">
-                markdown
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyway.xyz/post/typora/">
-        <div class="feature-container" style="background-image: url('https://flyway.xyz/post-images/typora.jpg')">
-        </div>
-      </a>
-    
-  </section>
 
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyway.xyz/post/html-and-markdown/">
-        <h2 class="post-title">html-and-markdown</h2>
-      </a>
-      <div class="post-abstract">
-        <p>学习<code>HTML</code>，对比学习<code>Markdown</code>。<br>
-对比两种标记语言的异同，输出同一种效果。</p>
-
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-09-06</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://flyway.xyz/tag/fGlSkvcDF/">
-                html
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://flyway.xyz/tag/d9SZd8DVkr/">
-                markdown
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyway.xyz/post/html-and-markdown/">
-        <div class="feature-container" style="background-image: url('https://flyway.xyz/post-images/html-and-markdown.png')">
-        </div>
-      </a>
-    
-  </section>
-
-
-<div class="pagination-container">
-  
-  
-</div>
-
-
-      </div>
+      
 
       <div class="site-footer">
   <div class="slogan">闲坐竹林里，淡泊寻常心。</div>
