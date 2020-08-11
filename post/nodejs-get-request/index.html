@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>html | 白罴</title>
+<title>nodejs-get-request | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -78,62 +78,55 @@
 
 
       <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">nodejs-get-request</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-05-01</span>
+            
+          </div>
+          <div class="post-content">
+            <pre><code class="language-js">//模拟发送http请求
+const request = require(&quot;request&quot;);
 
-        <div class="current-tag-container">
-          <h2 class="title">
-            <i class="icon icon-pricetags-outline"></i> html
-          </h2> 
+let addressArr = [&quot;广州市&quot; , &quot;中山市&quot;, &quot;佛山市&quot;]
+
+
+for (let index = 0; index &lt; addressArr.length; index++) {
+  const address = addressArr[index];
+  let url = &quot;https://apis.map.qq.com/jsapi?qt=geoc&amp;addr=&quot; + address + &quot;&amp;output=jsonp&amp;pf=jsapi&amp;ref=jsapi&quot;//&amp;cb=qq.maps._svcb2.geocoder0&quot;
+
+  //get请求
+  console.log(encodeURI(url));
+  request(encodeURI(url), function (error, response, body) {
+    if (!error &amp;&amp; response.statusCode == 200) {
+      // console.log(JSON.parse(body))
+      let j = JSON.parse(body)
+      console.log(address + &quot;-&quot; + j.detail.pointx + &quot;-&quot; + j.detail.pointy)
+    }
+    else {
+      console.log(error);
+    }
+  });
+}
+
+</code></pre>
+
+          </div>
         </div>
 
         
-<section class="post-item">
-    <div class="content">
-      <a href="https://flyway.xyz/post/html-and-markdown/">
-        <h2 class="post-title">html-and-markdown</h2>
-      </a>
-      <div class="post-abstract">
-        <p>学习<code>HTML</code>，对比学习<code>Markdown</code>。<br>
-对比两种标记语言的异同，输出同一种效果。</p>
-
+          <div class="next-post">
+            <a class="purple-link" href="https://flyway.xyz/post/rails-nginx-in-mac/">
+              <h3 class="post-title">
+                下一篇：Rails + Nginx in Mac
+              </h3>
+            </a>
+          </div>
+          
       </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-09-06</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://flyway.xyz/tag/fGlSkvcDF/">
-                html
-                
-                  ，
-                
-              </a>
-            
-              <a href="https://flyway.xyz/tag/d9SZd8DVkr/">
-                markdown
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-      <a href="https://flyway.xyz/post/html-and-markdown/">
-        <div class="feature-container" style="background-image: url('https://flyway.xyz/post-images/html-and-markdown.png')">
-        </div>
-      </a>
-    
-  </section>
 
-
-<div class="pagination-container">
-  
-  
-</div>
-
-
-      </div>
+      
 
       <div class="site-footer">
   <div class="slogan">闲坐竹林里，淡泊寻常心。</div>
