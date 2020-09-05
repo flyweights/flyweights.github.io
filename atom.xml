@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://flyway.xyz</id>
     <title>白罴</title>
-    <updated>2020-08-11T05:24:05.988Z</updated>
+    <updated>2020-09-05T11:05:14.830Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flyway.xyz"/>
     <link rel="self" href="https://flyway.xyz/atom.xml"/>
@@ -10,6 +10,49 @@
     <logo>https://flyway.xyz/images/avatar.png</logo>
     <icon>https://flyway.xyz/favicon.ico</icon>
     <rights>All rights reserved 2020, 白罴</rights>
+    <entry>
+        <title type="html"><![CDATA[算法]]></title>
+        <id>https://flyway.xyz/post/suan-fa/</id>
+        <link href="https://flyway.xyz/post/suan-fa/">
+        </link>
+        <updated>2020-09-05T11:04:09.000Z</updated>
+        <content type="html"><![CDATA[<p>给定一个升序整型数组 [0,1,2,4,5,7,13,15,16] ,<br>
+找出其中连续出现的数字区间，<br>
+输出为[&quot;0-&gt;2&quot;,&quot;4-&gt;5&quot;,&quot;7&quot;,&quot;13&quot;,&quot;15-&gt;16&quot;]</p>
+<pre><code class="language-js">let arr = [
+	0, 1, 2, 4, 5, 7,
+	13, 15, 16
+]
+let newArr = []
+
+function bar (index = 0) {
+	// 终点
+	if (index &gt; arr.length - 1) {
+		return;
+	}
+	
+	// 起点
+	let tmps = []
+	tmps.push(arr[index])
+	foo(tmps, index)
+}
+
+// 递归
+function foo (tmps, index) {
+	if (arr[index] + 1 == arr[index + 1]) {
+		tmps.push(arr[index + 1])
+		foo(tmps, index + 1)
+	} else {
+		newArr.push(tmps)// 插值
+		bar(index + 1) // 下一轮
+	}
+}
+
+bar()
+console.log(newArr)
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[funtion-callback-promise]]></title>
         <id>https://flyway.xyz/post/funtion-callback-promise/</id>
@@ -326,195 +369,6 @@ const server = http.createServer((req, res) =&gt; {
 
 server.listen(8000)
 console.log('OK');
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[swift 的基础知识!]]></title>
-        <id>https://flyway.xyz/post/swift-de-ji-chu-zhi-shi/</id>
-        <link href="https://flyway.xyz/post/swift-de-ji-chu-zhi-shi/">
-        </link>
-        <updated>2020-06-01T11:27:10.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="1-from-objc-to-swift">1. from objc to swift</h2>
-<pre><code class="language-objc">const int count = 10; 
-double price = 23.55;
-
-NSString *firstMessage = @&quot;Objc is awesome. &quot;;
-NSString *secondMessage = @&quot;What do you think?&quot;;
-NSString *message = [NSString stringWithFormat:@&quot;%@%@&quot;, firstMessage, secondMessage];
-
-NSLog(@&quot;%@&quot;, message);
-
-</code></pre>
-<pre><code class="language-swift">let count = 10
-var price = 23.55
-
-let firstMessage = &quot;Swift is awesome. &quot;
-let secondMessage = &quot;What do you think?&quot;
-var message = firstMessage + secondMessage
-
-print(message)
-
-</code></pre>
-<h2 id="2-常量-和-变量">2. 常量 和 变量</h2>
-<pre><code class="language-swift">let constant = 10
-var y = 10
-var x = y + constant
-
-</code></pre>
-<h2 id="3-类型推论">3. 类型推论</h2>
-<pre><code class="language-swift">// 按住 option 鍵 + 鼠标点击任一变量 = 得出该变量的类型
-
-let constant:Int = 10
-var y:Int = 10
-var x:Int = y + constant
-
-</code></pre>
-<h2 id="4-字符串-string">4. 字符串 String</h2>
-<pre><code class="language-swift">var message:String = &quot;Talk is cheap, show me the code&quot;
-
-// 字符串追加
-var greeting = &quot;Hello&quot;
-var name = &quot;xiaoming&quot;
-var message = greeting + name
-
-// 大写和小写转换
-message.uppercased()
-message.lowercased()
-
-// 字符串的字符个数
-message.count
-
-// 类型转换
-var totalPrice:Int = 100
-var totalPriceMessage = &quot;The price of the book is $&quot; + String(totalPrice)
-
-</code></pre>
-<h2 id="5流程控制">5.流程控制</h2>
-<pre><code class="language-swift">var time = 6
-
-if time == 6 {
-    print(&quot;自己煮早餐&quot;)
-} else {
-    print(&quot;到外面买早餐&quot;)
-}
-
-// 或者
-
-switch time {
-case 6:
-    print(&quot;自己煮早餐&quot;)
-default:
-    print(&quot;到外面买早餐&quot;)
-}
-
-
-var money = 9999
-
-if money &gt;= 100000 {
-    print(&quot;出国游&quot;)
-} else if money &gt;= 10000 &amp;&amp; money &lt; 100000 {
-    print(&quot;国内游&quot;)
-} else if money &gt;= 1000 &amp;&amp; money &lt; 10000 {
-    print(&quot;省内游&quot;)
-} else {
-    print(&quot;市内游&quot;)
-}
-
-// 或者
-
-switch money {
-case 100000...:
-    print(&quot;出国游&quot;)
-case 10000...99999:
-    print(&quot;国内游&quot;)
-case 1000...9999:
-    print(&quot;省内游&quot;)
-default:
-    print(&quot;市内游&quot;)
-}
-
-
-</code></pre>
-<h2 id="6-数组-array">6. 数组 Array</h2>
-<pre><code class="language-swift">var book1 = &quot;水浒传&quot;
-var book2 = &quot;三国演义&quot;
-var book3 = &quot;西游记&quot;
-
-var bookArray = [book1, book2, book3]
-
-// 获取第一本书
-print(bookArray[0])
-
-// 添加一本书
-bookArray.append(&quot;红楼梦&quot;)
-
-// 一共有多少本书
-bookArray.count
-
-
-// 遍历所有书籍
-for index in 0...3{
-    print(bookArray[index])
-}
-
-for index in 0...bookArray.count-1{
-    print(bookArray[index])
-}
-
-for book in bookArray {
-    print(book)
-}
-</code></pre>
-<h2 id="7-字典-dictionary">7. 字典 Dictionary</h2>
-<pre><code class="language-swift">var animalDict = [
-    &quot;cat&quot;: &quot;🐱&quot;,
-    &quot;dog&quot;: &quot;🐶&quot;,
-    &quot;pig&quot;: &quot;🐷&quot;,
-    &quot;cow&quot;: &quot;🐮&quot;
-]
-
-// 这里有出现一个警告⚠️ Expression implicitly coerced from 'String?' to 'Any'
-print(animalDict[&quot;dog&quot;])
-
-for (key, value) in animalDict {
-    print(&quot;Title: \(key)&quot;)
-    print(&quot;Emoji: \(value)&quot;)
-    print(&quot;---&quot;)
-}
-
-</code></pre>
-<h2 id="8-可选类型-optionals">8. 可选类型 Optionals</h2>
-<pre><code class="language-swift">// 声明一个为 nil 的 可选类型 字符串
-var hobby: String?
-
-hobby = &quot;running&quot;
-
-// ❌ Value of optional type 'String?' must be unwrapped to a value of type 'String'
-// var message = &quot;Your hobby is &quot; + hobby
-
-// 所以取值的时，应该解开可选类型
-
-// 1. 暴力解开，使用感叹号 ！
-if hobby != nil {
-    var message = &quot;Your hobby is &quot; + hobby!
-    print(message)
-
-}
-
-// 2. 可选绑定，就是将一个 有值的可选类型 赋给一个 临时的变量
-if let hobbyValue = hobby {
-    var message = &quot;Your hobby is &quot; + hobbyValue
-    print(message)
-}
-
-/*
- 总结：
-    使用了可选类型，就相当于是快递的“货件打包”
-    可选类型产生了保护的作用
-    收到快递之后，只有拆开快递，才能取出货件，这就是取值
- */
-
 </code></pre>
 ]]></content>
     </entry>

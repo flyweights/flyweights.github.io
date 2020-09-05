@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>Objc and Ruby relationships 0 Basics | 白罴</title>
+<title>算法 | 白罴</title>
 <meta name="description" content="闲坐竹林里，淡泊寻常心。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -80,52 +80,46 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">Objc and Ruby relationships 0 Basics</h2>
+          <h2 class="post-title">算法</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2020-02-01</span>
-            
-              <span>
-                <i class="icon-pricetags-outline"></i>
-                
-                  <a href="https://flyway.xyz/tag/PJ-nsua5m/">
-                    Objc
-                    
-                      ，
-                    
-                  </a>
-                
-                  <a href="https://flyway.xyz/tag/tUS-dEnxm/">
-                    Ruby
-                    
-                  </a>
-                
-              </span>
+            <span><i class="icon-calendar-outline"></i> 2020-09-05</span>
             
           </div>
           <div class="post-content">
-            <h2 id="变量-常量">变量 &amp; 常量</h2>
-<p>objc:</p>
-<pre><code class="language-objc">NSString * myName = @&quot;小明&quot;;
-NSString * const kMyName = @&quot;小明&quot;;
-</code></pre>
-<p>ruby:</p>
-<pre><code class="language-ruby">my_name = &quot;小明&quot;
-MyName = &quot;小明&quot;
-</code></pre>
-<h2 id="注释">注释</h2>
-<p>objc:</p>
-<pre><code class="language-objc">// 单行注释
+            <p>给定一个升序整型数组 [0,1,2,4,5,7,13,15,16] ,<br>
+找出其中连续出现的数字区间，<br>
+输出为[&quot;0-&gt;2&quot;,&quot;4-&gt;5&quot;,&quot;7&quot;,&quot;13&quot;,&quot;15-&gt;16&quot;]</p>
+<pre><code class="language-js">let arr = [
+	0, 1, 2, 4, 5, 7,
+	13, 15, 16
+]
+let newArr = []
 
-/*
-    多行注释
-*/
-</code></pre>
-<p>ruby:</p>
-<pre><code class="language-ruby"># 单行注释
+function bar (index = 0) {
+	// 终点
+	if (index &gt; arr.length - 1) {
+		return;
+	}
+	
+	// 起点
+	let tmps = []
+	tmps.push(arr[index])
+	foo(tmps, index)
+}
 
-=begin
-  多行注释
-=end
+// 递归
+function foo (tmps, index) {
+	if (arr[index] + 1 == arr[index + 1]) {
+		tmps.push(arr[index + 1])
+		foo(tmps, index + 1)
+	} else {
+		newArr.push(tmps)// 插值
+		bar(index + 1) // 下一轮
+	}
+}
+
+bar()
+console.log(newArr)
 </code></pre>
 
           </div>
@@ -133,9 +127,9 @@ MyName = &quot;小明&quot;
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://flyway.xyz/post/rails-restful/">
+            <a class="purple-link" href="https://flyway.xyz/post/funtion-callback-promise/">
               <h3 class="post-title">
-                下一篇：rails-restful
+                下一篇：funtion-callback-promise
               </h3>
             </a>
           </div>
